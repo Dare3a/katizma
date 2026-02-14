@@ -1,26 +1,91 @@
 <!DOCTYPE html>
 <html lang="sr">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Katizma Studio | Izrada sajtova i SEO optimizacija</title>
-    <meta name="description" content="Profesionalna izrada sajtova, SEO optimizacija i digital marketing. Povećajte online prisustvo uz Katizma Studio." />
+    <meta name="description"
+          content="Profesionalna izrada sajtova, SEO optimizacija i digital marketing. Povećajte online prisustvo uz Katizma Studio."/>
     <link href="/src/style.css" rel="stylesheet">
+    <script type="module" src="/src/main.js"></script>
 </head>
 <body>
 
 <!-- NAVBAR -->
-<header class="py-6">
+<header class="sticky top-0 z-50 py-6 bg-white backdrop-blur-md border-b border-gray-800">
     <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <h1 class="text-2xl font-bold text-primary">KATIZMASTUDIO</h1>
+
+        <!-- Desktop navigacija -->
         <nav class="hidden md:flex gap-8 text-sm uppercase tracking-wide">
-            <a href="#" class="hover:text-primary transition">Početna</a>
-            <a href="#" class="hover:text-primary transition">Portfolio</a>
-            <a href="#" class="hover:text-primary transition">O nama</a>
-            <a href="#" class="hover:text-primary transition">Kontakt</a>
+            <a href="#" class="hover:text-primary transition">POČETNA</a>
+
+            <!-- Padajući meni za Usluge -->
+            <div class="relative group">
+                <button class="hover:text-primary transition flex items-center gap-2">
+                    USLUGE
+                    <svg class="w-4 h-4 transform group-hover:rotate-180 transition" fill="none" stroke="currentColor"
+                         viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </button>
+                <div class="absolute left-0 mt-0 w-56 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 border border-gray-800">
+                    <a href="#" class="block px-4 py-3 hover:bg-gray-800 hover:text-primary transition rounded-t-lg">SEO
+                        optimizacija</a>
+                    <a href="#" class="block px-4 py-3 hover:bg-gray-800 hover:text-primary transition">Izrada
+                        sajtova</a>
+                    <a href="#" class="block px-4 py-3 hover:bg-gray-800 hover:text-primary transition">Digital
+                        marketing</a>
+                    <a href="#" class="block px-4 py-3 hover:bg-gray-800 hover:text-primary transition">Web dizajn</a>
+                    <a href="#" class="block px-4 py-3 hover:bg-gray-800 hover:text-primary transition rounded-b-lg">E-commerce
+                        rešenja</a>
+                </div>
+            </div>
+
+            <a href="#" class="hover:text-primary transition">PORTFOLIO</a>
+            <a href="#" class="hover:text-primary transition">O NAMA</a>
+            <a href="#" class="hover:text-primary transition">KONTAKT</a>
         </nav>
+
+        <!-- Hamburger dugme -->
+        <button id="hamburger" class="md:hidden text-2xl">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </button>
     </div>
+
+    <!-- Mobilna navigacija -->
+    <nav id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex flex-col gap-4">
+            <a href="#" class="hover:text-primary transition py-2">POČETNA</a>
+
+            <!-- Mobilni padajući meni za Usluge -->
+            <div>
+                <button id="mobile-dropdown-btn" class="w-full text-left hover:text-primary transition flex items-center justify-between py-2">
+                    USLUGE
+                    <svg id="mobile-dropdown-icon" class="w-4 h-4 transform transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </button>
+                <div id="mobile-dropdown-menu" class="hidden pl-4 flex flex-col gap-2 mt-2 border-l border-gray-300">
+                    <a href="#" class="hover:text-primary transition py-2">SEO optimizacija</a>
+                    <a href="#" class="hover:text-primary transition py-2">Izrada sajtova</a>
+                    <a href="#" class="hover:text-primary transition py-2">Digital marketing</a>
+                    <a href="#" class="hover:text-primary transition py-2">Web dizajn</a>
+                    <a href="#" class="hover:text-primary transition py-2">E-commerce rešenja</a>
+                </div>
+            </div>
+
+            <a href="#" class="hover:text-primary transition py-2">PORTFOLIO</a>
+            <a href="#" class="hover:text-primary transition py-2">O NAMA</a>
+            <a href="#" class="hover:text-primary transition py-2">KONTAKT</a>
+        </div>
+    </nav>
 </header>
+
+
 
 <!-- HERO -->
 <section class="py-24 text-center">
