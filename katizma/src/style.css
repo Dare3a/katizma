@@ -64,3 +64,24 @@
 
 /* keep content above overlays */
 .phone-pill > *{ position: relative; z-index:1; }
+/* fade-up on scroll */
+.reveal-up {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 1100ms ease, transform 1100ms cubic-bezier(.2,.8,.2,1);
+    will-change: opacity, transform;
+}
+
+.reveal-up.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal-up,
+    .reveal-up.is-visible {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}

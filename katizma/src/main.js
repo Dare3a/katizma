@@ -32,3 +32,20 @@ mobileLinks.forEach(link => {
         mobileDropdownIcon.classList.remove('rotate-180');
     });
 });
+
+const revealEls = document.querySelectorAll('.reveal-up');
+
+// reveal-up na scrollovani element
+const io = new IntersectionObserver(
+    (entries, obs) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                obs.unobserve(entry.target); // animira samo jednom
+            }
+        });
+    },
+    { threshold: 0.2, rootMargin: '0px 0px -10% 0px' }
+);
+
+revealEls.forEach((el) => io.observe(el));
