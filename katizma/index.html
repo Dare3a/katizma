@@ -12,105 +12,183 @@
 <body>
 
 <!-- NAVBAR -->
-<header class="sticky top-0 z-50 py-6 bg-white/60 backdrop-blur-lg border-b border-gray-200 shadow-sm">
-    <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
-        <p class="text-2xl font-bold text-primary">KATIZMA</p>
+<header class="sticky top-0 z-50 border-b border-slate-200 bg-white/70 backdrop-blur-lg shadow-sm">
+    <div class="mx-auto max-w-7xl px-6">
+        <div class="flex h-16 items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="text-2xl font-bold tracking-tight text-primary">KATIZMA</a>
 
-        <!-- Desktop navigacija -->
-        <nav class="hidden md:block" aria-label="Glavna navigacija">
-            <ul class="flex gap-8 text-sm uppercase tracking-wide items-center">
+            <!-- Desktop -->
+            <nav class="hidden md:block" aria-label="Glavna navigacija">
+                <ul class="flex items-center gap-8 text-sm font-semibold tracking-wide text-slate-800">
+                    <li>
+                        <a href="#"
+                           class="rounded-md px-2 py-1 transition hover:text-teal-600 focus:outline-none focus:ring-2 focus:ring-teal-500/40">
+                            POČETNA
+                        </a>
+                    </li>
+
+                    <!-- Desktop dropdown -->
+                    <li class="relative group">
+                        <button
+                                type="button"
+                                class="group inline-flex items-center gap-2 rounded-md px-2 py-1 transition hover:text-teal-600 focus:outline-none focus:ring-2 focus:ring-teal-500/40"
+                                aria-haspopup="true"
+                                aria-expanded="false"
+                        >
+                            USLUGE
+                            <svg
+                                    class="h-4 w-4 origin-center transition-transform duration-200 ease-out group-hover:rotate-180"
+                                    viewBox="0 0 20 20"
+                                    fill="currentColor"
+                                    aria-hidden="true"
+                            >
+                                <path
+                                        fill-rule="evenodd"
+                                        clip-rule="evenodd"
+                                        d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 10.94l3.71-3.71a.75.75 0 1 1 1.06 1.06l-4.24 4.24a.75.75 0 0 1-1.06 0L5.21 8.29a.75.75 0 0 1 .02-1.08z"
+                                />
+                            </svg>
+                        </button>
+
+                        <!-- Hover bridge: popunjava razmak između dugmeta i menija -->
+                        <div class="absolute left-0 right-0 top-full h-3"></div>
+
+                        <ul
+                                class="absolute left-0 top-full mt-3 w-60 translate-y-2 rounded-xl border border-slate-200 bg-white p-2 shadow-xl
+           opacity-0 invisible transition-all duration-200
+           group-hover:opacity-100 group-hover:visible group-hover:translate-y-0
+           group-focus-within:opacity-100 group-focus-within:visible group-focus-within:translate-y-0"
+                        >
+                            <li>
+                                <a href="#"
+                                   class="block rounded-lg px-3 py-2 text-sm text-slate-800 transition-colors duration-75 ease-out hover:bg-teal-500/90 hover:text-white hover:shadow-md focus:outline-none focus:ring-2 focus:ring-teal-500/30">
+                                    Izrada web sajta
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                   class="block rounded-lg px-3 py-2 text-sm text-slate-800 transition-colors duration-75 ease-out
+       hover:bg-teal-500/90 hover:text-white hover:shadow-md
+       focus:outline-none focus:ring-2 focus:ring-teal-500/30">
+                                    SEO optimizacija
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                   class="block rounded-lg px-3 py-2 text-sm text-slate-800 transition-colors duration-75 ease-out
+       hover:bg-teal-500/90 hover:text-white hover:shadow-md
+       focus:outline-none focus:ring-2 focus:ring-teal-500/30">
+                                    Digital marketing
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                   class="block rounded-lg px-3 py-2 text-sm text-slate-800 transition-colors duration-75 ease-out
+       hover:bg-teal-500/90 hover:text-white hover:shadow-md
+       focus:outline-none focus:ring-2 focus:ring-teal-500/30">
+                                    Web dizajn
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="#"
+                           class="rounded-md px-2 py-1 transition hover:text-teal-600 focus:outline-none focus:ring-2 focus:ring-teal-500/40">
+                            PORTFOLIO
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#"
+                           class="rounded-md px-2 py-1 transition hover:text-teal-600 focus:outline-none focus:ring-2 focus:ring-teal-500/40">
+                            O NAMA
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#"
+                           class="rounded-md px-2 py-1 transition hover:text-teal-600 focus:outline-none focus:ring-2 focus:ring-teal-500/40">
+                            KONTAKT
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Hamburger -->
+            <button
+                    id="hamburger"
+                    class="md:hidden inline-flex items-center justify-center rounded-xl p-2 text-slate-800 transition hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500/40"
+                    aria-label="Otvori meni"
+                    aria-controls="mobile-menu"
+                    aria-expanded="false"
+            >
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile panel -->
+    <nav id="mobile-menu" class="hidden md:hidden border-t border-slate-200 bg-white/90 backdrop-blur-lg"
+         aria-label="Mobilna navigacija">
+        <div class="mx-auto max-w-7xl px-6 py-4">
+            <ul class="flex flex-col gap-1 text-sm font-semibold text-slate-800">
                 <li>
-                    <a href="#" class="hover:text-primary hover:text-teal-500 transition">POČETNA</a>
+                    <a href="#"
+                       class="block rounded-lg px-3 py-3 transition hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500/30">
+                        POČETNA
+                    </a>
                 </li>
 
-                <!-- Padajući meni za Usluge -->
-                <li class="relative group">
-                    <button class="hover:text-teal-500 transition flex items-center gap-2" aria-haspopup="true"
-                            aria-expanded="false">
-                        USLUGE
-                        <svg class="w-4 h-4 transform group-hover:rotate-180 transition" fill="none"
-                             stroke="currentColor"
-                             viewBox="0 0 24 24" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                  d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                <!-- Mobile dropdown -->
+                <li>
+                    <button
+                            id="mobile-dropdown-btn"
+                            type="button"
+                            class="group flex w-full items-center justify-between rounded-lg px-3 py-3 text-left transition hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500/30"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                            aria-controls="mobile-dropdown-menu"
+                    >
+                        <span>USLUGE</span>
+
+                        <svg id="mobile-dropdown-icon"
+                             class="h-4 w-4 shrink-0 origin-center transition-transform duration-200 ease-out text-slate-600"
+                             viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                  d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 10.94l3.71-3.71a.75.75 0 1 1 1.06 1.06l-4.24 4.24a.75.75 0 0 1-1.06 0L5.21 8.29a.75.75 0 0 1 .02-1.08z"/>
                         </svg>
                     </button>
-                    <ul class="absolute left-0 mt-0 w-56 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 border border-gray-800">
-                        <li>
-                            <a href="#"
-                               class="block px-4 py-3 hover:bg-teal-500 hover:text-white rounded-t-lg transition">Izrada
-                                web sajta</a>
-                        </li>
-                        <li>
-                            <a href="#"
-                               class="block px-4 py-3 hover:bg-teal-500 hover:text-white transition">SEO
-                                optimizacija</a>
-                        </li>
-                        <li>
-                            <a href="#" class="block px-4 py-3 hover:bg-teal-500 hover:text-white transition">Digital
-                                marketing</a>
-                        </li>
-                        <li>
-                            <a href="#"
-                               class="block px-4 py-3 hover:bg-teal-500 hover:text-white rounded-b-lg transition">Web
-                                dizajn</a>
-                        </li>
+
+                    <ul id="mobile-dropdown-menu" class="hidden mt-1 pl-3 border-l border-slate-200">
+                        <li><a href="#"
+                               class="block rounded-lg px-3 py-2 text-slate-700 transition hover:bg-teal-50 hover:text-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500/30">Izrada
+                            web sajta</a></li>
+                        <li><a href="#"
+                               class="block rounded-lg px-3 py-2 text-slate-700 transition hover:bg-teal-50 hover:text-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500/30">SEO
+                            optimizacija</a></li>
+                        <li><a href="#"
+                               class="block rounded-lg px-3 py-2 text-slate-700 transition hover:bg-teal-50 hover:text-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500/30">Digital
+                            marketing</a></li>
+                        <li><a href="#"
+                               class="block rounded-lg px-3 py-2 text-slate-700 transition hover:bg-teal-50 hover:text-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500/30">Web
+                            dizajn</a></li>
                     </ul>
                 </li>
 
-                <li>
-                    <a href="#" class="hover:text-teal-500 transition">PORTFOLIO</a>
+                <li><a href="#"
+                       class="block rounded-lg px-3 py-3 transition hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500/30">PORTFOLIO</a>
                 </li>
-                <li>
-                    <a href="#" class="hover:text-teal-500 transition">O NAMA</a>
-                </li>
-                <li>
-                    <a href="#" class="hover:text-teal-500 transition">KONTAKT</a>
+                <li><a href="#"
+                       class="block rounded-lg px-3 py-3 transition hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500/30">O
+                    NAMA</a></li>
+                <li><a href="#"
+                       class="block rounded-lg px-3 py-3 transition hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500/30">KONTAKT</a>
                 </li>
             </ul>
-        </nav>
-
-        <!-- Hamburger dugme -->
-        <button id="hamburger" class="md:hidden text-2xl" aria-label="Otvori meni" aria-controls="mobile-menu"
-                aria-expanded="false">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-        </button>
-    </div>
-
-    <!-- Mobilna navigacija -->
-    <nav id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200" aria-label="Mobilna navigacija">
-        <ul class="max-w-7xl mx-auto px-6 py-4 flex flex-col gap-4">
-            <li>
-                <a href="#" class="hover:text-primary transition py-2 block">POČETNA</a>
-            </li>
-
-            <!-- Mobilni padajući meni za Usluge -->
-            <li>
-                <button id="mobile-dropdown-btn"
-                        class="w-full text-left hover:text-primary transition flex items-center justify-between py-2"
-                        aria-haspopup="true" aria-expanded="false" aria-controls="mobile-dropdown-menu">
-                    USLUGE
-                    <svg id="mobile-dropdown-icon" class="w-4 h-4 transform transition" fill="none"
-                         stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-                    </svg>
-                </button>
-                <ul id="mobile-dropdown-menu" class="hidden pl-4 flex flex-col gap-2 mt-2 border-l border-gray-300">
-                    <li><a href="#" class="hover:text-primary transition py-2 block">Izrada web sajta</a></li>
-                    <li><a href="#" class="hover:text-primary transition py-2 block">SEO optimizacija</a></li>
-                    <li><a href="#" class="hover:text-primary transition py-2 block">Digital marketing</a></li>
-                    <li><a href="#" class="hover:text-primary transition py-2 block">Web dizajn</a></li>
-                </ul>
-            </li>
-
-            <li><a href="#" class="hover:text-primary transition py-2 block">PORTFOLIO</a></li>
-            <li><a href="#" class="hover:text-primary transition py-2 block">O NAMA</a></li>
-            <li><a href="#" class="hover:text-primary transition py-2 block">KONTAKT</a></li>
-        </ul>
+        </div>
     </nav>
 </header>
 <!-- HERO (Artistics web-agency style) -->

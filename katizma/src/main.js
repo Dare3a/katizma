@@ -8,12 +8,14 @@ const mobileDropdownIcon = document.getElementById('mobile-dropdown-icon');
 
 // Toggle mobilnog menija
 hamburger.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
+    const isHidden = mobileMenu.classList.toggle('hidden');
+    hamburger.setAttribute('aria-expanded', String(!isHidden));
 });
 
 // Toggle mobilnog padajućeg menija
 mobileDropdownBtn.addEventListener('click', () => {
-    mobileDropdownMenu.classList.toggle('hidden');
+    const isHidden = mobileDropdownMenu.classList.toggle('hidden');
+    mobileDropdownBtn.setAttribute('aria-expanded', String(!isHidden));
     mobileDropdownIcon.classList.toggle('rotate-180');
 });
 
@@ -22,7 +24,11 @@ const mobileLinks = mobileMenu.querySelectorAll('a');
 mobileLinks.forEach(link => {
     link.addEventListener('click', () => {
         mobileMenu.classList.add('hidden');
+        hamburger.setAttribute('aria-expanded', 'false');
+
         mobileDropdownMenu.classList.add('hidden');
+        mobileDropdownBtn.setAttribute('aria-expanded', 'false');
+
         mobileDropdownIcon.classList.remove('rotate-180');
     });
 });
