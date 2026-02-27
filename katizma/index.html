@@ -257,26 +257,43 @@
                         </div>
                     </div>
 
-                    <!-- CTA -->
-                    <a href="tel:1234567890"
-                       class="phone-pill inline-flex items-center gap-3 rounded-full
-          border border-teal-400/20 bg-black/90
-          px-6 py-3 text-white
-          shadow-[0_0_0_0.5px_rgba(45,212,191,0.35),0_0_20px_rgba(45,212,191,0.19)]
-          transition hover:border-teal-300/90 hover:shadow-[0_0_0_1px_rgba(45,212,191,0.65),0_0_34px_rgba(45,212,191,0.30)]
-          active:translate-y-[1px]">
+                    <!-- CTA wrapper -->
+                    <div class="mt-6 flex justify-center">
+                        <!-- CTA -->
+                        <a href="tel:1234567890"
+                           class="phone-pill group inline-flex items-center gap-3 rounded-full
+        border border-teal-400/20 bg-black/90
+        px-6 py-3 text-white
+        shadow-[0_0_0_0.5px_rgba(45,212,191,0.35),0_0_20px_rgba(45,212,191,0.19)]
+        transition hover:border-teal-300/90 hover:shadow-[0_0_0_1px_rgba(45,212,191,0.65),0_0_34px_rgba(45,212,191,0.30)]
+        active:translate-y-[1px]">
 
-                        <!-- Icon circle -->
-                        <span class="grid h-10 w-10 place-items-center rounded-full border border-white/35 bg-black/60">
-    <!-- phone icon -->
-    <svg viewBox="0 0 24 24" class="h-5 w-5 fill-none stroke-white/90" stroke-width="1.8" stroke-linecap="round"
-         stroke-linejoin="round">
-      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.12.86.31 1.7.57 2.5a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.58-1.09a2 2 0 0 1 2.11-.45c.8.26 1.64.45 2.5.57A2 2 0 0 1 22 16.92z"/>
-    </svg>
-  </span>
+                            <!-- Icon circle -->
+                            <span class="relative grid h-10 w-10 place-items-center rounded-full border border-white/35 bg-black/60">
 
-                        <span class="text-lg font-semibold tracking-wide">(123) 456-7890</span>
-                    </a>
+            <!-- pulse ring -->
+            <span class="absolute inset-0 rounded-full
+                         border border-teal-400/40 opacity-0
+                         scale-75
+                         transition duration-500 ease-out
+                         group-hover:opacity-100 group-hover:scale-110"></span>
+
+                                <!-- phone icon -->
+            <svg viewBox="0 0 24 24"
+                 class="relative z-10 h-5 w-5 fill-none stroke-white/90
+                        transition-transform duration-300 ease-out
+                        group-hover:scale-110"
+                 stroke-width="1.8"
+                 stroke-linecap="round"
+                 stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.12.86.31 1.7.57 2.5a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.58-1.09a2 2 0 0 1 2.11-.45c.8.26 1.64.45 2.5.57A2 2 0 0 1 22 16.92z"/>
+            </svg>
+        </span>
+
+                            <span class="text-lg font-semibold tracking-wide">(123) 456-7890</span>
+                        </a>
+
+                    </div>
                 </div>
 
                 <p class="fade-up fade-up-delay-3 mt-6 max-w-xl text-base leading-relaxed text-white/70 sm:text-lg">
@@ -420,7 +437,7 @@
                     </div>
 
                     <!-- front image -->
-                    <div class="absolute right-0 top-50 w-[70%]">
+                    <div class="absolute right-0 top-[50%] w-[70%]">
                         <div class="group overflow-hidden rounded-[34px]
                   border border-white/10 bg-white/5 backdrop-blur
                   shadow-[0_32px_110px_rgba(0,0,0,0.75)]
@@ -438,22 +455,29 @@
 
         </div>
 
-        <!-- phone pill (center) -->
-        <div class="mt-12 flex justify-center">
-            <a href="tel:1234567890"
-               class="phone-pill inline-flex items-center gap-3 rounded-full
-                border border-teal-400/20 bg-black/90
-                px-6 py-3 text-white
-                shadow-[0_0_0_0.5px_rgba(45,212,191,0.35),0_0_20px_rgba(45,212,191,0.19)]
-                transition hover:border-teal-300/90 hover:shadow-[0_0_0_1px_rgba(45,212,191,0.65),0_0_34px_rgba(45,212,191,0.30)]
-                active:translate-y-[1px]">
-        <span class="grid h-10 w-10 place-items-center rounded-full border border-white/35 bg-black/60">
-          <svg viewBox="0 0 24 24" class="h-5 w-5 fill-none stroke-white/90" stroke-width="1.8" stroke-linecap="round"
-               stroke-linejoin="round" aria-hidden="true">
-            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.12.86.31 1.7.57 2.5a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.58-1.09a2 2 0 0 1 2.11-.45c.8.26 1.64.45 2.5.57A2 2 0 0 1 22 16.92z"/>
-          </svg>
+        <!-- CTA pill (center) -->
+        <div class="mt-35 sm:mt-40 flex justify-center">
+            <a href="/o-nama"
+               class="phone-pill group inline-flex items-center gap-3 rounded-full
+        border border-teal-400/20 bg-black/90
+        px-6 py-3 text-white
+        shadow-[0_0_0_0.5px_rgba(45,212,191,0.35),0_0_20px_rgba(45,212,191,0.19)]
+        transition hover:border-teal-300/90 hover:shadow-[0_0_0_1px_rgba(45,212,191,0.65),0_0_34px_rgba(45,212,191,0.30)]
+        active:translate-y-[1px]">
+
+                <!-- arrow icon -->
+                <span class="grid h-10 w-10 place-items-center rounded-full border border-white/35 bg-black/60">
+            <svg viewBox="0 0 24 24"
+                 class="h-5 w-5 fill-none stroke-white/90 transition-transform duration-300 ease-out group-hover:translate-y-1"
+                 stroke-width="2"
+                 stroke-linecap="round"
+                 stroke-linejoin="round"
+                 aria-hidden="true">
+                <path d="M6 9l6 6 6-6"/>
+            </svg>
         </span>
-                <span class="text-lg font-semibold tracking-wide">(123) 456-7890</span>
+
+                <span class="text-lg font-semibold tracking-wide">Pročitaj više</span>
             </a>
         </div>
 
