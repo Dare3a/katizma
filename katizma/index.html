@@ -294,7 +294,7 @@
                     <!-- Big image -->
                     <div class="col-span-1 row-span-2 overflow-hidden rounded-[26px] border border-white/10 bg-white/5">
                         <img
-                                src="https://demo.awaikenthemes.com/artistics/web-agency/wp-content/uploads/2025/01/hero-img-1.jpg"
+                                src="/public/images/ranking.jpg"
                                 class="h-full w-full object-cover"
                                 alt=""
                         />
@@ -303,7 +303,7 @@
                     <!-- Small image top -->
                     <div class="overflow-hidden rounded-[26px] border border-white/10 bg-white/5">
                         <img
-                                src="https://demo.awaikenthemes.com/artistics/web-agency/wp-content/uploads/2025/01/hero-img-2.jpg"
+                                src="/public/images/blue-man-vr-glasses.jpg"
                                 class="h-full w-full object-cover"
                                 alt=""
                         />
@@ -312,7 +312,7 @@
                     <!-- Small image bottom -->
                     <div class="relative overflow-hidden rounded-[26px] border border-white/10 bg-white/5">
                         <img
-                                src="https://demo.awaikenthemes.com/artistics/web-agency/wp-content/uploads/2025/01/hero-img-3.jpg"
+                                src="/public/images/tech.jpg"
                                 class="h-full w-full object-cover"
                                 alt=""
                         />
@@ -341,7 +341,7 @@
 
         <div class="mt-12 h-[2px] w-full bg-gradient-to-r from-violet-500 via-violet-400/70 to-transparent"></div>
 
-        <div class="mt-10 grid gap-10 lg:grid-cols-2 lg:items-start">
+        <div class="mt-10 grid gap-10 lg:grid-cols-2 lg:items-center">
             <!-- LEFT -->
             <div>
                 <p class="max-w-xl text-base leading-relaxed text-white/90">
@@ -396,25 +396,46 @@
                     </ul>
                 </div>
             </div>
+            <!-- RIGHT (equal size overlap - premium) -->
+            <div class="relative mx-auto w-full max-w-[680px]">
 
-            <!-- RIGHT -->
-            <div class="grid gap-10">
-                <div class="overflow-hidden rounded-3xl shadow-[0_18px_60px_rgba(0,0,0,0.55)]">
-                    <img
-                            src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1600&auto=format&fit=crop"
-                            alt="VR"
-                            class="h-[240px] w-full object-cover sm:h-[260px] lg:h-[280px]"
-                    />
-                </div>
+                <!-- subtle glow behind -->
+                <div class="absolute -inset-6 rounded-[40px] bg-gradient-to-tr from-teal-500/10 via-violet-500/10 to-fuchsia-500/10 blur-2xl"></div>
 
-                <div class="overflow-hidden rounded-3xl shadow-[0_18px_60px_rgba(0,0,0,0.55)]">
-                    <img
-                            src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1600&auto=format&fit=crop"
-                            alt="Laptop"
-                            class="h-[260px] w-full object-cover sm:h-[300px] lg:h-[320px]"
-                    />
+                <!-- canvas -->
+                <div class="relative h-[400px] sm:h-[440px] lg:h-[480px]">
+
+                    <!-- back image -->
+                    <div class="absolute left-0 top-0 w-[78%]">
+                        <div class="group overflow-hidden rounded-[34px]
+                  border border-white/10 bg-white/5 backdrop-blur
+                  shadow-[0_24px_70px_rgba(0,0,0,0.55)]
+                  transition-transform duration-200 ease-out hover:-translate-y-1">
+                            <img
+                                    src="/public/images/blue-man-vr-glasses.jpg"
+                                    alt=""
+                                    class="h-[310px] w-full object-cover sm:h-[350px] lg:h-[370px] transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+                            />
+                        </div>
+                    </div>
+
+                    <!-- front image -->
+                    <div class="absolute right-0 top-50 w-[70%]">
+                        <div class="group overflow-hidden rounded-[34px]
+                  border border-white/10 bg-white/5 backdrop-blur
+                  shadow-[0_32px_110px_rgba(0,0,0,0.75)]
+                  transition-transform duration-200 ease-out hover:-translate-y-1">
+                            <img
+                                    src="https://images.unsplash.com/photo-1552581234-26160f608093?q=80&w=1600&auto=format&fit=crop"
+                                    alt=""
+                                    class="h-[310px] w-full object-cover sm:h-[350px] lg:h-[370px] transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+                            />
+                        </div>
+                    </div>
+
                 </div>
             </div>
+
         </div>
 
         <!-- phone pill (center) -->
@@ -438,7 +459,7 @@
 
         <!-- bottom divider -->
         <div class="mt-12 h-[2px] w-full bg-gradient-to-r from-violet-500 via-violet-400/70 to-transparent"></div>
-       <div class="pb-14"></div>
+        <div class="pb-14"></div>
     </div>
 </section>
 
