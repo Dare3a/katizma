@@ -85,3 +85,14 @@
         transition: none;
     }
 }
+
+/*icon breathing*/
+@keyframes breath {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+}
+
+.icon-breath {
+    animation: breath 4s ease-in-out infinite;
+    transform-origin: center;
+}
