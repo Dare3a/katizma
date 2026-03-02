@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Katizma Studio | Izrada sajta i SEO optimizacija</title>
+    <meta name="description"
+          content="Profesionalna izrada sajtova, SEO optimizacija i digital marketing. Povećajte online prisustvo uz Katizma Studio."/>
+    <link href="/src/style.css" rel="stylesheet">
+    <script type="module" src="/src/main.js"></script>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="sticky top-0 z-50 border-b border-slate-200 bg-white/70 backdrop-blur-lg shadow-sm">
+    <div class="mx-auto max-w-7xl px-6">
+        <div class="flex h-16 items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="text-2xl font-bold tracking-tight text-primary">KATIZMA</a>
+
+            <!-- Desktop -->
+            <nav class="hidden md:block" aria-label="Glavna navigacija">
+                <ul class="flex items-center gap-8 text-sm font-semibold tracking-wide text-slate-800">
+                    <li>
+                        <a href="#"
+                           class="rounded-md px-2 py-1 transition hover:text-teal-600 focus:outline-none focus:ring-2 focus:ring-teal-500/40">
+                            POČETNA
+                        </a>
+                    </li>
+
+                    <!-- Desktop dropdown -->
+                    <li class="relative group">
+                        <button
+                                type="button"
+                                class="group inline-flex items-center gap-2 rounded-md px-2 py-1 transition hover:text-teal-600 focus:outline-none focus:ring-2 focus:ring-teal-500/40"
+                                aria-haspopup="true"
+                                aria-expanded="false"
+                        >
+                            USLUGE
+                            <svg
+                                    class="h-4 w-4 origin-center transition-transform duration-200 ease-out group-hover:rotate-180"
+                                    viewBox="0 0 20 20"
+                                    fill="currentColor"
+                                    aria-hidden="true"
+                            >
+                                <path
+                                        fill-rule="evenodd"
+                                        clip-rule="evenodd"
+                                        d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 10.94l3.71-3.71a.75.75 0 1 1 1.06 1.06l-4.24 4.24a.75.75 0 0 1-1.06 0L5.21 8.29a.75.75 0 0 1 .02-1.08z"
+                                />
+                            </svg>
+                        </button>
+
+                        <!-- Hover bridge: popunjava razmak između dugmeta i menija -->
+                        <div class="absolute left-0 right-0 top-full h-3"></div>
+
+                        <ul
+                                class="absolute left-0 top-full mt-3 w-60 translate-y-2 rounded-xl border border-slate-200 bg-white p-2 shadow-xl
+           opacity-0 invisible transition-all duration-200
+           group-hover:opacity-100 group-hover:visible group-hover:translate-y-0
+           group-focus-within:opacity-100 group-focus-within:visible group-focus-within:translate-y-0"
+                        >
+                            <li>
+                                <a href="#"
+                                   class="block rounded-lg px-3 py-2 text-sm text-slate-800 transition-colors duration-75 ease-out hover:bg-teal-500/90 hover:text-white hover:shadow-md focus:outline-none focus:ring-2 focus:ring-teal-500/30">
+                                    Izrada web sajta
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                   class="block rounded-lg px-3 py-2 text-sm text-slate-800 transition-colors duration-75 ease-out
+       hover:bg-teal-500/90 hover:text-white hover:shadow-md
+       focus:outline-none focus:ring-2 focus:ring-teal-500/30">
+                                    SEO optimizacija
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                   class="block rounded-lg px-3 py-2 text-sm text-slate-800 transition-colors duration-75 ease-out
+       hover:bg-teal-500/90 hover:text-white hover:shadow-md
+       focus:outline-none focus:ring-2 focus:ring-teal-500/30">
+                                    Digital marketing
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                   class="block rounded-lg px-3 py-2 text-sm text-slate-800 transition-colors duration-75 ease-out
+       hover:bg-teal-500/90 hover:text-white hover:shadow-md
+       focus:outline-none focus:ring-2 focus:ring-teal-500/30">
+                                    Web dizajn
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="#"
+                           class="rounded-md px-2 py-1 transition hover:text-teal-600 focus:outline-none focus:ring-2 focus:ring-teal-500/40">
+                            PORTFOLIO
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#"
+                           class="rounded-md px-2 py-1 transition hover:text-teal-600 focus:outline-none focus:ring-2 focus:ring-teal-500/40">
+                            O NAMA
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#"
+                           class="rounded-md px-2 py-1 transition hover:text-teal-600 focus:outline-none focus:ring-2 focus:ring-teal-500/40">
+                            KONTAKT
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Hamburger -->
+            <button
+                    id="hamburger"
+                    class="md:hidden inline-flex items-center justify-center rounded-xl p-2 text-slate-800 transition hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500/40"
+                    aria-label="Otvori meni"
+                    aria-controls="mobile-menu"
+                    aria-expanded="false"
+            >
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile panel -->
+    <nav id="mobile-menu" class="hidden md:hidden border-t border-slate-200 bg-white/90 backdrop-blur-lg"
+         aria-label="Mobilna navigacija">
+        <div class="mx-auto max-w-7xl px-6 py-4">
+            <ul class="flex flex-col gap-1 text-sm font-semibold text-slate-800">
+                <li>
+                    <a href="#"
+                       class="block rounded-lg px-3 py-3 transition hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500/30">
+                        POČETNA
+                    </a>
+                </li>
+
+                <!-- Mobile dropdown -->
+                <li>
+                    <button
+                            id="mobile-dropdown-btn"
+                            type="button"
+                            class="group flex w-full items-center justify-between rounded-lg px-3 py-3 text-left transition hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500/30"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                            aria-controls="mobile-dropdown-menu"
+                    >
+                        <span>USLUGE</span>
+
+                        <svg id="mobile-dropdown-icon"
+                             class="h-4 w-4 shrink-0 origin-center transition-transform duration-200 ease-out text-slate-600"
+                             viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                  d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 10.94l3.71-3.71a.75.75 0 1 1 1.06 1.06l-4.24 4.24a.75.75 0 0 1-1.06 0L5.21 8.29a.75.75 0 0 1 .02-1.08z"/>
+                        </svg>
+                    </button>
+
+                    <ul id="mobile-dropdown-menu" class="hidden mt-1 pl-3 border-l border-slate-200">
+                        <li><a href="#"
+                               class="block rounded-lg px-3 py-2 text-slate-700 transition hover:bg-teal-50 hover:text-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500/30">Izrada
+                            web sajta</a></li>
+                        <li><a href="#"
+                               class="block rounded-lg px-3 py-2 text-slate-700 transition hover:bg-teal-50 hover:text-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500/30">SEO
+                            optimizacija</a></li>
+                        <li><a href="#"
+                               class="block rounded-lg px-3 py-2 text-slate-700 transition hover:bg-teal-50 hover:text-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500/30">Digital
+                            marketing</a></li>
+                        <li><a href="#"
+                               class="block rounded-lg px-3 py-2 text-slate-700 transition hover:bg-teal-50 hover:text-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500/30">Web
+                            dizajn</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="#"
+                       class="block rounded-lg px-3 py-3 transition hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500/30">PORTFOLIO</a>
+                </li>
+                <li><a href="#"
+                       class="block rounded-lg px-3 py-3 transition hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500/30">O
+                    NAMA</a></li>
+                <li><a href="#"
+                       class="block rounded-lg px-3 py-3 transition hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500/30">KONTAKT</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<!-- HERO (Artistics web-agency style) -->
+<section class="relative overflow-hidden bg-slate-950 text-white">
+    <!-- Background glow + subtle grid -->
+    <div class="pointer-events-none absolute inset-0">
+        <div class="absolute -top-48 left-1/2 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-violet-600/25 blur-3xl"></div>
+        <div class="absolute -bottom-52 left-10 h-[560px] w-[560px] rounded-full bg-fuchsia-500/15 blur-3xl"></div>
+        <div class="absolute inset-0 opacity-[0.18] [background-image:linear-gradient(to_right,rgba(255,255,255,0.10)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.10)_1px,transparent_1px)] [background-size:48px_48px]"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_45%),radial-gradient(circle_at_bottom,rgba(255,255,255,0.06),transparent_50%)]"></div>
+    </div>
+
+    <div class="relative mx-auto max-w-7xl px-6 py-16 lg:py-24">
+        <div class="grid items-center gap-12 lg:grid-cols-2">
+            <!-- LEFT -->
+            <div class="fade-up">
+                <div class="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/5 px-4 py-2 text-xs font-semibold tracking-[0.18em] text-white/80 backdrop-blur">
+                    <span class="inline-block h-2 w-2 rounded-full bg-teal-500"></span>
+                    KATIZMA STUDIO
+                </div>
+
+                <h1 class="fade-up fade-up-delay-1 mt-6 text-4xl font-semibold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
+                    IZRADA WEB SAJTA
+                    <span class="block text-violet-300">& SEO OPTIMIZACIJA</span>
+                </h1>
+
+                <div class="fade-up fade-up-delay-2 mt-6 flex flex-wrap items-center gap-4">
+                    <!-- Rating badge -->
+                    <div class="w-full sm:w-auto flex flex-wrap items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 backdrop-blur min-w-0">
+                        <div class="flex -space-x-2 shrink-0">
+                            <img class="h-8 w-8 rounded-full border border-slate-950 object-cover"
+                                 src="https://demo.awaikenthemes.com/artistics/web-agency/wp-content/uploads/2025/01/hero-img-2.jpg"
+                                 alt="client"/>
+                            <img class="h-8 w-8 rounded-full border border-slate-950 object-cover"
+                                 src="https://demo.awaikenthemes.com/artistics/web-agency/wp-content/uploads/2025/01/hero-img-3.jpg"
+                                 alt="client"/>
+                            <img class="h-8 w-8 rounded-full border border-slate-950 object-cover"
+                                 src="https://demo.awaikenthemes.com/artistics/web-agency/wp-content/uploads/2025/01/hero-img-1.jpg"
+                                 alt="client"/>
+                        </div>
+
+                        <div class="min-w-0">
+                            <div class="text-sm font-semibold">(1k+ recenzija)</div>
+
+                            <div class="mt-1 flex flex-wrap items-center gap-2 text-xs text-white/65 min-w-0">
+                                <div class="flex items-center gap-0.5 shrink-0">
+                                    <!-- stars -->
+                                    <svg class="h-4 w-4 fill-amber-300" viewBox="0 0 24 24">
+                                        <path d="M12 17.3l-6.2 3.6 1.7-7.1L2 9.2l7.3-.6L12 2l2.7 6.6 7.3.6-5.5 4.6 1.7 7.1z"/>
+                                    </svg>
+                                    <svg class="h-4 w-4 fill-amber-300" viewBox="0 0 24 24">
+                                        <path d="M12 17.3l-6.2 3.6 1.7-7.1L2 9.2l7.3-.6L12 2l2.7 6.6 7.3.6-5.5 4.6 1.7 7.1z"/>
+                                    </svg>
+                                    <svg class="h-4 w-4 fill-amber-300" viewBox="0 0 24 24">
+                                        <path d="M12 17.3l-6.2 3.6 1.7-7.1L2 9.2l7.3-.6L12 2l2.7 6.6 7.3.6-5.5 4.6 1.7 7.1z"/>
+                                    </svg>
+                                    <svg class="h-4 w-4 fill-amber-300" viewBox="0 0 24 24">
+                                        <path d="M12 17.3l-6.2 3.6 1.7-7.1L2 9.2l7.3-.6L12 2l2.7 6.6 7.3.6-5.5 4.6 1.7 7.1z"/>
+                                    </svg>
+                                    <svg class="h-4 w-4 fill-amber-300" viewBox="0 0 24 24">
+                                        <path d="M12 17.3l-6.2 3.6 1.7-7.1L2 9.2l7.3-.6L12 2l2.7 6.6 7.3.6-5.5 4.6 1.7 7.1z"/>
+                                    </svg>
+                                </div>
+                                <span class="min-w-0 break-words">Prosečna ocena na osnovu povratnih informacija klijenata</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CTA wrapper -->
+                    <div class="mt-6 flex justify-center">
+                        <!-- CTA -->
+                        <a href="tel:1234567890"
+                           class="phone-pill group inline-flex items-center gap-3 rounded-full
+        border border-teal-400/20 bg-black/90
+        px-6 py-3 text-white
+        shadow-[0_0_0_0.5px_rgba(45,212,191,0.35),0_0_20px_rgba(45,212,191,0.19)]
+        transition hover:border-teal-300/90 hover:shadow-[0_0_0_1px_rgba(45,212,191,0.65),0_0_34px_rgba(45,212,191,0.30)]
+        active:translate-y-[1px]">
+
+                            <!-- Icon circle -->
+                            <span class="relative grid h-10 w-10 place-items-center rounded-full border border-white/35 bg-black/60">
+
+            <!-- pulse ring -->
+            <span class="absolute inset-0 rounded-full
+                         border border-teal-400/40 opacity-0
+                         scale-75
+                         transition duration-500 ease-out
+                         group-hover:opacity-100 group-hover:scale-110"></span>
+
+                                <!-- phone icon -->
+            <svg viewBox="0 0 24 24"
+                 class="relative z-10 h-5 w-5 fill-none stroke-white/90
+                        transition-transform duration-300 ease-out
+                        group-hover:scale-110"
+                 stroke-width="1.8"
+                 stroke-linecap="round"
+                 stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.12.86.31 1.7.57 2.5a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.58-1.09a2 2 0 0 1 2.11-.45c.8.26 1.64.45 2.5.57A2 2 0 0 1 22 16.92z"/>
+            </svg>
+        </span>
+
+                            <span class="text-lg font-semibold tracking-wide">(123) 456-7890</span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <p class="fade-up fade-up-delay-3 mt-6 max-w-xl text-base leading-relaxed text-white/70 sm:text-lg">
+                    Mi pravimo inovativne web sajtove i digitalna rešenja.
+                </p>
+            </div>
+
+            <!-- RIGHT (image collage - fixed layout on all screens) -->
+            <div class="relative mx-auto w-full max-w-[520px] fade-up fade-up-delay-2">
+                <div class="absolute -inset-6 rounded-[32px] bg-gradient-to-tr from-violet-500/20 via-fuchsia-400/10 to-cyan-400/10 blur-2xl"></div>
+
+                <!-- Fixed grid collage -->
+                <div class="relative grid grid-cols-2 grid-rows-2 gap-3">
+
+                    <!-- Big image -->
+                    <div class="col-span-1 row-span-2 overflow-hidden rounded-[26px] border border-white/10 bg-white/5">
+                        <img
+                                src="/images/ranking.jpg"
+                                class="h-full w-full object-cover"
+                                alt=""
+                        />
+                    </div>
+
+                    <!-- Small image top -->
+                    <div class="overflow-hidden rounded-[26px] border border-white/10 bg-white/5">
+                        <img
+                                src="/images/blue-man-vr-glasses.jpg"
+                                class="h-full w-full object-cover"
+                                alt=""
+                        />
+                    </div>
+
+                    <!-- Small image bottom -->
+                    <div class="relative overflow-hidden rounded-[26px] border border-white/10 bg-white/5">
+                        <img
+                                src="/images/tech.jpg"
+                                class="h-full w-full object-cover"
+                                alt=""
+                        />
+
+                        <!-- Decorative icon -->
+                        <div class="absolute -bottom-6 -left-6 grid h-16 w-16 place-items-center rounded-full border border-white/10 bg-slate-950/70 backdrop-blur">
+                            <svg viewBox="0 0 24 24" class="h-7 w-7 fill-violet-300">
+                                <path d="M11 2h2v7.1l6.2-3.6 1 1.7-6.2 3.6 6.2 3.6-1 1.7-6.2-3.6V22h-2v-7.1l-6.2 3.6-1-1.7L9 12 2.8 8.4l1-1.7L11 10.3V2z"/>
+                            </svg>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- O NAMA -->
+<section class="relative bg-black text-white">
+    <!-- top subtle divider -->
+    <div class="mx-auto max-w-7xl px-6 pt-14">
+        <div class="mb-4 flex items-center gap-2 text-sm font-medium uppercase tracking-wide text-white">
+            <!-- clover made of hearts -->
+            <svg viewBox="0 0 24 24" class="h-5 w-5 text-teal-400" fill="currentColor" aria-hidden="true">
+                <!-- top heart -->
+                <path d="M12 4.5c-.8-1.2-3-1.5-4 .3-1 1.8.4 3.3 4 6 3.6-2.7 5-4.2 4-6-1-1.8-3.2-1.5-4-.3z"/>
+                <!-- right heart -->
+                <g transform="rotate(90 12 12)">
+                    <path d="M12 4.5c-.8-1.2-3-1.5-4 .3-1 1.8.4 3.3 4 6 3.6-2.7 5-4.2 4-6-1-1.8-3.2-1.5-4-.3z"/>
+                </g>
+                <!-- bottom heart -->
+                <g transform="rotate(180 12 12)">
+                    <path d="M12 4.5c-.8-1.2-3-1.5-4 .3-1 1.8.4 3.3 4 6 3.6-2.7 5-4.2 4-6-1-1.8-3.2-1.5-4-.3z"/>
+                </g>
+                <!-- left heart -->
+                <g transform="rotate(270 12 12)">
+                    <path d="M12 4.5c-.8-1.2-3-1.5-4 .3-1 1.8.4 3.3 4 6 3.6-2.7 5-4.2 4-6-1-1.8-3.2-1.5-4-.3z"/>
+                </g>
+                <!-- stem -->
+                <path d="M12 14c0 2.2-1 3.5-2.6 5" stroke="currentColor" stroke-width="1.2" fill="none"
+                      stroke-linecap="round"/>
+            </svg>
+            <span>O nama</span>
+        </div>
+        <h2 class="text-5xl font-semibold tracking-tight">
+            Osnažujemo vaš <span class="text-teal-400">biznis</span>
+        </h2>
+        <div class="mt-10 grid gap-10 lg:grid-cols-2 lg:items-center">
+            <!-- LEFT -->
+            <div>
+                <p class="max-w-xl text-base leading-relaxed text-white/90">
+                    Od svog osnivanja , Studio Katizma je neko kome se možete uvek obratiti za različite potrebe
+                    prezentovanja vaše firme na internet platformama.
+                </p>
+
+                <p class="mt-8 max-w-xl text-base leading-relaxed text-white/90">
+                    Katizma se može pohvaliti globalnom bazom klijenata. Postavili smo standard za kreativnu izradu
+                    sajtova, SEO optimizaciju, Google ads i digital marketing.
+                </p>
+
+                <!-- Features card -->
+                <div class="reveal-up mt-10 max-w-xl rounded-2xl border border-violet-500/40 bg-white/5 p-8 shadow-[0_0_40px_rgba(139,92,246,0.12)] backdrop-blur-md">
+                    <ul class="space-y-7 text-2xl font-semibold">
+                        <li class="flex items-center gap-5">
+                            <!-- icon -->
+                            <span class="grid h-10 w-10 place-items-center text-violet-300">
+                <svg viewBox="0 0 24 24" class="h-9 w-9" fill="currentColor" aria-hidden="true">
+                  <path d="M12 2l1.6 5.2L19 5l-3.8 3.4L18 14l-5.4-2.7L10 17l-2.6-5.7L2 14l2.8-5.6L1 5l5.4 2.2L8 2h4z"/>
+                </svg>
+              </span>
+                            <span>Kreativna izvrsnost</span>
+                        </li>
+
+                        <li class="flex items-center gap-5">
+              <span class="grid h-10 w-10 place-items-center text-violet-300">
+                <svg viewBox="0 0 24 24" class="h-9 w-9" fill="currentColor" aria-hidden="true">
+                  <path d="M12 2c1.3 4.7 5.3 8.7 10 10-4.7 1.3-8.7 5.3-10 10C10.7 17.3 6.7 13.3 2 12 6.7 10.7 10.7 6.7 12 2z"/>
+                </svg>
+              </span>
+                            <span>Prilagođena rešenja</span>
+                        </li>
+
+                        <li class="flex items-center gap-5">
+              <span class="grid h-10 w-10 place-items-center text-violet-300">
+                <svg viewBox="0 0 24 24" class="h-9 w-9" fill="currentColor" aria-hidden="true">
+                  <path d="M7 3h10v6h4v12H3V9h4V3zm2 6h6V5H9v4z"/>
+                </svg>
+              </span>
+                            <span>Profesionalan pristup</span>
+                        </li>
+
+                        <li class="flex items-center gap-5">
+              <span class="grid h-10 w-10 place-items-center text-violet-300">
+                <svg viewBox="0 0 24 24" class="h-9 w-9" fill="currentColor" aria-hidden="true">
+                  <path d="M12 2l2.1 6.5H21l-5.6 4 2.2 6.5L12 15.9 6.4 19l2.2-6.5L3 8.5h6.9L12 2z"/>
+                </svg>
+              </span>
+                            <span>Sigurni rezultati</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- RIGHT (equal size overlap - premium) -->
+            <div class="relative mx-auto w-full max-w-[680px]">
+
+                <!-- subtle glow behind -->
+                <div class="absolute -inset-6 rounded-[40px] bg-gradient-to-tr from-teal-500/10 via-violet-500/10 to-fuchsia-500/10 blur-2xl"></div>
+
+                <!-- canvas -->
+                <div class="relative h-[400px] sm:h-[440px] lg:h-[480px]">
+
+                    <!-- back image -->
+                    <div class="absolute left-0 top-0 w-[78%]">
+                        <div class="group overflow-hidden rounded-[34px]
+                  border border-white/10 bg-white/5 backdrop-blur
+                  shadow-[0_24px_70px_rgba(0,0,0,0.55)]
+                  transition-transform duration-200 ease-out hover:-translate-y-1">
+                            <img
+                                    src="/images/programmers.jpg"
+                                    alt=""
+                                    class="h-[310px] w-full object-cover sm:h-[350px] lg:h-[370px] transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+                            />
+                        </div>
+                    </div>
+
+                    <!-- front image -->
+                    <div class="absolute right-0 top-[50%] w-[70%]">
+                        <div class="group overflow-hidden rounded-[34px]
+                  border border-white/10 bg-white/5 backdrop-blur
+                  shadow-[0_32px_110px_rgba(0,0,0,0.75)]
+                  transition-transform duration-200 ease-out hover:-translate-y-1">
+                            <img
+                                    src="/images/web-coding.jpg"
+                                    alt=""
+                                    class="h-[310px] w-full object-cover sm:h-[350px] lg:h-[370px] transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+                            />
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- CTA pill (center) -->
+        <div class="mt-35 sm:mt-40 flex justify-center">
+            <a href="/o-nama"
+               class="phone-pill group inline-flex items-center gap-3 rounded-full
+        border border-teal-400/20 bg-black/90
+        px-6 py-3 text-white
+        shadow-[0_0_0_0.5px_rgba(45,212,191,0.35),0_0_20px_rgba(45,212,191,0.19)]
+        transition hover:border-teal-300/90 hover:shadow-[0_0_0_1px_rgba(45,212,191,0.65),0_0_34px_rgba(45,212,191,0.30)]
+        active:translate-y-[1px]">
+
+                <!-- arrow icon -->
+                <span class="grid h-10 w-10 place-items-center rounded-full border border-white/35 bg-black/60">
+            <svg viewBox="0 0 24 24"
+                 class="h-5 w-5 fill-none stroke-white/90 transition-transform duration-300 ease-out group-hover:translate-y-1"
+                 stroke-width="2"
+                 stroke-linecap="round"
+                 stroke-linejoin="round"
+                 aria-hidden="true">
+                <path d="M6 9l6 6 6-6"/>
+            </svg>
+        </span>
+
+                <span class="text-lg font-semibold tracking-wide">Pročitaj više</span>
+            </a>
+        </div>
+
+        <!-- bottom divider -->
+        <div class="mt-12 h-[2px] w-full bg-gradient-to-r from-violet-500 via-violet-400/70 to-transparent"></div>
+        <div class="pb-14"></div>
+    </div>
+</section>
+
+<!-- ŠTA MI NUDIMO -->
+<section class="relative bg-black text-white">
+    <div class="mx-auto max-w-7xl px-6 py-16">
+        <!-- Top -->
+        <div class="grid gap-10 lg:grid-cols-2 lg:items-start">
+            <!-- Left text -->
+            <div>
+                <div class="mb-4 flex items-center gap-2 text-sm font-medium uppercase tracking-wide text-white">
+                    <!-- clover made of hearts -->
+                    <svg viewBox="0 0 24 24" class="h-5 w-5 text-teal-400" fill="currentColor" aria-hidden="true">
+                        <!-- top heart -->
+                        <path d="M12 4.5c-.8-1.2-3-1.5-4 .3-1 1.8.4 3.3 4 6 3.6-2.7 5-4.2 4-6-1-1.8-3.2-1.5-4-.3z"/>
+                        <!-- right heart -->
+                        <g transform="rotate(90 12 12)">
+                            <path d="M12 4.5c-.8-1.2-3-1.5-4 .3-1 1.8.4 3.3 4 6 3.6-2.7 5-4.2 4-6-1-1.8-3.2-1.5-4-.3z"/>
+                        </g>
+                        <!-- bottom heart -->
+                        <g transform="rotate(180 12 12)">
+                            <path d="M12 4.5c-.8-1.2-3-1.5-4 .3-1 1.8.4 3.3 4 6 3.6-2.7 5-4.2 4-6-1-1.8-3.2-1.5-4-.3z"/>
+                        </g>
+                        <!-- left heart -->
+                        <g transform="rotate(270 12 12)">
+                            <path d="M12 4.5c-.8-1.2-3-1.5-4 .3-1 1.8.4 3.3 4 6 3.6-2.7 5-4.2 4-6-1-1.8-3.2-1.5-4-.3z"/>
+                        </g>
+                        <!-- stem -->
+                        <path d="M12 14c0 2.2-1 3.5-2.6 5" stroke="currentColor" stroke-width="1.2" fill="none"
+                              stroke-linecap="round"/>
+                    </svg>
+                    <span>Naše usluge</span>
+                </div>
+                <h2 class="text-5xl font-semibold tracking-tight sm:text-6xl">
+                    Šta mi <span class="text-teal-400">pružamo</span>
+                </h2>
+                <p class="mt-8 max-w-xl text-lg leading-relaxed text-white/80">
+                    Naše ponude se kreću od grafičkog dizajna i strategije brendiranja do razvoja web stranica,
+                    zatim SEO optimizacije, google ads i digitalni marketing.
+                </p>
+                <p class="mt-4 text-2xl font-medium text-violet-300">
+                    Proverite naše mogućnosti!
+                </p>
+            </div>
+
+            <!-- Right quote pill -->
+            <div class="flex lg:justify-end">
+                <div class="relative w-full max-w-xl rounded-2xl border border-violet-500/30 bg-white/5 p-6 shadow-[0_0_50px_rgba(139,92,246,0.18)] backdrop-blur-md">
+                    <div class="absolute left-0 top-0 h-full w-1/2 rounded-2xl bg-gradient-to-r from-violet-500/70 to-transparent opacity-60"></div>
+                    <p class="relative text-lg font-semibold leading-snug text-white/90">
+                        “Osnaživanje vašeg brenda kroz kreativan web sajt, uz SEO optimizaciju pozicioniramo vas na prvu
+                        stranu googla”
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cards row -->
+        <div class="mt-14 grid gap-6 lg:grid-cols-5 lg:items-end">
+            <!-- Card 1 -->
+            <article
+                    class="group relative overflow-hidden rounded-3xl border border-violet-500/30 bg-white/[0.03] p-6 shadow-[0_18px_60px_rgba(0,0,0,0.55)] backdrop-blur-md transition hover:border-violet-400/60">
+                <div class="absolute -right-10 -top-10 h-28 w-28 rounded-full bg-violet-500/15 blur-2xl"></div>
+
+                <div class="flex h-12 w-12 items-center justify-center">
+                    <!-- gradient icon -->
+                    <svg viewBox="0 0 24 24" class="h-11 w-11 icon-breath" aria-hidden="true">
+                        <defs>
+                            <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+                                <stop offset="0" stop-color="#7c3aed"/>
+                                <stop offset="0.5" stop-color="#22d3ee"/>
+                                <stop offset="1" stop-color="#a78bfa"/>
+                            </linearGradient>
+                        </defs>
+                        <circle cx="12" cy="12" r="9" fill="none" stroke="url(#g1)" stroke-width="1.8"/>
+                        <circle cx="12" cy="12" r="4" fill="none" stroke="url(#g1)" stroke-width="1.8"/>
+                        <circle cx="12" cy="12" r="1.8" fill="url(#g1)"/>
+                    </svg>
+                </div>
+
+                <h3 class="mt-10 text-lg font-semibold leading-tight">
+                    Brend <br/> strategija
+                </h3>
+            </article>
+
+            <!-- Card 2 -->
+            <article
+                    class="group relative overflow-hidden rounded-3xl border border-violet-500/30 bg-white/[0.03] p-6 shadow-[0_18px_60px_rgba(0,0,0,0.55)] backdrop-blur-md transition hover:border-violet-400/60">
+                <div class="absolute -right-10 -top-10 h-28 w-28 rounded-full bg-cyan-400/10 blur-2xl"></div>
+
+                <div class="flex h-12 w-12 items-center justify-center">
+                    <svg viewBox="0 0 28 24" class="h-11 w-11 icon-breath" aria-hidden="true">
+                        <defs>
+                            <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
+                                <stop offset="0" stop-color="#22d3ee"/>
+                                <stop offset="0.5" stop-color="#7c3aed"/>
+                                <stop offset="1" stop-color="#a78bfa"/>
+                            </linearGradient>
+                        </defs>
+                        <path fill="url(#g2)" d="M4 14c5-2 10-7 12-12 2 5 7 10 12 12-5 2-10 7-12 12-2-5-7-10-12-12z"/>
+                    </svg>
+                </div>
+
+                <h3 class="mt-10 text-lg font-semibold leading-tight">
+                    Izrada sajta
+                </h3>
+            </article>
+
+            <!-- Card 3 -->
+            <article
+                    class="group relative overflow-hidden rounded-3xl border border-violet-500/30 bg-white/[0.03] p-6 shadow-[0_18px_60px_rgba(0,0,0,0.55)] backdrop-blur-md transition hover:border-violet-400/60">
+                <div class="absolute -right-10 -top-10 h-28 w-28 rounded-full bg-violet-500/12 blur-2xl"></div>
+
+                <div class="flex h-12 w-12 items-center justify-center">
+                    <svg viewBox="0 0 24 24" class="h-11 w-11 icon-breath" aria-hidden="true">
+                        <defs>
+                            <linearGradient id="g3" x1="0" y1="0" x2="1" y2="1">
+                                <stop offset="0" stop-color="#a78bfa"/>
+                                <stop offset="0.5" stop-color="#7c3aed"/>
+                                <stop offset="1" stop-color="#22d3ee"/>
+                            </linearGradient>
+                        </defs>
+                        <path fill="url(#g3)" d="M12 2l3 2 4 1-1 4 1 4-4 1-3 2-3-2-4-1 1-4-1-4 4-1 3-2z"/>
+                    </svg>
+                </div>
+
+                <h3 class="mt-10 text-lg font-semibold leading-tight">
+                    SEO optimizacija <br/> GEO optimizacija
+                </h3>
+            </article>
+
+            <!-- Card 4 -->
+            <article
+                    class="group relative overflow-hidden rounded-3xl border border-violet-500/30 bg-white/[0.03] p-6 shadow-[0_18px_60px_rgba(0,0,0,0.55)] backdrop-blur-md transition hover:border-violet-400/60">
+                <div class="absolute -right-10 -top-10 h-28 w-28 rounded-full bg-fuchsia-400/10 blur-2xl"></div>
+
+                <div class="flex h-12 w-12 items-center justify-center">
+                    <svg viewBox="0 0 24 24" class="h-11 w-11 icon-breath" aria-hidden="true">
+                        <defs>
+                            <linearGradient id="g4" x1="0" y1="0" x2="1" y2="1">
+                                <stop offset="0" stop-color="#22d3ee"/>
+                                <stop offset="0.45" stop-color="#a78bfa"/>
+                                <stop offset="1" stop-color="#7c3aed"/>
+                            </linearGradient>
+                        </defs>
+                        <path fill="url(#g4)"
+                              d="M12 3c4.4 0 8 3.6 8 8s-3.6 8-8 8S4 15.4 4 11s3.6-8 8-8zm0 4a4 4 0 100 8 4 4 0 000-8z"/>
+                    </svg>
+                </div>
+
+                <h3 class="mt-10 text-lg font-semibold leading-tight">
+                    Google Ads
+                </h3>
+            </article>
+
+            <!-- Big card 5 -->
+            <article
+                    class="group relative flex flex-col overflow-hidden rounded-3xl border border-violet-500/30 bg-white/[0.03] p-8 shadow-[0_22px_80px_rgba(0,0,0,0.65)] backdrop-blur-md transition hover:border-violet-400/60 lg:h-[280px]">
+
+                <!-- big purple blob -->
+                <div class="absolute -left-20 -top-20 h-56 w-56 rounded-full bg-violet-500/35 blur-3xl"></div>
+
+                <!-- icon -->
+                <div class="flex h-14 w-14 items-center justify-center">
+                    <svg viewBox="0 0 24 24" class="h-12 w-12 icon-breath" aria-hidden="true">
+                        <defs>
+                            <linearGradient id="g5" x1="0" y1="0" x2="1" y2="1">
+                                <stop offset="0" stop-color="#7c3aed"/>
+                                <stop offset="0.5" stop-color="#22d3ee"/>
+                                <stop offset="1" stop-color="#a78bfa"/>
+                            </linearGradient>
+                        </defs>
+                        <path fill="url(#g5)" d="M7 6a5 5 0 019-2 5 5 0 012 9 5 5 0 11-11-7z"/>
+                    </svg>
+                </div>
+
+                <!-- text on bottom -->
+                <h3 class="mt-auto text-lg font-semibold leading-tight">
+                    Digital marketing
+                </h3>
+
+            </article>
+        </div>
+
+        <!-- bottom divider -->
+        <div class="mt-16 h-[2px] w-full bg-gradient-to-r from-violet-500 via-violet-400/70 to-transparent"></div>
+    </div>
+</section>
+
+<!-- KAKO MI RADIMO / PROCESS -->
+<section class="relative bg-black text-white">
+    <div class="mx-auto max-w-7xl px-6 py-16">
+
+        <!-- Eyebrow -->
+        <div class="flex items-center gap-2 text-sm font-medium uppercase tracking-wide text-white">
+            <!-- clover (hearts) -->
+            <svg viewBox="0 0 24 24" class="h-5 w-5 text-teal-400" fill="currentColor" aria-hidden="true">
+                <path d="M12 4.5c-.8-1.2-3-1.5-4 .3-1 1.8.4 3.3 4 6 3.6-2.7 5-4.2 4-6-1-1.8-3.2-1.5-4-.3z"/>
+                <g transform="rotate(90 12 12)">
+                    <path d="M12 4.5c-.8-1.2-3-1.5-4 .3-1 1.8.4 3.3 4 6 3.6-2.7 5-4.2 4-6-1-1.8-3.2-1.5-4-.3z"/>
+                </g>
+                <g transform="rotate(180 12 12)">
+                    <path d="M12 4.5c-.8-1.2-3-1.5-4 .3-1 1.8.4 3.3 4 6 3.6-2.7 5-4.2 4-6-1-1.8-3.2-1.5-4-.3z"/>
+                </g>
+                <g transform="rotate(270 12 12)">
+                    <path d="M12 4.5c-.8-1.2-3-1.5-4 .3-1 1.8.4 3.3 4 6 3.6-2.7 5-4.2 4-6-1-1.8-3.2-1.5-4-.3z"/>
+                </g>
+            </svg>
+            <span>Kako mi radimo</span>
+        </div>
+
+        <!-- Title -->
+        <h2 class="mt-5 text-5xl font-semibold tracking-tight sm:text-6xl">
+            Korak po korak za <br/>
+            <span class="text-teal-400">uspešan</span> biznis
+        </h2>
+
+        <!-- Timeline (aligned with section content) -->
+        <div class="mt-14">
+            <div class="relative mx-auto w-full max-w-7xl px-6 h-12">
+
+                <!-- dotted line centered -->
+                <div
+                        class="absolute left-0 right-0 top-1/2 -translate-y-1/2 h-[2px] opacity-90"
+                        style="
+              background-image: radial-gradient(circle, rgba(167,139,250,0.95) 1.6px, transparent 2px);
+              background-size: 12px 2px;
+              background-repeat: repeat-x;
+              background-position: center;
+            ">
+                </div>
+
+                <!-- nodes -->
+                <div class="absolute inset-0 flex items-center justify-between">
+                    <span class="h-5 w-5 rounded-full bg-violet-300"></span>
+                    <span class="h-6 w-6 rounded-full bg-violet-300"></span>
+                    <span class="h-7 w-7 rounded-full bg-violet-300"></span>
+                    <!-- final node with ring pulse -->
+                    <span class="relative h-10 w-10 rounded-full bg-violet-300 shadow-[0_0_40px_rgba(167,139,250,0.35)] node-ring"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Steps -->
+        <div class="mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+            <!-- 01 -->
+            <article>
+                <div class="text-[90px] leading-none font-semibold text-transparent [-webkit-text-stroke:2px_#14b8a6]">
+                    01
+                </div>
+                <h3 class="mt-4 text-2xl font-semibold">Brend strategija</h3>
+                <p class="mt-4 text-base leading-relaxed text-white/80">
+                    Identifikujemo vaš brend i sa visokim uticajem prilagođavamo vašoj targetiranoj publici,
+                    industriji i ciljevima. Na taj način postajete prepoznatljivi i jedinstveni u poslovanju.
+                </p>
+            </article>
+
+            <!-- 02 -->
+            <article>
+                <div class="text-[90px] leading-none font-semibold text-transparent [-webkit-text-stroke:2px_#14b8a6]">
+                    02
+                </div>
+                <h3 class="mt-4 text-2xl font-semibold">Izrada web sajta</h3>
+                <p class="mt-4 text-base leading-relaxed text-white/80">
+                    Kreiranje modernih i funkcionalnih responsiv web sajtova za mobilne i desktop uređaje,
+                    pružajući iskustva koja inspirišu i osnažuju vaše poslovanje da napreduje.
+                </p>
+            </article>
+
+            <!-- 03 -->
+            <article>
+                <div class="text-[90px] leading-none font-semibold text-transparent [-webkit-text-stroke:2px_#14b8a6]">
+                    03
+                </div>
+                <h3 class="mt-4 text-2xl font-semibold">SEO optimizacija</h3>
+                <p class="mt-4 text-base leading-relaxed text-white/80">
+                    Istraživanjem ključnih reči za vašu nišu pravimo strategiju za pozicioniranje sajta
+                    na prve stranice u Google pretrazi. Postajete viđeni i ostvarujete nove konverzije.
+                </p>
+            </article>
+
+            <!-- 04 -->
+            <article>
+                <div class="text-[90px] leading-none font-semibold text-transparent [-webkit-text-stroke:2px_#14b8a6]">
+                    04
+                </div>
+                <h3 class="mt-4 text-2xl font-semibold">Digital marketing</h3>
+                <p class="mt-4 text-base leading-relaxed text-white/80">
+                    Kreiranje jedinstvenih kampanja za Google Ads, kao i digitalnih iskustava na platformama Instagram i
+                    Facebook koja
+                    podižu vaš brend na viši nivo privlačeći nove klijente.
+                </p>
+            </article>
+        </div>
+        <!-- bottom divider -->
+        <div class="mt-16 h-[2px] w-full bg-gradient-to-r from-violet-500 via-violet-400/70 to-transparent"></div>
+    </div>
+</section>
+
+<!-- IZRADA WEB SAJTA -->
+<section class="relative bg-black text-white">
+    <div class="mx-auto max-w-7xl px-6 py-16">
+        <div class="grid gap-12 lg:grid-cols-2 lg:items-start">
+
+            <!-- LEFT -->
+            <div>
+                <!-- Eyebrow -->
+                <div class="mb-4 flex items-center gap-2 text-sm font-medium uppercase tracking-wide text-white">
+                    <!-- clover (hearts) -->
+                    <svg viewBox="0 0 24 24" class="h-5 w-5 text-teal-400" fill="currentColor" aria-hidden="true">
+                        <path d="M12 4.5c-.8-1.2-3-1.5-4 .3-1 1.8.4 3.3 4 6 3.6-2.7 5-4.2 4-6-1-1.8-3.2-1.5-4-.3z"/>
+                        <g transform="rotate(90 12 12)">
+                            <path d="M12 4.5c-.8-1.2-3-1.5-4 .3-1 1.8.4 3.3 4 6 3.6-2.7 5-4.2 4-6-1-1.8-3.2-1.5-4-.3z"/>
+                        </g>
+                        <g transform="rotate(180 12 12)">
+                            <path d="M12 4.5c-.8-1.2-3-1.5-4 .3-1 1.8.4 3.3 4 6 3.6-2.7 5-4.2 4-6-1-1.8-3.2-1.5-4-.3z"/>
+                        </g>
+                        <g transform="rotate(270 12 12)">
+                            <path d="M12 4.5c-.8-1.2-3-1.5-4 .3-1 1.8.4 3.3 4 6 3.6-2.7 5-4.2 4-6-1-1.8-3.2-1.5-4-.3z"/>
+                        </g>
+                        <path d="M12 14c0 2.2-1 3.5-2.6 5" stroke="currentColor" stroke-width="1.2" fill="none"
+                              stroke-linecap="round"/>
+                    </svg>
+                    <span>Odaberite najbolji web sajt za vas</span>
+                </div>
+                <h2 class="text-5xl font-semibold tracking-tight sm:text-6xl">
+                    Izrada <span class="text-teal-400">web sajta</span>
+                </h2>
+                <div class="mt-10 space-y-8 text-base leading-relaxed text-white/85">
+                    <p class="max-w-xl">
+                        Katizma studio za izradu web sajta koristi moderne napredne tehnologije u zavisnosti od vaših
+                        potreba i želja.
+                        Za pravljenje sajtova se najčešće koriste: HTML5, CSS3, JS, jQuery, Bootstrap, Tailwind, PHP,
+                        MySql i ostali potrebni programi.
+                    </p>
+                    <p class="max-w-xl">
+                        Kreiramo responzivne web stranice koje zadovoljavaju UX i UI standarde. Sajtovi su zaštićeni
+                        najboljim mogućim bezbednosnim alatima.
+                        Nakon izrade sajta, isti kačimo na hosting i puštamo u produkciju. Otvaramo vam domenske
+                        email adrese i povezujemo sa kontakt formom na sajtu.
+                    </p>
+                    <p class="max-w-xl">
+                        Osim izrade sajta ukoliko već posedujete prezentaciju, vršimo ažuriranje i redizajn postojećih
+                        web sajtova.
+                    </p>
+                    <p class="text-2xl font-medium text-violet-300">
+                        Obratite nam se za najbolje rešenje za vas!
+                    </p>
+                </div>
+                <!-- YOUR phone-pill button -->
+                <div class="mt-10 flex justify-start">
+                    <a href="tel:1234567890"
+                       class="phone-pill group inline-flex items-center gap-3 rounded-full
+              border border-teal-400/20 bg-black/90
+              px-6 py-3 text-white
+              shadow-[0_0_0_0.5px_rgba(45,212,191,0.35),0_0_20px_rgba(45,212,191,0.19)]
+              transition hover:border-teal-300/90 hover:shadow-[0_0_0_1px_rgba(45,212,191,0.65),0_0_34px_rgba(45,212,191,0.30)]
+              active:translate-y-[1px]">
+
+            <span class="relative grid h-10 w-10 place-items-center rounded-full border border-white/35 bg-black/60">
+              <span class="absolute inset-0 rounded-full border border-teal-400/40 opacity-0 scale-75 transition duration-500 ease-out group-hover:opacity-100 group-hover:scale-110"></span>
+              <svg viewBox="0 0 24 24"
+                   class="relative z-10 h-5 w-5 fill-none stroke-white/90 transition-transform duration-300 ease-out group-hover:scale-110"
+                   stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.12.86.31 1.7.57 2.5a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.58-1.09a2 2 0 0 1 2.11-.45c.8.26 1.64.45 2.5.57A2 2 0 0 1 22 16.92z"/>
+              </svg>
+            </span>
+
+                        <span class="text-lg font-semibold tracking-wide">(123) 456-7890</span>
+                    </a>
+                </div>
+            </div>
+            <!-- RIGHT -->
+            <div class="mx-auto w-full max-w-xl lg:mx-0 lg:ml-auto">
+                <div class="space-y-5">
+                    <!-- pill helper -->
+                    <!-- (same style for all) -->
+                    <div class="group relative overflow-hidden rounded-2xl border border-violet-500/25 transition hover:border-violet-400/60 bg-white/[0.03] px-6 py-5 shadow-[0_18px_60px_rgba(0,0,0,0.55)] backdrop-blur-md">
+                        <div class="absolute inset-0 bg-gradient-to-r from-violet-600/35 via-violet-500/15 to-transparent opacity-80"></div>
+                        <div class="relative flex items-center gap-4">
+              <span class="grid h-11 w-11 place-items-center rounded-xl border border-white/10 bg-black/30">
+                <!-- responsive: desktop + tablet + mobile -->
+                <svg viewBox="0 0 24 24" class="h-6 w-6 text-white/90" fill="none" stroke="currentColor"
+                     stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M3 5h12v8H3z"/>
+                  <path d="M6 17h6"/>
+                  <path d="M18 6h3v10h-3z"/>
+                  <path d="M16 10h2"/>
+                  <path d="M8 13h2"/>
+                </svg>
+              </span>
+                            <div class="text-lg font-semibold">Responzivan dizajn</div>
+                        </div>
+                    </div>
+                    <div class="group relative overflow-hidden rounded-2xl border border-violet-500/25 transition hover:border-violet-400/60 bg-white/[0.03] px-6 py-5 shadow-[0_18px_60px_rgba(0,0,0,0.55)] backdrop-blur-md">
+                        <div class="absolute inset-0 bg-gradient-to-r from-violet-600/35 via-violet-500/15 to-transparent opacity-80"></div>
+                        <div class="relative flex items-center gap-4">
+              <span class="grid h-11 w-11 place-items-center rounded-xl border border-white/10 bg-black/30">
+                <!-- Android + Apple -->
+                <svg viewBox="0 0 24 24" class="h-6 w-6 text-white/90" fill="none" stroke="currentColor"
+                     stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <!-- Android-ish -->
+                  <path d="M7 10c0-2 2-4 5-4s5 2 5 4v7H7z"/>
+                  <path d="M9 6l-1-2"/>
+                  <path d="M15 6l1-2"/>
+                  <path d="M9 12h0"/>
+                  <path d="M15 12h0"/>
+                    <!-- Apple-ish leaf -->
+                  <path d="M18.5 8c1-1 1.8-1.2 2.5-1.3"/>
+                </svg>
+              </span>
+                            <div class="text-lg font-semibold">Mobilni - Android / Apple</div>
+                        </div>
+                    </div>
+                    <div class="group relative overflow-hidden rounded-2xl border border-violet-500/25 transition hover:border-violet-400/60 bg-white/[0.03] px-6 py-5 shadow-[0_18px_60px_rgba(0,0,0,0.55)] backdrop-blur-md">
+                        <div class="absolute inset-0 bg-gradient-to-r from-violet-600/35 via-violet-500/15 to-transparent opacity-80"></div>
+                        <div class="relative flex items-center gap-4">
+              <span class="grid h-11 w-11 place-items-center rounded-xl border border-white/10 bg-black/30">
+                <!-- Laptop -->
+                <svg viewBox="0 0 24 24" class="h-6 w-6 text-white/90" fill="none" stroke="currentColor"
+                     stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M5 6h14v9H5z"/>
+                  <path d="M3 18h18"/>
+                </svg>
+              </span>
+                            <div class="text-lg font-semibold">Desktop računari</div>
+                        </div>
+                    </div>
+                    <div class="group relative overflow-hidden rounded-2xl border border-violet-500/25 transition hover:border-violet-400/60 bg-white/[0.03] px-6 py-5 shadow-[0_18px_60px_rgba(0,0,0,0.55)] backdrop-blur-md">
+                        <div class="absolute inset-0 bg-gradient-to-r from-violet-600/35 via-violet-500/15 to-transparent opacity-80"></div>
+                        <div class="relative flex items-center gap-4">
+              <span class="grid h-11 w-11 place-items-center rounded-xl border border-white/10 bg-black/30">
+                <!-- Coding -->
+                <svg viewBox="0 0 24 24" class="h-6 w-6 text-white/90" fill="none" stroke="currentColor"
+                     stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M9 9l-4 3 4 3"/>
+                  <path d="M15 9l4 3-4 3"/>
+                  <path d="M13 7l-2 10"/>
+                </svg>
+              </span>
+                            <div class="text-lg font-semibold">HTML5, CSS3, JS, PHP, JSON</div>
+                        </div>
+                    </div>
+                    <div class="group relative overflow-hidden rounded-2xl border border-violet-500/25 transition hover:border-violet-400/60 bg-white/[0.03] px-6 py-5 shadow-[0_18px_60px_rgba(0,0,0,0.55)] backdrop-blur-md">
+                        <div class="absolute inset-0 bg-gradient-to-r from-violet-600/35 via-violet-500/15 to-transparent opacity-80"></div>
+                        <div class="relative flex items-center gap-4">
+              <span class="grid h-11 w-11 place-items-center rounded-xl border border-white/10 bg-black/30">
+                <!-- Brush -->
+                <svg viewBox="0 0 24 24" class="h-6 w-6 text-white/90" fill="none" stroke="currentColor"
+                     stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M19 3l2 2-9 9-3-3 10-10z"/>
+                  <path d="M8 12l-2 2"/>
+                  <path d="M6 14c-1.2 1.2-1.1 3.6-3 5 2.2.1 4.2-.6 5-2 .6-1 .7-2.2 0-3-.6-.7-1.4-.8-2-.2z"/>
+                </svg>
+              </span>
+                            <div class="text-lg font-semibold">Bootstrap, Tailwind</div>
+                        </div>
+                    </div>
+                    <div class="group relative overflow-hidden rounded-2xl border border-violet-500/25 transition hover:border-violet-400/60 bg-white/[0.03] px-6 py-5 shadow-[0_18px_60px_rgba(0,0,0,0.55)] backdrop-blur-md">
+                        <div class="absolute inset-0 bg-gradient-to-r from-violet-600/35 via-violet-500/15 to-transparent opacity-80"></div>
+                        <div class="relative flex items-center gap-4">
+              <span class="grid h-11 w-11 place-items-center rounded-xl border border-white/10 bg-black/30">
+               <!-- WordPress double-V icon -->
+<svg viewBox="0 0 24 24" class="h-6 w-6 text-white/90" fill="none" stroke="currentColor"
+     stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <path d="M4 6l3 12 5-9 5 9 3-12"/>
+</svg>
+              </span>
+                            <div class="text-lg font-semibold">WordPress</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- bottom divider -->
+        <div class="mt-16 h-[2px] w-full bg-gradient-to-r from-violet-500 via-violet-400/70 to-transparent"></div>
+    </div>
+</section>
+
+<!-- PRICING (Izrada web sajta) -->
+<section class="relative bg-black text-white">
+    <!-- subtle background glow -->
+    <div class="pointer-events-none absolute inset-0">
+        <div class="absolute -top-40 right-10 h-[520px] w-[520px] rounded-full bg-teal-500/10 blur-3xl"></div>
+        <div class="absolute -bottom-40 left-10 h-[520px] w-[520px] rounded-full bg-violet-500/10 blur-3xl"></div>
+    </div>
+
+    <div class="relative mx-auto max-w-7xl px-6 py-16">
+        <!-- Header -->
+        <div class="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
+            <div>
+                <div class="mb-4 flex items-center gap-2 text-sm font-medium uppercase tracking-wide text-white">
+                    <!-- clover (hearts) -->
+                    <svg viewBox="0 0 24 24" class="h-5 w-5 text-teal-400" fill="currentColor" aria-hidden="true">
+                        <path d="M12 4.5c-.8-1.2-3-1.5-4 .3-1 1.8.4 3.3 4 6 3.6-2.7 5-4.2 4-6-1-1.8-3.2-1.5-4-.3z"/>
+                        <g transform="rotate(90 12 12)">
+                            <path d="M12 4.5c-.8-1.2-3-1.5-4 .3-1 1.8.4 3.3 4 6 3.6-2.7 5-4.2 4-6-1-1.8-3.2-1.5-4-.3z"/>
+                        </g>
+                        <g transform="rotate(180 12 12)">
+                            <path d="M12 4.5c-.8-1.2-3-1.5-4 .3-1 1.8.4 3.3 4 6 3.6-2.7 5-4.2 4-6-1-1.8-3.2-1.5-4-.3z"/>
+                        </g>
+                        <g transform="rotate(270 12 12)">
+                            <path d="M12 4.5c-.8-1.2-3-1.5-4 .3-1 1.8.4 3.3 4 6 3.6-2.7 5-4.2 4-6-1-1.8-3.2-1.5-4-.3z"/>
+                        </g>
+                        <path d="M12 14c0 2.2-1 3.5-2.6 5" stroke="currentColor" stroke-width="1.2" fill="none"
+                              stroke-linecap="round"/>
+                    </svg>
+                    <span>Cenovnik izrade sajta</span>
+                </div>
+
+                <h2 class="text-5xl font-semibold tracking-tight sm:text-6xl">
+                    Fleksibilan <span class="text-teal-400">plan</span> izrade sajta
+                </h2>
+            </div>
+
+            <!-- Top-right text (2 sentences) -->
+            <div class="max-w-xl text-base leading-relaxed text-white/80 lg:pt-3">
+                Cena izrade web sajta zavisi od strukture stranica, funkcionalnosti i dizajna.
+                Nakon kratkih informacija o vašim potrebama, dobijate preciznu ponudu i rok izrade. Ponuđeni paketi su
+                informativnog karaktera i ako smatrate da ni jedan od naših paketa ne odgovara vašim zahtevima, svakako
+                nas trebate kontaktirati i kreiraćemo najbolju ponudu za vas.
+            </div>
+        </div>
+
+        <!-- Cards -->
+        <div class="mt-14 grid gap-8 lg:grid-cols-3">
+            <!-- Card 1 -->
+            <article
+                    class="relative flex h-full flex-col overflow-hidden rounded-3xl border border-violet-500/25 bg-white/[0.03] p-8 shadow-[0_22px_80px_rgba(0,0,0,0.65)] backdrop-blur-md transition hover:border-violet-400/60">
+                <div class="absolute -right-16 -top-16 h-44 w-44 rounded-full bg-violet-500/10 blur-3xl"></div>
+
+                <h3 class="text-2xl font-semibold">Start</h3>
+                <p class="mt-2 text-sm text-white/70">Idealno za jednostavne prezentacione sajtove.</p>
+
+                <div class="mt-8 flex items-end gap-2">
+                    <span class="pb-3 text-xs uppercase tracking-wider text-white/40">od</span>
+                    <span class="text-6xl font-semibold text-teal-300">€299</span>
+                </div>
+
+                <div class="mt-8 h-px w-full bg-white/10"></div>
+
+                <ul class="mt-7 space-y-4 text-sm text-white/85">
+                    <li class="flex items-start gap-3">
+                        <span class="mt-1 h-3 w-3 rounded-full border-2 border-teal-400"></span>
+                        Do 5 stranica (Home, O nama, Usluge, Blog, Kontakt)
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="mt-1 h-3 w-3 rounded-full border-2 border-teal-400"></span>
+                        Responsive dizajn
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="mt-1 h-3 w-3 rounded-full border-2 border-teal-400"></span>
+                        Galerija slika
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="mt-1 h-3 w-3 rounded-full border-2 border-teal-400"></span>
+                        Kontakt forma + Google mapa
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="mt-1 h-3 w-3 rounded-full border-2 border-teal-400"></span>
+                        Sigurnosna podešavanja
+                    </li>
+                </ul>
+
+                <div class="mt-auto pt-6">
+                    <div class="mb-6 h-px w-full bg-white/10"></div>
+
+                    <a href="#"
+                       class="inline-flex w-full items-center justify-center rounded-full bg-white/10 px-6 py-4 text-sm font-semibold text-white transition hover:bg-white/15">
+                        Zatraži ponudu
+                    </a>
+                </div>
+            </article>
+
+            <!-- Card 2 (Popular) -->
+            <article
+                    class="relative flex h-full flex-col overflow-hidden rounded-3xl border border-violet-500/25 bg-white/[0.03] p-8 shadow-[0_22px_80px_rgba(0,0,0,0.65)] backdrop-blur-md transition hover:border-violet-400/60">
+                <!-- ribbon -->
+                <div class="absolute -right-14 top-8 rotate-45 bg-teal-400 px-16 py-2 text-xs font-bold tracking-[0.18em] text-black">
+                    POPULARNO
+                </div>
+                <div class="absolute -left-20 -top-20 h-56 w-56 rounded-full bg-teal-500/12 blur-3xl"></div>
+
+                <h3 class="text-2xl font-semibold">Pro</h3>
+                <p class="mt-2 text-sm text-white/70">Odlično za rastuće biznise.</p>
+
+                <div class="mt-8 flex items-end gap-2">
+                    <span class="pb-3 text-xs uppercase tracking-wider text-white/40">od</span>
+                    <span class="text-6xl font-semibold text-teal-300">€499</span>
+                </div>
+
+                <div class="mt-8 h-px w-full bg-white/10"></div>
+
+                <ul class="mt-7 space-y-4 text-sm text-white/85">
+                    <li class="flex items-start gap-3">
+                        <span class="mt-1 h-3 w-3 rounded-full border-2 border-teal-400"></span>
+                        Do 10 stranica + sekcije po meri
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="mt-1 h-3 w-3 rounded-full border-2 border-teal-400"></span>
+                        Responsive dizajn
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="mt-1 h-3 w-3 rounded-full border-2 border-teal-400"></span>
+                        Osnovni on page SEO
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="mt-1 h-3 w-3 rounded-full border-2 border-teal-400"></span>
+                        Galerija slika
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="mt-1 h-3 w-3 rounded-full border-2 border-teal-400"></span>
+                        Kontakt forma + Google mapa
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="mt-1 h-3 w-3 rounded-full border-2 border-teal-400"></span>
+                        Integracije: Google Console / Analytics
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="mt-1 h-3 w-3 rounded-full border-2 border-teal-400"></span>
+                        Osnovni copywriting
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="mt-1 h-3 w-3 rounded-full border-2 border-teal-400"></span>
+                        Sigurnosna podešavanja
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="mt-1 h-3 w-3 rounded-full border-2 border-teal-400"></span>
+                        Pro struktura
+                    </li>
+                </ul>
+
+                <div class="mt-auto pt-6">
+
+                    <div class="mb-6 h-px w-full bg-white/10"></div>
+
+                    <div class="flex justify-center gap-4">
+
+                        <!-- Phone -->
+                        <a href="tel:+381600000000"
+                           class="group flex h-12 w-12 items-center justify-center rounded-full
+                  border border-white/15 bg-white/[0.05]
+                  transition hover:border-teal-400 hover:bg-teal-400/10
+                  hover:shadow-[0_0_20px_rgba(20,184,166,0.25)]"
+                           title="Pozovite nas">
+
+                            <svg viewBox="0 0 24 24"
+                                 class="h-5 w-5 stroke-white/80 transition group-hover:stroke-teal-300"
+                                 fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2
+                         19.8 19.8 0 0 1-8.63-3.07
+                         19.5 19.5 0 0 1-6-6
+                         A19.8 19.8 0 0 1 2.08 4.18
+                         2 2 0 0 1 4.06 2h3
+                         a2 2 0 0 1 2 1.72
+                         c.12.86.31 1.7.57 2.5
+                         a2 2 0 0 1-.45 2.11L8.09 9.91
+                         a16 16 0 0 0 6 6l1.58-1.09
+                         a2 2 0 0 1 2.11-.45
+                         c.8.26 1.64.45 2.5.57
+                         A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                        </a>
+
+                        <!-- Viber -->
+                        <a href="viber://chat?number=%2B381600000000"
+                           class="group flex h-12 w-12 items-center justify-center rounded-full
+                  border border-white/15 bg-white/[0.05]
+                  transition hover:border-violet-400 hover:bg-violet-500/10
+                  hover:shadow-[0_0_20px_rgba(139,92,246,0.25)]"
+                           title="Pišite nam na Viber">
+
+                            <svg viewBox="0 0 24 24"
+                                 class="h-5 w-5 fill-white/80 transition group-hover:fill-violet-300">
+                                <path d="M12 2C6.48 2 2 5.82 2 10.5c0 2.58 1.3 4.9 3.35 6.45L5 22l4.2-2.15
+                         c.88.24 1.81.37 2.8.37 5.52 0 10-3.82 10-8.5S17.52 2 12 2z"/>
+                            </svg>
+                        </a>
+
+                        <!-- WhatsApp -->
+                        <a href="https://wa.me/381600000000"
+                           class="group flex h-12 w-12 items-center justify-center rounded-full
+                  border border-white/15 bg-white/[0.05]
+                  transition hover:border-green-400 hover:bg-green-400/10
+                  hover:shadow-[0_0_20px_rgba(74,222,128,0.25)]"
+                           title="Pišite nam na WhatsApp">
+
+                            <svg viewBox="0 0 24 24"
+                                 class="h-5 w-5 fill-white/80 transition group-hover:fill-green-300">
+                                <path d="M20 12a8 8 0 1 0-14.9 3.9L4 20l4.3-1.1A8 8 0 1 0 20 12z"/>
+                            </svg>
+                        </a>
+
+                        <!-- Email -->
+                        <a href="mailto:info@katizma.rs"
+                           class="group flex h-12 w-12 items-center justify-center rounded-full
+                  border border-white/15 bg-white/[0.05]
+                  transition hover:border-cyan-400 hover:bg-cyan-400/10
+                  hover:shadow-[0_0_20px_rgba(34,211,238,0.25)]"
+                           title="Pošaljite email">
+
+                            <svg viewBox="0 0 24 24"
+                                 class="h-5 w-5 stroke-white/80 transition group-hover:stroke-cyan-300"
+                                 fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16v16H4z"/>
+                                <path d="M22 6l-10 7L2 6"/>
+                            </svg>
+                        </a>
+
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="group relative flex flex-col overflow-hidden rounded-3xl border border-teal-400/50
+                     bg-gradient-to-b from-white/[0.07] via-white/[0.04] to-white/[0.02]
+                     p-8 shadow-[0_30px_120px_rgba(20,184,166,0.25)]
+                     backdrop-blur-sm transition hover:border-teal-300/80">
+                <!-- PREMIUM badge -->
+                <span class="absolute right-6 top-6 rounded-full
+    border border-teal-300/40
+    bg-teal-400/10 px-3 py-1 text-xs font-semibold tracking-wide
+    text-teal-300 backdrop-blur">
+    PREMIUM
+    </span>
+                <div class="absolute -right-16 -top-16 h-44 w-44 rounded-full bg-teal-500/10 blur-3xl"></div>
+
+                <h3 class="text-2xl font-semibold">Premium</h3>
+                <p class="mt-2 text-sm text-white/70">Za veće sajtove i ozbiljnije projekte.</p>
+
+                <div class="mt-8 flex items-end gap-2">
+                    <span class="pb-3 text-xs uppercase tracking-wider text-white/40">od</span>
+                    <span class="text-6xl font-semibold text-teal-300">€899</span>
+                </div>
+
+                <div class="mt-8 h-px w-full bg-white/10"></div>
+
+                <ul class="mt-7 space-y-4 text-sm text-white/85">
+                    <li class="flex items-start gap-3">
+                        <span class="mt-1 h-3 w-3 rounded-full border-2 border-teal-400"></span>
+                        Do 20+ stranica + prilagođene komponente
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="mt-1 h-3 w-3 rounded-full border-2 border-teal-400"></span>
+                        Responsive dizajn
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="mt-1 h-3 w-3 rounded-full border-2 border-teal-400"></span>
+                        Napredni on page SEO
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="mt-1 h-3 w-3 rounded-full border-2 border-teal-400"></span>
+                        Galerija slika
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="mt-1 h-3 w-3 rounded-full border-2 border-teal-400"></span>
+                        Kontakt forma + Google mapa
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="mt-1 h-3 w-3 rounded-full border-2 border-teal-400"></span>
+                        Integracije: Google Console / Analytics
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="mt-1 h-3 w-3 rounded-full border-2 border-teal-400"></span>
+                        Copywriting + optimizacija CTA elemenata
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="mt-1 h-3 w-3 rounded-full border-2 border-teal-400"></span>
+                        Sigurnosna podešavanja + optimizacija performansi
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="mt-1 h-3 w-3 rounded-full border-2 border-teal-400"></span>
+                        Premium struktura, animacije, modali, testimoniali, slajderi...
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="mt-1 h-3 w-3 rounded-full border-2 border-teal-400"></span>
+                        Višejezičan sajt
+                    </li>
+                </ul>
+
+                <div class="mt-auto pt-6">
+                    <div class="mb-6 h-px w-full bg-white/10"></div>
+
+                    <a href="#"
+                       class="inline-flex w-full items-center justify-center rounded-full
+     bg-teal-400 px-6 py-4 text-sm font-semibold text-black
+     shadow-[0_0_0_0.5px_rgba(45,212,191,0.45),0_0_28px_rgba(45,212,191,0.35)]
+     transition duration-300 ease-out
+     hover:bg-teal-300 hover:shadow-[0_0_0_1px_rgba(45,212,191,0.65),0_0_38px_rgba(45,212,191,0.45)]
+     active:translate-y-[1px]">
+                        Zatraži ponudu
+                    </a>
+                </div>
+            </article>
+        </div>
+
+        <!-- bottom helper row -->
+        <div class="mt-12 flex flex-col gap-4 text-sm text-white/75 sm:flex-row sm:items-center sm:justify-center sm:gap-10">
+            <div class="flex items-center gap-2">
+        <span class="grid h-8 w-8 place-items-center rounded-full border border-teal-400/30 bg-white/[0.03]">
+          <svg viewBox="0 0 24 24" class="h-4 w-4 text-teal-300" fill="none" stroke="currentColor" stroke-width="1.8"
+               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M8 7V3h8v4"/>
+            <path d="M7 7h10v14H7z"/>
+            <path d="M9 11h6"/>
+          </svg>
+        </span>
+                <span>Dogovor po želji</span>
+            </div>
+
+            <div class="flex items-center gap-2">
+        <span class="grid h-8 w-8 place-items-center rounded-full border border-teal-400/30 bg-white/[0.03]">
+          <svg viewBox="0 0 24 24" class="h-4 w-4 text-teal-300" fill="none" stroke="currentColor" stroke-width="1.8"
+               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 3l7 4v6c0 5-3 8-7 8s-7-3-7-8V7z"/>
+            <path d="M9 12l2 2 4-5"/>
+          </svg>
+        </span>
+                <span>Nema skrivenih troškova</span>
+            </div>
+
+            <div class="flex items-center gap-2">
+        <span class="grid h-8 w-8 place-items-center rounded-full border border-teal-400/30 bg-white/[0.03]">
+          <svg viewBox="0 0 24 24" class="h-4 w-4 text-teal-300" fill="none" stroke="currentColor" stroke-width="1.8"
+               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 6v6l4 2"/>
+            <path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+        </span>
+                <span>Brza izrada i jasni rokovi</span>
+            </div>
+        </div>
+
+        <!-- bottom divider -->
+        <div class="mt-14 h-[2px] w-full bg-gradient-to-r from-violet-500 via-violet-400/70 to-transparent"></div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="py-10 border-t border-gray-800 text-center text-gray-500 text-sm">
+    (123) 456-7890 | office@katizma.com
+</footer>
+
+</body>
+</html>
