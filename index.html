@@ -1639,6 +1639,7 @@
     </div>
 </section>
 <!-- PROJECTS -->
+
 <section class="relative overflow-hidden bg-black text-white">
 
     <!-- background glow -->
@@ -1675,9 +1676,36 @@
             </h2>
 
         </div>
+        <div class="mb-6 flex justify-center gap-3 lg:hidden">
 
+            <button id="projectsPrev"
+                    class="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/[0.05] transition hover:border-teal-400 hover:bg-teal-400/10">
+
+                <svg viewBox="0 0 24 24" class="h-5 w-5 stroke-white" fill="none"
+                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M15 18l-6-6 6-6"/>
+                </svg>
+
+            </button>
+
+
+            <button id="projectsNext"
+                    class="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/[0.05] transition hover:border-teal-400 hover:bg-teal-400/10">
+
+                <svg viewBox="0 0 24 24" class="h-5 w-5 stroke-white" fill="none"
+                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 18l6-6-6-6"/>
+                </svg>
+
+            </button>
+
+        </div>
         <!-- cards -->
-        <div class="flex gap-5 overflow-x-auto snap-x snap-mandatory pb-4 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:grid lg:grid-cols-3 lg:gap-8 lg:overflow-visible">
+        <div id="projectsSlider"
+             class="flex gap-5 overflow-x-auto snap-x snap-mandatory pb-4
+[-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden
+lg:grid lg:grid-cols-3 lg:gap-8 lg:overflow-visible">
+
 
             <!-- CARD -->
             <article

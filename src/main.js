@@ -1,4 +1,3 @@
-
 // Hamburger meni
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobile-menu');
@@ -45,7 +44,27 @@ const io = new IntersectionObserver(
             }
         });
     },
-    { threshold: 0.2, rootMargin: '0px 0px -10% 0px' }
+    {threshold: 0.2, rootMargin: '0px 0px -10% 0px'}
 );
 
 revealEls.forEach((el) => io.observe(el));
+
+/*strelice projekata na indexnoj*/
+
+const projectsSlider = document.getElementById('projectsSlider');
+const projectsPrev = document.getElementById('projectsPrev');
+const projectsNext = document.getElementById('projectsNext');
+
+if (projectsSlider && projectsPrev && projectsNext) {
+    const scrollProjects = (direction) => {
+        const scrollAmount = projectsSlider.clientWidth * 0.85;
+
+        projectsSlider.scrollBy({
+            left: scrollAmount * direction,
+            behavior: 'smooth'
+        });
+    };
+
+    projectsPrev.addEventListener('click', () => scrollProjects(-1));
+    projectsNext.addEventListener('click', () => scrollProjects(1));
+}
