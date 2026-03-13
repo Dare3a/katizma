@@ -2140,8 +2140,159 @@ hover:shadow-[0_0_30px_rgba(45,212,191,0.15)]">
 </section>
 
 <!-- FOOTER -->
-<footer class="py-10 border-t border-gray-800 text-center text-gray-500 text-sm">
-    (123) 456-7890 | office@katizma.com
+<footer class="relative overflow-hidden bg-black text-white">
+    <!-- background glow -->
+    <div class="pointer-events-none absolute inset-0">
+        <div class="absolute -top-24 left-0 h-[420px] w-[420px] rounded-full bg-teal-500/10 blur-3xl"></div>
+        <div class="absolute bottom-0 right-0 h-[420px] w-[420px] rounded-full bg-violet-500/10 blur-3xl"></div>
+    </div>
+
+    <div class="relative mx-auto max-w-7xl px-6 pt-16 pb-10">
+        <!-- top divider -->
+        <div class="mb-14 h-px w-full bg-white/10"></div>
+
+        <!-- top footer grid -->
+        <div class="grid gap-10 lg:grid-cols-[1.2fr_0.7fr_0.9fr_1fr]">
+            <!-- brand -->
+            <div>
+                <a href="/" class="inline-flex items-center gap-3">
+                    <span class="grid h-14 w-14 place-items-center rounded-2xl bg-teal-400 text-black shadow-[0_0_25px_rgba(45,212,191,0.18)]">
+                        <svg viewBox="0 0 24 24" class="h-7 w-7" fill="currentColor" aria-hidden="true">
+                            <path d="M5 4h14v3H5zm0 6h14v3H5zm0 6h14v3H5z"/>
+                        </svg>
+                    </span>
+                    <span class="text-4xl font-semibold tracking-tight">
+                        katizma<span class="text-teal-400">.</span>
+                    </span>
+                </a>
+
+                <p class="mt-8 max-w-sm text-xl leading-relaxed text-white/75">
+                    Kvalitetna izrada sajtova, SEO optimizacija i digitalna rešenja prilagođena vašem poslovanju.
+                </p>
+            </div>
+
+            <!-- quick links -->
+            <div>
+                <h3 class="text-3xl font-semibold">Brzi linkovi</h3>
+                <ul class="mt-8 space-y-5 text-xl text-white/80">
+                    <li><a href="/" class="transition hover:text-teal-300">Početna</a></li>
+                    <li><a href="/o-nama" class="transition hover:text-teal-300">O nama</a></li>
+                    <li><a href="/usluge" class="transition hover:text-teal-300">Usluge</a></li>
+                    <li><a href="/portfolio" class="transition hover:text-teal-300">Portfolio</a></li>
+                    <li><a href="/kontakt" class="transition hover:text-teal-300">Kontakt</a></li>
+                </ul>
+            </div>
+
+            <!-- services -->
+            <div>
+                <h3 class="text-3xl font-semibold">Usluge</h3>
+                <ul class="mt-8 space-y-5 text-xl text-white/80">
+                    <li><a href="/seo-optimizacija" class="transition hover:text-teal-300">SEO optimizacija</a></li>
+                    <li><a href="/izrada-sajta" class="transition hover:text-teal-300">Izrada sajta</a></li>
+                    <li><a href="/digitalni-marketing" class="transition hover:text-teal-300">Digitalni marketing</a></li>
+                    <li><a href="/odrzavanje-sajtova" class="transition hover:text-teal-300">Održavanje sajtova</a></li>
+                </ul>
+            </div>
+
+            <!-- contact -->
+            <div>
+                <h3 class="text-3xl font-semibold">Kontakt</h3>
+
+                <div class="mt-8 space-y-6">
+                    <!-- phone -->
+                    <div class="flex items-center gap-4 border-b border-white/10 pb-6">
+                        <span class="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-teal-400 text-black shadow-[0_0_20px_rgba(45,212,191,0.2)]">
+                            <svg viewBox="0 0 24 24" class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.12.86.31 1.7.57 2.5a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.58-1.09a2 2 0 0 1 2.11-.45c.8.26 1.64.45 2.5.57A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                        </span>
+
+                        <div>
+                            <div class="text-sm uppercase tracking-wide text-white/50">Telefon</div>
+                            <a href="tel:+381601234567" class="mt-1 block text-2xl font-semibold text-white transition hover:text-teal-300">
+                                +381 60 123 4567
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- email -->
+                    <div class="flex items-center gap-4">
+                        <span class="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-teal-400 text-black shadow-[0_0_20px_rgba(45,212,191,0.2)]">
+                            <svg viewBox="0 0 24 24" class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <rect x="3" y="5" width="18" height="14" rx="2"/>
+                                <path d="M3 7l9 6 9-6"/>
+                            </svg>
+                        </span>
+
+                        <div>
+                            <div class="text-sm uppercase tracking-wide text-white/50">Email</div>
+                            <a href="mailto:info@katizma.rs" class="mt-1 block text-2xl font-semibold text-white transition hover:text-teal-300">
+                                info@katizma.rs
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- newsletter / socials box -->
+        <div class="mt-14 rounded-[36px] border border-white/10 bg-white/[0.03] px-8 py-8 shadow-[0_20px_60px_rgba(0,0,0,0.4)] backdrop-blur-md">
+            <div class="flex flex-col gap-8 xl:flex-row xl:items-center xl:justify-between">
+                <!-- newsletter -->
+                <div class="flex flex-col gap-5 xl:flex-row xl:items-center">
+                    <h3 class="text-3xl font-semibold">Prijavite se na newsletter:</h3>
+
+                    <form class="flex flex-col gap-4 sm:flex-row">
+                        <input type="email"
+                               placeholder="Unesite email"
+                               class="h-16 min-w-[280px] rounded-full border border-white/10 bg-black/40 px-6 text-lg text-white placeholder:text-white/40 outline-none transition focus:border-teal-400/60">
+
+                        <button type="submit"
+                                class="h-16 rounded-full bg-teal-400 px-8 text-lg font-semibold text-black transition hover:bg-teal-300">
+                            Prijava
+                        </button>
+                    </form>
+                </div>
+
+                <!-- socials -->
+                <div class="flex flex-col gap-5 xl:flex-row xl:items-center xl:gap-8">
+                    <div class="hidden h-14 w-px bg-white/10 xl:block"></div>
+
+                    <span class="text-3xl font-semibold">Pratite nas:</span>
+
+                    <div class="flex items-center gap-4">
+                        <!-- X -->
+                        <a href="#" class="flex h-12 w-12 items-center justify-center rounded-full border border-teal-400/50 text-teal-300 transition hover:bg-teal-400 hover:text-black" aria-label="X">
+                            <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+                                <path d="M5 5l14 14M19 5L5 19"/>
+                            </svg>
+                        </a>
+
+                        <!-- Facebook -->
+                        <a href="#" class="flex h-12 w-12 items-center justify-center rounded-full border border-teal-400/50 text-teal-300 transition hover:bg-teal-400 hover:text-black" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor" aria-hidden="true">
+                                <path d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.9.3-1.6 1.6-1.6H17V4.8c-.4-.1-1.3-.2-2.4-.2-2.4 0-4.1 1.5-4.1 4.3V11H8v3h2.5v8h3z"/>
+                            </svg>
+                        </a>
+
+                        <!-- Instagram -->
+                        <a href="#" class="flex h-12 w-12 items-center justify-center rounded-full border border-teal-400/50 text-teal-300 transition hover:bg-teal-400 hover:text-black" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <rect x="3" y="3" width="18" height="18" rx="5"/>
+                                <circle cx="12" cy="12" r="4"/>
+                                <circle cx="17.5" cy="6.5" r="1"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- copyright -->
+        <div class="mt-12 text-center text-lg text-white/70">
+            Copyright © 2026 Katizma Studio. Sva prava zadržana.
+        </div>
+    </div>
 </footer>
 
 </body>
