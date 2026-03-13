@@ -135,3 +135,28 @@
 .phone-pulse {
     animation: phonePulse 2.6s infinite;
 }
+
+/*Gradient line*/
+.footer-gradient-line {
+    height: 2px;
+    width: 100%;
+    background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(139,92,246,0.6),
+            rgba(45,212,191,0.8),
+            rgba(139,92,246,0.6),
+            transparent
+    );
+    background-size: 200% 100%;
+    animation: footerFlow 6s linear infinite;
+}
+
+@keyframes footerFlow {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
