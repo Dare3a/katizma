@@ -68,24 +68,35 @@ if (projectsSlider && projectsPrev && projectsNext) {
     projectsPrev.addEventListener('click', () => scrollProjects(-1));
     projectsNext.addEventListener('click', () => scrollProjects(1));
 }
+
 /*topup dugme*/
-const scrollBtn = document.getElementById("scrollTopBtn");
+const scrollProgress = document.getElementById('scrollProgress');
+const scrollProgressCircle = document.getElementById('scrollProgressCircle');
 
-window.addEventListener("scroll", () => {
+if (scrollProgress && scrollProgressCircle) {
+    const radius = 46;
+    const circumference = 2 * Math.PI * radius;
 
-    if (window.scrollY > 400) {
-        scrollBtn.classList.remove("opacity-0", "pointer-events-none");
-        scrollBtn.classList.add("opacity-100");
-    } else {
-        scrollBtn.classList.add("opacity-0", "pointer-events-none");
-        scrollBtn.classList.remove("opacity-100");
-    }
+    scrollProgressCircle.style.strokeDasharray = `${circumference}`;
+    scrollProgressCircle.style.strokeDashoffset = `${circumference}`;
 
-});
+    const updateScrollProgress = () => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = docHeight > 0 ? scrollTop / docHeight : 0;
+        const offset = circumference - (progress * circumference);
 
-scrollBtn.addEventListener("click", () => {
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
-});
+        scrollProgressCircle.style.strokeDashoffset = offset;
+
+        if (scrollTop > 300) {
+            scrollProgress.classList.remove('opacity-0', 'pointer-events-none');
+            scrollProgress.classList.add('opacity-100');
+        } else {
+            scrollProgress.classList.add('opacity-0', 'pointer-events-none');
+            scrollProgress.classList.remove('opacity-100');
+        }
+    };
+
+    window.addEventListener('scroll', updateScrollProgress, { passive: true });
+    updateScrollProgress();
+}

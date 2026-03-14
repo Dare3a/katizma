@@ -9,7 +9,7 @@
     <link href="/src/style.css" rel="stylesheet">
     <script type="module" src="/src/main.js"></script>
 </head>
-<body>
+<body id="top">
 
 <!-- NAVBAR -->
 <header class="sticky top-0 z-50 border-b border-slate-200 bg-white/70 backdrop-blur-lg shadow-sm">
@@ -2295,18 +2295,37 @@ hover:shadow-[0_0_30px_rgba(45,212,191,0.15)]">
     </div>
 </footer>
 
-<button id="scrollTopBtn"
-        class="fixed bottom-8 right-8 z-50 flex h-14 w-14 items-center justify-center rounded-full
-        border border-teal-400/30 bg-black/80 text-teal-300
-        shadow-[0_0_0_1px_rgba(45,212,191,0.25),0_0_25px_rgba(45,212,191,0.18)]
-        backdrop-blur-md
-        opacity-0 pointer-events-none
-        transition duration-300
-        hover:border-teal-300 hover:text-white
-        hover:shadow-[0_0_0_1px_rgba(45,212,191,0.6),0_0_40px_rgba(45,212,191,0.35)]">
+<a href="#top" id="scrollProgress"
+   class="fixed bottom-6 right-6 z-50 grid h-10 w-10 sm:h-14 sm:w-14 place-items-center rounded-full
+          border border-white/10 bg-black/70 text-white/90 backdrop-blur-md
+          shadow-[0_0_12px_rgba(45,212,191,0.15)]
+          opacity-0 pointer-events-none transition duration-300
+          hover:scale-105 hover:text-teal-300
+          sm:shadow-[0_0_0_1px_rgba(45,212,191,0.25),0_0_25px_rgba(45,212,191,0.18)]"
+   aria-label="Nazad na vrh">
 
+    <!-- progress ring -->
+    <svg class="absolute inset-0 -rotate-90" viewBox="0 0 100 100" aria-hidden="true">
+
+        <circle cx="50" cy="50" r="46"
+                fill="none"
+                stroke="rgba(255,255,255,0.10)"
+                stroke-width="4" />
+
+        <circle id="scrollProgressCircle"
+                cx="50" cy="50" r="46"
+                fill="none"
+                stroke="#2dd4bf"
+                stroke-width="4"
+                stroke-linecap="round"
+                stroke-dasharray="289"
+                stroke-dashoffset="289" />
+
+    </svg>
+
+    <!-- arrow -->
     <svg viewBox="0 0 24 24"
-         class="h-6 w-6 transition-transform duration-300 group-hover:-translate-y-1"
+         class="relative z-10 h-4 w-4 sm:h-5 sm:w-5"
          fill="none"
          stroke="currentColor"
          stroke-width="2"
@@ -2318,6 +2337,6 @@ hover:shadow-[0_0_30px_rgba(45,212,191,0.15)]">
 
     </svg>
 
-</button>
+</a>
 </body>
 </html>

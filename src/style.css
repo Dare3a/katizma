@@ -160,3 +160,7 @@
         background-position: -200% 0;
     }
 }
+
+html {
+    scroll-behavior: smooth;
+}
