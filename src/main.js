@@ -68,3 +68,24 @@ if (projectsSlider && projectsPrev && projectsNext) {
     projectsPrev.addEventListener('click', () => scrollProjects(-1));
     projectsNext.addEventListener('click', () => scrollProjects(1));
 }
+/*topup dugme*/
+const scrollBtn = document.getElementById("scrollTopBtn");
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 400) {
+        scrollBtn.classList.remove("opacity-0", "pointer-events-none");
+        scrollBtn.classList.add("opacity-100");
+    } else {
+        scrollBtn.classList.add("opacity-0", "pointer-events-none");
+        scrollBtn.classList.remove("opacity-100");
+    }
+
+});
+
+scrollBtn.addEventListener("click", () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});
