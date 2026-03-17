@@ -35,3 +35,58 @@ if (mobileMenu && hamburger) {
         });
     });
 }
+
+const desktopServicesItem = document.getElementById('desktop-services-item');
+const desktopServicesBtn = document.getElementById('desktop-services-btn');
+const desktopDropdownMenu = document.getElementById('desktop-dropdown-menu');
+const desktopServicesIcon = document.getElementById('desktop-services-icon');
+let dropdownTimeout;
+
+function openDesktopDropdown() {
+    if (!desktopDropdownMenu || !desktopServicesBtn || !desktopServicesIcon) return;
+
+    desktopDropdownMenu.classList.remove('opacity-0', 'invisible', 'translate-y-2');
+    desktopDropdownMenu.classList.add('opacity-100', 'visible', 'translate-y-0');
+    desktopServicesBtn.setAttribute('aria-expanded', 'true');
+    desktopServicesIcon.classList.add('rotate-180');
+}
+
+function closeDesktopDropdown() {
+    if (!desktopDropdownMenu || !desktopServicesBtn || !desktopServicesIcon) return;
+
+    desktopDropdownMenu.classList.add('opacity-0', 'invisible', 'translate-y-2');
+    desktopDropdownMenu.classList.remove('opacity-100', 'visible', 'translate-y-0');
+    desktopServicesBtn.setAttribute('aria-expanded', 'false');
+    desktopServicesIcon.classList.remove('rotate-180');
+}
+
+if (desktopServicesItem) {
+    desktopServicesItem.addEventListener('mouseenter', () => {
+        clearTimeout(dropdownTimeout);
+        openDesktopDropdown();
+    });
+
+    desktopServicesItem.addEventListener('mouseleave', () => {
+        dropdownTimeout = setTimeout(() => {
+            closeDesktopDropdown();
+        }, 120); // možeš menjati: 100–200ms
+    });
+}
+
+if (desktopServicesBtn) {
+    desktopServicesBtn.addEventListener('click', () => {
+        const isOpen = desktopServicesBtn.getAttribute('aria-expanded') === 'true';
+        if (isOpen) {
+            closeDesktopDropdown();
+        } else {
+            openDesktopDropdown();
+        }
+    });
+}
+
+document.addEventListener('click', (e) => {
+    if (!desktopServicesItem) return;
+    if (!desktopServicesItem.contains(e.target)) {
+        closeDesktopDropdown();
+    }
+});
