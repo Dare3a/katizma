@@ -530,3 +530,149 @@ html {
 /* =========================
    END HERO ORBIT GLOW
    ========================= */
+
+/*Animacija za blok u okviru sajt bloka u hero sekciji na str izrada sajta*/
+.mini-orb-scene {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.75rem;
+    background:
+            radial-gradient(circle at 20% 30%, rgba(34, 211, 238, 0.10), transparent 30%),
+            radial-gradient(circle at 80% 70%, rgba(217, 70, 239, 0.12), transparent 34%),
+            linear-gradient(135deg, rgba(139, 92, 246, 0.20), rgba(236, 72, 153, 0.12));
+    border: 1px solid rgba(255,255,255,0.08);
+    isolation: isolate;
+}
+
+.mini-orb-scene::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+            linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-size: 18px 18px;
+    opacity: 0.45;
+}
+
+.mini-orb {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(10px);
+    will-change: transform;
+}
+
+.mini-orb-1 {
+    width: 3.8rem;
+    height: 3.8rem;
+    left: 10%;
+    top: 18%;
+    background: rgba(34, 211, 238, 0.42);
+    animation: miniFloatOne 7s ease-in-out infinite;
+}
+
+.mini-orb-2 {
+    width: 3.2rem;
+    height: 3.2rem;
+    left: 48%;
+    top: 10%;
+    background: rgba(139, 92, 246, 0.42);
+    animation: miniFloatTwo 8.5s ease-in-out infinite;
+}
+
+.mini-orb-3 {
+    width: 2.8rem;
+    height: 2.8rem;
+    right: 10%;
+    bottom: 12%;
+    background: rgba(236, 72, 153, 0.35);
+    animation: miniFloatThree 7.5s ease-in-out infinite;
+}
+
+.mini-line {
+    position: absolute;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.28), transparent);
+    transform-origin: left center;
+    opacity: 0.8;
+}
+
+.mini-line-1 {
+    width: 46%;
+    left: 12%;
+    top: 52%;
+    transform: rotate(-10deg);
+    animation: miniLinePulse 4.8s ease-in-out infinite;
+}
+
+.mini-line-2 {
+    width: 34%;
+    right: 10%;
+    top: 36%;
+    transform: rotate(18deg);
+    animation: miniLinePulse 5.6s ease-in-out infinite reverse;
+}
+
+@keyframes miniFloatOne {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    25% {
+        transform: translate(10px, -6px) scale(1.06);
+    }
+    50% {
+        transform: translate(16px, 4px) scale(0.96);
+    }
+    75% {
+        transform: translate(6px, 10px) scale(1.03);
+    }
+}
+
+@keyframes miniFloatTwo {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    25% {
+        transform: translate(-8px, 8px) scale(1.04);
+    }
+    50% {
+        transform: translate(12px, 14px) scale(0.95);
+    }
+    75% {
+        transform: translate(18px, -4px) scale(1.05);
+    }
+}
+
+@keyframes miniFloatThree {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    25% {
+        transform: translate(-10px, -8px) scale(1.05);
+    }
+    50% {
+        transform: translate(-18px, 2px) scale(0.96);
+    }
+    75% {
+        transform: translate(-8px, 8px) scale(1.02);
+    }
+}
+
+@keyframes miniLinePulse {
+    0%, 100% {
+        opacity: 0.35;
+        transform: scaleX(0.92);
+    }
+    50% {
+        opacity: 0.9;
+        transform: scaleX(1.04);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .mini-orb,
+    .mini-line {
+        animation: none;
+    }
+}
+/*Kraj animacije za blok u okviru sajt bloka u hero sekciji*/
