@@ -200,3 +200,88 @@ html {
     font-weight: 700;
     background-color: rgba(240, 253, 250, 0.95);
 }
+/* floating cards horizontal drift */
+@keyframes heroFloatX {
+    0%, 100% {
+        transform: translateX(0) translateY(0);
+    }
+    25% {
+        transform: translateX(8px) translateY(-2px);
+    }
+    50% {
+        transform: translateX(14px) translateY(0);
+    }
+    75% {
+        transform: translateX(6px) translateY(2px);
+    }
+}
+
+@keyframes heroFloatXDelayed {
+    0%, 100% {
+        transform: translateX(0) translateY(0);
+    }
+    25% {
+        transform: translateX(-8px) translateY(2px);
+    }
+    50% {
+        transform: translateX(-14px) translateY(0);
+    }
+    75% {
+        transform: translateX(-6px) translateY(-2px);
+    }
+}
+
+.hero-float-x {
+    animation: heroFloatX 6s ease-in-out infinite;
+    will-change: transform;
+}
+
+.hero-float-x-delayed {
+    animation: heroFloatXDelayed 7s ease-in-out infinite;
+    will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-float-x,
+    .hero-float-x-delayed {
+        animation: none;
+    }
+}
+/*Grid wave*/
+@keyframes gridWave {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+        opacity: 0.16;
+        filter: blur(0px);
+    }
+    25% {
+        transform: translateY(-6px) scale(1.01);
+        opacity: 0.22;
+        filter: blur(0.2px);
+    }
+    50% {
+        transform: translateY(6px) scale(1.015);
+        opacity: 0.18;
+        filter: blur(0.4px);
+    }
+    75% {
+        transform: translateY(-3px) scale(1.01);
+        opacity: 0.20;
+        filter: blur(0.2px);
+    }
+}
+.grid-wave {
+    animation: gridWave 12s ease-in-out infinite;
+    will-change: transform, opacity;
+}
+.hero-grid-izrada-sajta {
+    position: absolute;
+    inset: 0;
+
+    background-image:
+            linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px),
+            radial-gradient(circle at 1px 1px, rgba(255,255,255,0.14) 1px, transparent 0);
+
+    background-size: 34px 34px, 34px 34px, 34px 34px;
+}
