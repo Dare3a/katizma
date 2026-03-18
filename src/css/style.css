@@ -285,3 +285,246 @@ html {
 
     background-size: 34px 34px, 34px 34px, 34px 34px;
 }
+
+/* =========================
+   HERO ORBIT GLOW
+   obriši stare .hero-glow-1/.2/.3 animacije ako ih imaš
+   ========================= */
+
+.hero-orbit {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    will-change: transform;
+}
+
+/* svaki orbit layer ima svoj centar i svoju putanju */
+.hero-orbit-1 {
+    animation: heroOrbitOne 30s linear infinite;
+}
+
+.hero-orbit-2 {
+    animation: heroOrbitTwo 38s linear infinite;
+}
+
+.hero-orbit-3 {
+    animation: heroOrbitThree 34s linear infinite;
+}
+
+.hero-glow {
+    position: absolute;
+    border-radius: 9999px;
+    pointer-events: none;
+    will-change: transform, opacity;
+    filter: blur(90px);
+    opacity: 0.95;
+}
+
+/* CYAN */
+.hero-glow-1 {
+    top: 8%;
+    left: 14%;
+    width: 24rem;
+    height: 24rem;
+    background: rgba(34, 211, 238, 0.22);
+}
+
+/* VIOLET */
+.hero-glow-2 {
+    top: 12%;
+    right: 10%;
+    width: 22rem;
+    height: 22rem;
+    background: rgba(139, 92, 246, 0.24);
+}
+
+/* FUCHSIA */
+.hero-glow-3 {
+    bottom: 8%;
+    left: 42%;
+    width: 20rem;
+    height: 20rem;
+    background: rgba(217, 70, 239, 0.20);
+}
+
+/* orbit putanje */
+@keyframes heroOrbitOne {
+    0% {
+        transform: translate3d(0, 0, 0) rotate(0deg);
+    }
+    20% {
+        transform: translate3d(70px, 35px, 0) rotate(72deg);
+    }
+    40% {
+        transform: translate3d(120px, -20px, 0) rotate(144deg);
+    }
+    60% {
+        transform: translate3d(40px, -70px, 0) rotate(216deg);
+    }
+    80% {
+        transform: translate3d(-35px, -20px, 0) rotate(288deg);
+    }
+    100% {
+        transform: translate3d(0, 0, 0) rotate(360deg);
+    }
+}
+
+@keyframes heroOrbitTwo {
+    0% {
+        transform: translate3d(0, 0, 0) rotate(360deg);
+    }
+    20% {
+        transform: translate3d(-80px, 30px, 0) rotate(288deg);
+    }
+    40% {
+        transform: translate3d(-140px, -35px, 0) rotate(216deg);
+    }
+    60% {
+        transform: translate3d(-60px, -85px, 0) rotate(144deg);
+    }
+    80% {
+        transform: translate3d(20px, -25px, 0) rotate(72deg);
+    }
+    100% {
+        transform: translate3d(0, 0, 0) rotate(0deg);
+    }
+}
+
+@keyframes heroOrbitThree {
+    0% {
+        transform: translate3d(0, 0, 0) rotate(0deg);
+    }
+    20% {
+        transform: translate3d(55px, -55px, 0) rotate(72deg);
+    }
+    40% {
+        transform: translate3d(-20px, -120px, 0) rotate(144deg);
+    }
+    60% {
+        transform: translate3d(-85px, -45px, 0) rotate(216deg);
+    }
+    80% {
+        transform: translate3d(-25px, 30px, 0) rotate(288deg);
+    }
+    100% {
+        transform: translate3d(0, 0, 0) rotate(360deg);
+    }
+}
+
+/* dodatni suptilan puls da glow ne deluje mrtvo */
+.hero-glow-1 {
+    animation: heroGlowPulseOne 8s ease-in-out infinite;
+}
+
+.hero-glow-2 {
+    animation: heroGlowPulseTwo 10s ease-in-out infinite;
+}
+
+.hero-glow-3 {
+    animation: heroGlowPulseThree 9s ease-in-out infinite;
+}
+
+@keyframes heroGlowPulseOne {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.90;
+    }
+    50% {
+        transform: scale(1.10);
+        opacity: 1;
+    }
+}
+
+@keyframes heroGlowPulseTwo {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.88;
+    }
+    50% {
+        transform: scale(1.12);
+        opacity: 1;
+    }
+}
+
+@keyframes heroGlowPulseThree {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.86;
+    }
+    50% {
+        transform: scale(1.08);
+        opacity: 0.98;
+    }
+}
+
+/* desktop pojačanje */
+@media (min-width: 640px) {
+    .hero-glow-1 {
+        width: 30rem;
+        height: 30rem;
+    }
+
+    .hero-glow-2 {
+        width: 28rem;
+        height: 28rem;
+    }
+
+    .hero-glow-3 {
+        width: 26rem;
+        height: 26rem;
+    }
+}
+
+/* mobile tuning */
+@media (max-width: 639px) {
+    .hero-glow {
+        filter: blur(65px);
+        opacity: 0.82;
+    }
+
+    .hero-glow-1 {
+        top: 6%;
+        left: -8%;
+        width: 16rem;
+        height: 16rem;
+    }
+
+    .hero-glow-2 {
+        top: 16%;
+        right: -10%;
+        width: 15rem;
+        height: 15rem;
+    }
+
+    .hero-glow-3 {
+        bottom: -4%;
+        left: 28%;
+        width: 14rem;
+        height: 14rem;
+    }
+
+    .hero-orbit-1 {
+        animation-duration: 22s;
+    }
+
+    .hero-orbit-2 {
+        animation-duration: 28s;
+    }
+
+    .hero-orbit-3 {
+        animation-duration: 24s;
+    }
+}
+
+/* accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .hero-orbit-1,
+    .hero-orbit-2,
+    .hero-orbit-3,
+    .hero-glow-1,
+    .hero-glow-2,
+    .hero-glow-3 {
+        animation: none;
+    }
+}
