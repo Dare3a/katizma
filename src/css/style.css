@@ -247,7 +247,7 @@ html {
         animation: none;
     }
 }
-/*Grid wave*/
+/*Grid wave indexna*/
 @keyframes gridWave {
     0%, 100% {
         transform: translateY(0) scale(1);
@@ -274,7 +274,7 @@ html {
     animation: gridWave 12s ease-in-out infinite;
     will-change: transform, opacity;
 }
-.hero-grid-izrada-sajta {
+.hero-grid-index {
     position: absolute;
     inset: 0;
 
@@ -288,7 +288,6 @@ html {
 
 /* =========================
    HERO ORBIT GLOW
-   obriši stare .hero-glow-1/.2/.3 animacije ako ih imaš
    ========================= */
 
 .hero-orbit {
@@ -528,3 +527,6 @@ html {
         animation: none;
     }
 }
+/* =========================
+   END HERO ORBIT GLOW
+   ========================= */
