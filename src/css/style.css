@@ -676,3 +676,76 @@ html {
     }
 }
 /*Kraj animacije za blok u okviru sajt bloka u hero sekciji*/
+
+/* =========================
+   TECH MARQUEE / MOVING BAR
+   ========================= */
+
+.tech-marquee {
+    overflow: hidden;
+    width: 100%;
+}
+
+.tech-marquee-track {
+    display: flex;
+    width: max-content;
+    will-change: transform;
+    animation: techMarqueeLoop 18s linear infinite;
+}
+
+.tech-marquee-group {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    white-space: nowrap;
+    padding: 1.1rem 0;
+}
+
+.tech-marquee-group span {
+    flex-shrink: 0;
+    font-size: clamp(1.4rem, 2vw, 2.3rem);
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    margin-right: 2rem;
+}
+
+.tech-marquee-group .tech-sep {
+    font-weight: 900;
+    margin-right: 2rem;
+}
+
+@keyframes techMarqueeLoop {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-33.3333%);
+    }
+}
+
+@media (max-width: 640px) {
+    .tech-marquee-group {
+        padding: 0.9rem 0;
+    }
+
+    .tech-marquee-group span {
+        font-size: clamp(1.05rem, 4vw, 1.35rem);
+        margin-right: 1.2rem;
+    }
+
+    .tech-marquee-group .tech-sep {
+        margin-right: 1.2rem;
+    }
+
+    .tech-marquee-track {
+        animation-duration: 14s;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .tech-marquee-track {
+        animation: none;
+    }
+}
