@@ -692,6 +692,24 @@ html {
     will-change: transform;
     animation: techMarqueeLoop 18s linear infinite;
 }
+/*za seo stranicu za desktop*/
+.tech-marquee-track--seo {
+    animation-duration: 45s;
+}
+
+/* mobilni za seo stranicu*/
+@media (max-width: 1024px) {
+    .tech-marquee-track.tech-marquee-track--seo {
+        animation: techMarqueeLoop 50s linear infinite;
+    }
+}
+
+@media (max-width: 640px) {
+    .tech-marquee-track--seo {
+        animation: tech-marquee 120s linear infinite;
+        gap: 2rem;
+    }
+}
 
 .tech-marquee-group {
     display: flex;
