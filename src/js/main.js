@@ -3,3 +3,4 @@ import './reveal.js';
 import './projects-slider.js';
 import './scroll-progress.js';
 import './testimonial.js';
+import './portfolio-filter.js';
