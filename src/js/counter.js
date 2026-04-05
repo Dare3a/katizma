@@ -1,8 +1,8 @@
-
     document.addEventListener("DOMContentLoaded", () => {
-    const counters = document.querySelectorAll(".counter");
+    const triggers = document.querySelectorAll(".counter-trigger");
     const duration = 1400;
-    let started = false;
+
+    if (!triggers.length) return;
 
     const animateCounter = (counter) => {
     const target = parseInt(counter.dataset.target, 10);
@@ -23,17 +23,36 @@
     requestAnimationFrame(updateCounter);
 };
 
+    const startTriggerCounters = (trigger) => {
+    if (trigger.dataset.counted === "true") return;
+    trigger.dataset.counted = "true";
+
+    const counters = trigger.querySelectorAll(".counter");
+    counters.forEach(counter => animateCounter(counter));
+};
+
     const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-    if (entry.isIntersecting && !started) {
-    started = true;
-    counters.forEach(counter => animateCounter(counter));
-    observer.disconnect();
+    if (entry.isIntersecting) {
+    startTriggerCounters(entry.target);
+    observer.unobserve(entry.target);
 }
 });
-}, { threshold: 0.35 });
+}, {
+    threshold: 0.2,
+    rootMargin: "0px 0px -10% 0px"
+});
 
-    if (counters.length) {
-    observer.observe(counters[0].closest("section"));
+    triggers.forEach((trigger) => {
+    observer.observe(trigger);
+
+    // fallback ako je element već vidljiv pri učitavanju
+    const rect = trigger.getBoundingClientRect();
+    const inView = rect.top < window.innerHeight && rect.bottom > 0;
+
+    if (inView) {
+    startTriggerCounters(trigger);
+    observer.unobserve(trigger);
 }
+});
 });
