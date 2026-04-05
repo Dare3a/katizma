@@ -774,7 +774,7 @@
             <!-- LEFT SIDE -->
             <div class="grid gap-6 md:grid-cols-[0.56fr_0.44fr]">
                 <!-- image + floating card -->
-                <div class="mb-0 md:mb-16">
+                <div class="mb-16 sm:mb-20 md:mb-24">
                     <div class="relative">
                         <!-- image -->
                         <div class="relative overflow-hidden rounded-[2rem] shadow-[0_22px_70px_rgba(0,0,0,0.45)]">
@@ -784,27 +784,18 @@
                             <div class="absolute inset-0 bg-linear-to-t from-slate-950/50 via-slate-950/10 to-transparent"></div>
                         </div>
 
-                        <!-- floating card mobile -->
-                        <div class="mt-4 md:hidden">
-                            <div class="inline-block rounded-2xl border border-violet-300/20 bg-violet-300 px-4 py-3 shadow-[0_18px_50px_rgba(0,0,0,0.35)]">
-                                <div class="flex items-end gap-2">
-                                    <div class="text-3xl font-semibold leading-none text-black">100%</div>
-                                    <div class="pb-0.5 text-xs font-medium leading-4 text-black/85">
-                                        Fokus na kvalitet,<br>jasan proces i rezultat
+                        <!-- floating card all devices -->
+                        <div class="absolute bottom-0 left-1/2 z-10 -translate-x-1/2 translate-y-1/2">
+                            <div class="w-[220px] sm:w-[280px] md:w-[200px] rounded-3xl border border-violet-300/20 bg-violet-300 px-3 py-3 shadow-[0_18px_50px_rgba(0,0,0,0.35)] sm:px-4 sm:py-4">
+                                <div class="flex flex-col items-center text-center gap-2 sm:gap-3">
+                                    <div class="text-black [font-variant-numeric:tabular-nums]">
+                            <span class="inline-block min-w-[3ch] text-center text-4xl font-semibold leading-none sm:text-5xl">
+                                <span class="counter" data-target="100">0</span>
+                            </span><span class="text-4xl font-semibold leading-none sm:text-5xl">%</span>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
 
-                        <!-- floating card desktop -->
-                        <div class="absolute bottom-0 left-1/2 z-10 hidden -translate-x-1/2 translate-y-1/2 md:block">
-                            <div class="rounded-3xl border border-violet-300/20 bg-violet-300 px-6 py-4 shadow-[0_18px_50px_rgba(0,0,0,0.35)]">
-                                <div class="flex flex-col items-center text-center gap-2">
-                                    <div class="text-5xl font-semibold leading-none text-black">
-                                        <span class="counter" data-target="100">0</span>%
-                                    </div>
-                                    <div class="text-sm font-medium leading-5 text-black/85">
-                                        Fokus na kvalitet, <br>progres i rezultat
+                                    <div class="text-sm font-medium leading-5 text-black/85 sm:text-[15px]">
+                                        Fokus na kvalitet,<br>progres i rezultat
                                     </div>
                                 </div>
                             </div>
@@ -817,7 +808,7 @@
                     <div class="absolute inset-0 bg-linear-to-b from-white/6 to-transparent"></div>
                     <div class="relative flex h-full flex-col justify-between gap-6">
                         <div class="p-3 text-slate-950/80">
-                            <h3 class="text-base font-semibold ">Moderan izgled</h3>
+                            <h3 class="text-base font-semibold">Moderan izgled</h3>
                             <p class="mt-2 text-md leading-6">
                                 Kreiramo sajtove koji ostavljaju profesionalan prvi utisak i podižu vrednost vašeg brenda.
                             </p>
@@ -825,16 +816,16 @@
                         <div class="h-px bg-slate-950/18"></div>
 
                         <div class="p-3 text-slate-950/80">
-                            <h3 class="text-base font-semibold ">SEO struktura</h3>
-                            <p class="mt-2 text-md leading-6 ">
+                            <h3 class="text-base font-semibold">SEO struktura</h3>
+                            <p class="mt-2 text-md leading-6">
                                 Struktura, sadržaj i tehnička osnova grade bolju vidljivost i lakši put do pravih upita.
                             </p>
                         </div>
                         <div class="h-px bg-slate-950/18"></div>
 
                         <div class="p-3 text-slate-950/80">
-                            <h3 class="text-base font-semibold ">Jasna saradnja</h3>
-                            <p class="mt-2 text-md leading-6 ">
+                            <h3 class="text-base font-semibold">Jasna saradnja</h3>
+                            <p class="mt-2 text-md leading-6">
                                 Direktna komunikacija, realni dogovori i konkretni sledeći koraci tokom celog projekta.
                             </p>
                         </div>
