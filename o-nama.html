@@ -773,22 +773,39 @@
         <div class="mt-14 grid gap-10 xl:grid-cols-[0.95fr_1.05fr] xl:items-start xl:gap-14">
             <!-- LEFT SIDE -->
             <div class="grid gap-6 md:grid-cols-[0.56fr_0.44fr]">
-                <!-- image block -->
-                <div class="relative">
-                    <div class="relative overflow-hidden rounded-[2rem] shadow-[0_22px_70px_rgba(0,0,0,0.45)]">
-                        <img src="/images/o-nama/zasto-izabrati-nas.jpg"
-                             alt="Tim koji radi na modernom web projektu"
-                             class="block h-[420px] w-full object-cover sm:h-[500px] lg:h-[560px]">
-                        <div class="absolute inset-0 bg-linear-to-t from-slate-950/50 via-slate-950/10 to-transparent"></div>
-                    </div>
+                <!-- image + floating card -->
+                <div class="mb-0 md:mb-16">
+                    <div class="relative">
+                        <!-- image -->
+                        <div class="relative overflow-hidden rounded-[2rem] shadow-[0_22px_70px_rgba(0,0,0,0.45)]">
+                            <img src="/images/o-nama/web-success.jpg"
+                                 alt="Tim koji radi na modernom web projektu"
+                                 class="block h-[420px] w-full object-cover sm:h-[500px] lg:h-[560px]">
+                            <div class="absolute inset-0 bg-linear-to-t from-slate-950/50 via-slate-950/10 to-transparent"></div>
+                        </div>
 
-                    <!-- floating card -->
-                    <div class="absolute -bottom-5 left-6 sm:left-8">
-                        <div class="rounded-3xl border border-violet-300/20 bg-violet-300 px-6 py-5 shadow-[0_18px_50px_rgba(0,0,0,0.35)]">
-                            <div class="flex items-end gap-3">
-                                <div class="text-4xl font-semibold leading-none text-black sm:text-5xl">100%</div>
-                                <div class="pb-1 text-sm font-medium leading-5 text-black/85">
-                                    Fokus na kvalitet,<br>jasan proces i rezultat
+                        <!-- floating card mobile -->
+                        <div class="mt-4 md:hidden">
+                            <div class="inline-block rounded-2xl border border-violet-300/20 bg-violet-300 px-4 py-3 shadow-[0_18px_50px_rgba(0,0,0,0.35)]">
+                                <div class="flex items-end gap-2">
+                                    <div class="text-3xl font-semibold leading-none text-black">100%</div>
+                                    <div class="pb-0.5 text-xs font-medium leading-4 text-black/85">
+                                        Fokus na kvalitet,<br>jasan proces i rezultat
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- floating card desktop -->
+                        <div class="absolute bottom-0 left-1/2 z-10 hidden -translate-x-1/2 translate-y-1/2 md:block">
+                            <div class="rounded-3xl border border-violet-300/20 bg-violet-300 px-6 py-4 shadow-[0_18px_50px_rgba(0,0,0,0.35)]">
+                                <div class="flex flex-col items-center text-center gap-2">
+                                    <div class="text-5xl font-semibold leading-none text-black">
+                                        <span class="counter" data-target="100">0</span>%
+                                    </div>
+                                    <div class="text-sm font-medium leading-5 text-black/85">
+                                        Fokus na kvalitet, <br>progres i rezultat
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -796,26 +813,28 @@
                 </div>
 
                 <!-- teal benefit block -->
-                <div class="relative overflow-hidden rounded-[2rem] bg-teal-700/90 p-6 shadow-[0_20px_60px_rgba(0,0,0,0.35)] sm:p-7">
+                <div class="relative overflow-hidden rounded-4xl bg-teal-300/90 p-6 shadow-[0_20px_60px_rgba(0,0,0,0.35)] sm:p-3">
                     <div class="absolute inset-0 bg-linear-to-b from-white/6 to-transparent"></div>
                     <div class="relative flex h-full flex-col justify-between gap-6">
-                        <div class="rounded-2xl border border-white/10 bg-black/10 p-4 backdrop-blur-sm">
-                            <h3 class="text-base font-semibold text-white">Moderan i ozbiljan izgled</h3>
-                            <p class="mt-2 text-sm leading-6 text-white/80">
+                        <div class="p-3 text-slate-950/80">
+                            <h3 class="text-base font-semibold ">Moderan izgled</h3>
+                            <p class="mt-2 text-md leading-6">
                                 Kreiramo sajtove koji ostavljaju profesionalan prvi utisak i podižu vrednost vašeg brenda.
                             </p>
                         </div>
+                        <div class="h-px bg-slate-950/18"></div>
 
-                        <div class="rounded-2xl border border-white/10 bg-black/10 p-4 backdrop-blur-sm">
-                            <h3 class="text-base font-semibold text-white">SEO osnova od starta</h3>
-                            <p class="mt-2 text-sm leading-6 text-white/80">
+                        <div class="p-3 text-slate-950/80">
+                            <h3 class="text-base font-semibold ">SEO struktura</h3>
+                            <p class="mt-2 text-md leading-6 ">
                                 Struktura, sadržaj i tehnička osnova grade bolju vidljivost i lakši put do pravih upita.
                             </p>
                         </div>
+                        <div class="h-px bg-slate-950/18"></div>
 
-                        <div class="rounded-2xl border border-white/10 bg-black/10 p-4 backdrop-blur-sm">
-                            <h3 class="text-base font-semibold text-white">Jasna saradnja bez komplikacija</h3>
-                            <p class="mt-2 text-sm leading-6 text-white/80">
+                        <div class="p-3 text-slate-950/80">
+                            <h3 class="text-base font-semibold ">Jasna saradnja</h3>
+                            <p class="mt-2 text-md leading-6 ">
                                 Direktna komunikacija, realni dogovori i konkretni sledeći koraci tokom celog projekta.
                             </p>
                         </div>
@@ -826,9 +845,9 @@
             <!-- RIGHT SIDE -->
             <div class="xl:pt-2">
                 <p class="max-w-3xl text-lg leading-8 text-white/80">
-                    Ne radimo generička rešenja, već sajtove i digitalne nastupe koji su prilagođeni vašem biznisu,
+                    Mi izrađujemo sajtove i digitalna rešenja koji su prilagođeni vašem biznisu,
                     publici i ciljevima. Naš pristup kombinuje moderan dizajn, SEO logiku i jasan korisnički tok,
-                    kako biste dobili sajt koji ne izgleda samo dobro, već uliva poverenje i pomaže da ostvarite konkretne rezultate.
+                    kako biste dobili prezentaciju koja uliva poverenje i pomaže da ostvarite konkretne rezultate.
                 </p>
 
                 <!-- stats -->
@@ -844,10 +863,10 @@
 
                     <div class="sm:border-l sm:border-white/10 sm:px-6">
                         <div class="text-4xl font-semibold tracking-tight text-violet-300 sm:text-5xl">
-                            <span class="counter" data-target="100">0</span>%
+                            <span class="counter" data-target="300">0</span>+
                         </div>
                         <p class="mt-3 max-w-[14rem] text-base leading-7 text-white/75">
-                            Posvećenost svakom detalju, komunikaciji i finalnom kvalitetu
+                            Ključnih reči na prvoj strani Google-a u oganskoj pretrazi
                         </p>
                     </div>
 
@@ -856,7 +875,7 @@
                             <span class="counter" data-target="24">0</span>/7
                         </div>
                         <p class="mt-3 max-w-[14rem] text-base leading-7 text-white/75">
-                            Razmišljanje o performansama, stabilnosti i dugoročnoj vrednosti
+                            Posvećenost performansama, stabilnosti i dugoročnoj vrednosti
                         </p>
                     </div>
                 </div>
