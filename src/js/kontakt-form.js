@@ -1,4 +1,9 @@
 document.addEventListener('DOMContentLoaded', function () {
+    const timeField = document.getElementById('form_time');
+
+    if (timeField) {
+        timeField.value = Date.now();
+    }
     const phoneInput = document.getElementById('phone');
 
     if (phoneInput) {
