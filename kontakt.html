@@ -338,25 +338,22 @@
                 <div class="pointer-events-none absolute left-1/2 top-1/2 h-[240px] w-[320px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-slate-950/90 blur-[90px] sm:h-[280px] sm:w-[420px]"></div>
 
                 <div class="relative">
-                    <!-- label -->
                     <div class="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/5 px-4 py-2 text-[11px] font-semibold tracking-[0.18em] text-white/75 backdrop-blur">
-                    <span class="flex h-5 w-5 items-center justify-center">
-                        <svg viewBox="0 0 24 24" class="h-5 w-5 text-teal-400 shrink-0 relative -top-px"
-                             fill="currentColor" aria-hidden="true">
-                            <path d="M12 4.5c-.8-1.2-3-1.5-4 .3-1 1.8.4 3.3 4 6 3.6-2.7 5-4.2 4-6-1-1.8-3.2-1.5-4-.3z"/>
-                            <g transform="rotate(90 12 12)">
+                        <span class="flex h-5 w-5 items-center justify-center">
+                            <svg viewBox="0 0 24 24" class="h-5 w-5 text-teal-400 shrink-0 relative -top-px" fill="currentColor" aria-hidden="true">
                                 <path d="M12 4.5c-.8-1.2-3-1.5-4 .3-1 1.8.4 3.3 4 6 3.6-2.7 5-4.2 4-6-1-1.8-3.2-1.5-4-.3z"/>
-                            </g>
-                            <g transform="rotate(180 12 12)">
-                                <path d="M12 4.5c-.8-1.2-3-1.5-4 .3-1 1.8.4 3.3 4 6 3.6-2.7 5-4.2 4-6-1-1.8-3.2-1.5-4-.3z"/>
-                            </g>
-                            <g transform="rotate(270 12 12)">
-                                <path d="M12 4.5c-.8-1.2-3-1.5-4 .3-1 1.8.4 3.3 4 6 3.6-2.7 5-4.2 4-6-1-1.8-3.2-1.5-4-.3z"/>
-                            </g>
-                            <path d="M12 14c0 2.2-1 3.5-2.6 5" stroke="currentColor" stroke-width="1.2" fill="none"
-                                  stroke-linecap="round"/>
-                        </svg>
-                    </span>
+                                <g transform="rotate(90 12 12)">
+                                    <path d="M12 4.5c-.8-1.2-3-1.5-4 .3-1 1.8.4 3.3 4 6 3.6-2.7 5-4.2 4-6-1-1.8-3.2-1.5-4-.3z"/>
+                                </g>
+                                <g transform="rotate(180 12 12)">
+                                    <path d="M12 4.5c-.8-1.2-3-1.5-4 .3-1 1.8.4 3.3 4 6 3.6-2.7 5-4.2 4-6-1-1.8-3.2-1.5-4-.3z"/>
+                                </g>
+                                <g transform="rotate(270 12 12)">
+                                    <path d="M12 4.5c-.8-1.2-3-1.5-4 .3-1 1.8.4 3.3 4 6 3.6-2.7 5-4.2 4-6-1-1.8-3.2-1.5-4-.3z"/>
+                                </g>
+                                <path d="M12 14c0 2.2-1 3.5-2.6 5" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+                            </svg>
+                        </span>
                         <span>KONTAKT FORMA</span>
                     </div>
 
@@ -371,7 +368,8 @@
                         Pošaljite upit i odgovorićemo vam u najkraćem roku. Tu smo za izradu sajtova, SEO optimizaciju i digitalni razvoj vašeg brenda.
                     </p>
 
-                    <form action="src/php/kontakt.php"
+                    <form id="kontakt-form"
+                          action="kontakt.php"
                           method="POST"
                           class="mt-8 space-y-5"
                           novalidate>
@@ -387,9 +385,7 @@
 
                         <div class="grid gap-5 sm:grid-cols-2">
                             <div>
-                                <label for="name" class="mb-2 block text-sm font-medium text-white/80">
-                                    Ime
-                                </label>
+                                <label for="name" class="mb-2 block text-sm font-medium text-white/80">Ime</label>
                                 <input type="text"
                                        id="name"
                                        name="name"
@@ -403,9 +399,7 @@
                             </div>
 
                             <div>
-                                <label for="surname" class="mb-2 block text-sm font-medium text-white/80">
-                                    Prezime
-                                </label>
+                                <label for="surname" class="mb-2 block text-sm font-medium text-white/80">Prezime</label>
                                 <input type="text"
                                        id="surname"
                                        name="surname"
@@ -420,9 +414,7 @@
                         </div>
 
                         <div>
-                            <label for="phone" class="mb-2 block text-sm font-medium text-white/80">
-                                Telefon
-                            </label>
+                            <label for="phone" class="mb-2 block text-sm font-medium text-white/80">Telefon</label>
                             <input type="tel"
                                    id="phone"
                                    name="phone"
@@ -437,9 +429,7 @@
                         </div>
 
                         <div>
-                            <label for="email" class="mb-2 block text-sm font-medium text-white/80">
-                                Email adresa
-                            </label>
+                            <label for="email" class="mb-2 block text-sm font-medium text-white/80">Email adresa</label>
                             <input type="email"
                                    id="email"
                                    name="email"
@@ -452,9 +442,7 @@
                         </div>
 
                         <div>
-                            <label for="subject" class="mb-2 block text-sm font-medium text-white/80">
-                                Naslov poruke
-                            </label>
+                            <label for="subject" class="mb-2 block text-sm font-medium text-white/80">Naslov poruke</label>
                             <input type="text"
                                    id="subject"
                                    name="subject"
@@ -468,9 +456,7 @@
                         </div>
 
                         <div>
-                            <label for="message" class="mb-2 block text-sm font-medium text-white/80">
-                                Poruka
-                            </label>
+                            <label for="message" class="mb-2 block text-sm font-medium text-white/80">Poruka</label>
                             <textarea id="message"
                                       name="message"
                                       data-form-field="message"
@@ -501,6 +487,9 @@
                                 </svg>
                             </button>
                         </div>
+
+                        <!-- STATUS -->
+                        <div id="form-status" class="hidden"></div>
                     </form>
                 </div>
             </div>
