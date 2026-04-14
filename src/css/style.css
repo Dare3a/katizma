@@ -767,3 +767,12 @@ html {
         animation: none;
     }
 }
+/* HERO KONTAKT PAGE BACKGROUND */
+@keyframes floatSlow {
+    0%,100% { transform: translateY(0) translateX(0); }
+    50% { transform: translateY(-30px) translateX(20px); }
+}
+
+.wave-anim {
+    animation: floatSlow 12s ease-in-out infinite;
+}

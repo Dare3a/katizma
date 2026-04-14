@@ -194,37 +194,52 @@
 <!-- HERO - KONTAKT -->
 <section class="relative overflow-hidden bg-slate-950 text-white">
 
-    <!-- Background (isti stil kao portfolio, ali može i bez slike ako želiš čistiji look) -->
-    <div class="absolute inset-0">
-        <img src="/images/portfolio/projekti-hero.jpg"
-             alt="Pozadina za kontakt sekciju"
-             class="h-full w-full object-cover opacity-40">
-        <div class="absolute inset-0 bg-slate-950/70"></div>
+    <!-- BACKGROUND -->
+    <div class="absolute inset-0 overflow-hidden">
+        <!-- base gradient -->
+        <div class="absolute inset-0 bg-[linear-gradient(135deg,#020617_0%,#041826_35%,#070b2d_70%,#140824_100%)]"></div>
 
-        <!-- gradient overlay -->
-        <div class="absolute inset-0 bg-[linear-gradient(90deg,rgba(2,6,23,0.9),rgba(2,6,23,0.75),rgba(2,6,23,0.9))]"></div>
+        <!-- wave 1 -->
+        <div class="wave-anim absolute -top-32 -left-40 h-[420px] w-[140%] rotate-[10deg]
+                    bg-[linear-gradient(90deg,rgba(45,212,191,0.18),rgba(99,102,241,0.14),rgba(168,85,247,0.16))]">
+        </div>
+
+        <!-- wave 2 -->
+        <div class="wave-anim absolute top-[120px] -right-52 h-[360px] w-[120%] rotate-[-12deg]
+                    bg-[linear-gradient(90deg,rgba(45,212,191,0.10),rgba(59,130,246,0.08),rgba(139,92,246,0.14))]">
+        </div>
+
+        <!-- wave 3 -->
+        <div class="wave-anim absolute bottom-[-140px] -left-24 h-[340px] w-[115%] rotate-[8deg]
+                    bg-[linear-gradient(90deg,rgba(20,184,166,0.12),rgba(14,165,233,0.10),rgba(124,58,237,0.12))]">
+        </div>
+
+        <!-- soft top/right accent -->
+        <div class="absolute -top-24 right-[-120px] h-[420px] w-[620px] rounded-full bg-violet-500/10 blur-3xl"></div>
+
+        <!-- soft left accent -->
+        <div class="absolute top-10 left-[-140px] h-[420px] w-[520px] rounded-full bg-teal-400/10 blur-3xl"></div>
+
+        <!-- vignette -->
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_35%,rgba(2,6,23,0.35)_100%)]"></div>
     </div>
 
-    <!-- Content -->
+    <!-- CONTENT -->
     <div class="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
+        <div class="flex min-h-[260px] flex-col items-center justify-center text-center">
 
-        <div class="flex flex-col items-center justify-center text-center min-h-[260px]">
-
-            <!-- Eyebrow -->
             <div class="mb-4 inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/5 px-4 py-2 text-[10px] font-semibold tracking-[0.18em] text-white/70 backdrop-blur">
                 <span class="h-2 w-2 rounded-full bg-teal-400"></span>
                 JAVITE NAM SE
             </div>
 
-            <!-- H1 -->
             <h1 class="text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl">
-            <span class="bg-linear-to-r from-teal-300 via-cyan-300 to-violet-300 bg-clip-text text-transparent">
-                Kontakt
-            </span>
+                <span class="bg-linear-to-r from-teal-300 via-cyan-300 to-violet-300 bg-clip-text text-transparent">
+                    Kontakt
+                </span>
             </h1>
 
         </div>
-
     </div>
 </section>
 
