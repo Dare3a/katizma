@@ -1,4 +1,24 @@
 document.addEventListener('DOMContentLoaded', function () {
+    const phoneInput = document.getElementById('phone');
+
+    if (phoneInput) {
+        phoneInput.addEventListener('input', () => {
+            phoneInput.value = phoneInput.value.replace(/[^0-9+()\/\s-]/g, '');
+        });
+
+        phoneInput.addEventListener('blur', () => {
+            const value = phoneInput.value.trim();
+            const phoneRegex = /^\+?[0-9][0-9\s()/-]{5,19}$/;
+
+            if (value !== '' && !phoneRegex.test(value)) {
+                phoneInput.setCustomValidity('Unesite ispravan broj telefona.');
+                phoneInput.classList.add('border-rose-400/60', 'ring-2', 'ring-rose-400/20');
+            } else {
+                phoneInput.setCustomValidity('');
+                phoneInput.classList.remove('border-rose-400/60', 'ring-2', 'ring-rose-400/20');
+            }
+        });
+    }
     const state = window.contactFormState || null;
     const form = document.getElementById('kontakt-form');
     const statusBox = document.getElementById('form-status');

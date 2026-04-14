@@ -420,9 +420,11 @@
                                    data-form-field="phone"
                                    autocomplete="tel"
                                    required
-                                   inputmode="tel"
-                                   pattern="^[0-9+()\/\s-]{6,20}$"
+                                   inputmode="numeric"
+                                   pattern="^\+?[0-9][0-9\s()/-]{5,19}$"
+                                   minlength="6"
                                    maxlength="20"
+                                   title="Unesite ispravan broj telefona"
                                    placeholder="Unesite broj telefona"
                                    class="w-full rounded-2xl border border-white/10 bg-black/30 px-5 py-4 text-white outline-none backdrop-blur transition placeholder:text-white/35 focus:border-teal-300/60 focus:bg-black/40 focus:ring-2 focus:ring-teal-400/20">
                         </div>
