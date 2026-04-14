@@ -2,12 +2,13 @@ document.addEventListener('DOMContentLoaded', function () {
     const state = window.contactFormState || null;
     const form = document.getElementById('kontakt-form');
     const statusBox = document.getElementById('form-status');
+    const submitBtn = form ? form.querySelector('button[type="submit"]') : null;
 
-    if (!form || !statusBox || !state) return;
+    if (!form || !statusBox) return;
 
     const fields = ['name', 'surname', 'phone', 'email', 'subject', 'message'];
 
-    if (state.old && typeof state.old === 'object') {
+    if (state && state.old && typeof state.old === 'object') {
         fields.forEach((field) => {
             const el = form.querySelector(`[name="${field}"]`);
             if (el && typeof state.old[field] === 'string') {
@@ -16,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    if (state.success === true) {
+    if (state && state.success === true) {
         form.reset();
 
         statusBox.className = 'rounded-2xl border border-teal-300/30 bg-teal-400/10 px-5 py-4 text-sm text-teal-100 shadow-[0_0_25px_rgba(45,212,191,0.16)] backdrop-blur';
@@ -31,7 +32,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 </div>
             </div>
         `;
-    } else if (state.error) {
+        statusBox.classList.remove('hidden');
+    } else if (state && state.error) {
         statusBox.className = 'rounded-2xl border border-rose-400/30 bg-rose-500/10 px-5 py-4 text-sm text-rose-100 shadow-[0_0_25px_rgba(244,63,94,0.14)] backdrop-blur';
         statusBox.innerHTML = `
             <div class="flex items-start gap-3">
@@ -44,13 +46,20 @@ document.addEventListener('DOMContentLoaded', function () {
                 </div>
             </div>
         `;
-    } else {
-        return;
+        statusBox.classList.remove('hidden');
     }
 
-    statusBox.classList.remove('hidden');
+    if (!form.hasAttribute('novalidate')) {
+        form.addEventListener('submit', function () {
+            if (submitBtn) {
+                submitBtn.disabled = true;
+            }
+        });
+    }
 
-    setTimeout(() => {
-        form.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }, 120);
+    if (statusBox.children.length > 0) {
+        setTimeout(() => {
+            form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 120);
+    }
 });

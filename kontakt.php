@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+header('Content-Type: text/html; charset=UTF-8');
+
 $result = false;
 $error = '';
 $old = [
@@ -52,6 +54,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $safeSubject = htmlspecialchars($old['subject'], ENT_QUOTES, 'UTF-8');
             $safeMessage = htmlspecialchars($old['message'], ENT_QUOTES, 'UTF-8');
 
+            $headerName = str_replace(["\r", "\n"], '', $safeName);
+            $headerSurname = str_replace(["\r", "\n"], '', $safeSurname);
+            $headerEmail = str_replace(["\r", "\n"], '', $safeEmail);
+
             $to = 'info@katizma.rs';
             $mailSubject = 'Kontakt forma: ' . $safeSubject;
 
@@ -63,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $body .= "Poruka:\r\n{$safeMessage}\r\n";
 
             $headers  = "From: Katizma Studio <info@katizma.rs>\r\n";
-            $headers .= "Reply-To: {$safeName} {$safeSurname} <{$safeEmail}>\r\n";
+            $headers .= "Reply-To: {$headerName} {$headerSurname} <{$headerEmail}>\r\n";
             $headers .= "MIME-Version: 1.0\r\n";
             $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
             $headers .= "Content-Transfer-Encoding: 8bit\r\n";
