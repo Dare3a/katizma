@@ -201,17 +201,17 @@
 
         <!-- wave 1 -->
         <div class="wave-anim absolute -top-32 -left-40 h-[420px] w-[140%] rotate-[10deg]
-                    bg-[linear-gradient(90deg,rgba(45,212,191,0.18),rgba(99,102,241,0.14),rgba(168,85,247,0.16))]">
+                    bg-[linear-gradient(90deg,rgba(45,212,191,0.55),rgba(99,102,241,0.14),rgba(168,85,247,0.45))]">
         </div>
 
         <!-- wave 2 -->
         <div class="wave-anim absolute top-[120px] -right-52 h-[360px] w-[120%] rotate-[-12deg]
-                    bg-[linear-gradient(90deg,rgba(45,212,191,0.10),rgba(59,130,246,0.08),rgba(139,92,246,0.14))]">
+                    bg-[linear-gradient(90deg,rgba(45,212,191,0.45),rgba(59,130,246,0.08),rgba(139,92,246,0.35))]">
         </div>
 
         <!-- wave 3 -->
         <div class="wave-anim absolute bottom-[-140px] -left-24 h-[340px] w-[115%] rotate-[8deg]
-                    bg-[linear-gradient(90deg,rgba(20,184,166,0.12),rgba(14,165,233,0.10),rgba(124,58,237,0.12))]">
+                    bg-[linear-gradient(90deg,rgba(20,184,166,0.65),rgba(14,165,233,0.10),rgba(124,58,237,0.55))]">
         </div>
 
         <!-- soft top/right accent -->
@@ -226,17 +226,23 @@
 
     <!-- CONTENT -->
     <div class="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
-        <div class="flex min-h-[260px] flex-col items-center justify-center text-center">
+        <div class="relative flex min-h-[260px] flex-col items-center justify-center text-center">
 
+            <!-- 🔥 DARK BLUR HALO -->
+            <div class="pointer-events-none absolute h-[240px] w-[440px] rounded-full
+                    bg-slate-950/80 blur-[90px]"></div>
+
+            <!-- Eyebrow -->
             <div class="mb-4 inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/5 px-4 py-2 text-[10px] font-semibold tracking-[0.18em] text-white/70 backdrop-blur">
                 <span class="h-2 w-2 rounded-full bg-teal-400"></span>
                 JAVITE NAM SE
             </div>
 
-            <h1 class="text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl">
-                <span class="bg-linear-to-r from-teal-300 via-cyan-300 to-violet-300 bg-clip-text text-transparent">
-                    Kontakt
-                </span>
+            <!-- H1 -->
+            <h1 class="relative text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl">
+            <span class="bg-linear-to-r from-teal-300 via-cyan-300 to-violet-300 bg-clip-text text-transparent">
+                Kontakt
+            </span>
             </h1>
 
         </div>
