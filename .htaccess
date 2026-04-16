@@ -1,88 +1,103 @@
-## EXPIRES CACHING ##
+# Disable directory listing
+Options -Indexes
 
-<IfModule mod_expires.c>
-  ExpiresActive On
-  ExpiresByType font/woff2 "access plus 1 year"
-  ExpiresByType font/woff "access plus 1 year"
-  ExpiresByType image/webp "access plus 1 year"
-  ExpiresByType image/jpeg "access plus 1 year"
-  ExpiresByType image/png "access plus 1 year"
-  ExpiresByType image/gif "access plus 1 year"
-  ExpiresByType image/svg+xml "access plus 1 year"
-  ExpiresByType image/x-icon "access plus 1 year"
-  ExpiresByType text/css "access plus 1 month"
-  ExpiresByType application/javascript "access plus 1 month"
-  ExpiresByType application/pdf "access plus 1 month"
-  ExpiresDefault "access plus 1 month"
-</IfModule>
-
-## EXPIRES CACHING ##
-
-
-
-# 1 Month for most static assets
-
-<filesMatch "\.(woff2|woff|css|js|jpg|jpeg|png|gif|webp|svg|ico)$">
-  Header set Vary "Accept-Encoding"
-  Header set Cache-Control "public, max-age=31536000, immutable"
-</filesMatch>
-
-
-
-<FilesMatch "\.(html?|txt|css|js|php|pl)$">
-
-    SetOutputFilter DEFLATE
-
- </FilesMatch>
-
-
+# Custom 404 page
 ErrorDocument 404 /404.html
 
-RewriteEngine On
-RewriteCond %{HTTP_HOST} www.clovercode.rs
-RewriteRule ^(.*) https://clovercode.rs/$1 [L,R=301]
-RewriteCond %{HTTP:X-Forwarded-Proto} !https
-RewriteCond %{HTTPS} off
-RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-RewriteCond %{THE_REQUEST} /index\.html? [NC]
-RewriteRule ^(.*/)?index\.html?$ /$1 [R=301,L]
+<IfModule mod_rewrite.c>
+    RewriteEngine On
 
+    # Force canonical host: www -> non-www
+    RewriteCond %{HTTP_HOST} ^www\.clovercode\.rs$ [NC]
+    RewriteRule ^ https://clovercode.rs%{REQUEST_URI} [L,R=301]
 
-Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+    # Force HTTPS
+    RewriteCond %{HTTPS} !=on
+    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-Header always set X-Frame-Options DENY
+    # Redirect /index.html to /
+    RewriteCond %{THE_REQUEST} \s/+(.*/)?index\.html?[\s?] [NC]
+    RewriteRule ^(.*/)?index\.html?$ /$1 [L,R=301]
+</IfModule>
 
-Header always set Referrer-Policy "same-origin"
+<IfModule mod_expires.c>
+    ExpiresActive On
+
+    # HTML/PHP: always refresh
+    ExpiresByType text/html "access plus 0 seconds"
+    ExpiresByType application/xhtml+xml "access plus 0 seconds"
+
+    # CSS/JS: short cache unless filenames are versioned
+    ExpiresByType text/css "access plus 7 days"
+    ExpiresByType text/javascript "access plus 7 days"
+    ExpiresByType application/javascript "access plus 7 days"
+    ExpiresByType application/x-javascript "access plus 7 days"
+
+    # Images/fonts: long cache
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+
+    # Other common assets
+    ExpiresByType application/pdf "access plus 1 month"
+
+    ExpiresDefault "access plus 7 days"
+</IfModule>
 
 <IfModule mod_headers.c>
-    Header set X-Content-Type-Options "nosniff"
+    # Images and fonts
+    <FilesMatch "\.(jpg|jpeg|png|gif|webp|svg|ico|woff|woff2)$">
+        Header set Cache-Control "public, max-age=31536000"
+    </FilesMatch>
+
+    # CSS and JS
+    <FilesMatch "\.(css|js)$">
+        Header set Cache-Control "public, max-age=604800"
+    </FilesMatch>
+
+    # HTML and PHP
+    <FilesMatch "\.(html|htm|php)$">
+        Header set Cache-Control "no-cache, no-store, must-revalidate"
+        Header set Pragma "no-cache"
+        Header set Expires "0"
+    </FilesMatch>
+
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+    # Enable only if the entire site and all subdomains are permanently on HTTPS
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+
+    <FilesMatch "\.(html|htm|css|js|php)$">
+        Header append Vary "Accept-Encoding"
+    </FilesMatch>
 </IfModule>
 
 <IfModule mod_deflate.c>
-	# Omogućavanje Gzip kompresije na podržanim MIME tipovima
-	AddOutputFilterByType DEFLATE text/plain
-	AddOutputFilterByType DEFLATE text/html
-	AddOutputFilterByType DEFLATE text/xml
-	AddOutputFilterByType DEFLATE text/css
-	AddOutputFilterByType DEFLATE application/xml
-	AddOutputFilterByType DEFLATE application/xhtml+xml
-	AddOutputFilterByType DEFLATE application/rss+xml
-	AddOutputFilterByType DEFLATE application/javascript
-	AddOutputFilterByType DEFLATE application/x-javascript
-	AddOutputFilterByType DEFLATE application/json
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE text/javascript
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/json
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/xhtml+xml
 
-	# Ne kompresovati sledeće tipove fajlova
-	SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png)$ no-gzip
-
-	# Zahtevi za stare browsere
-	<IfModule mod_setenvif.c>
-    	BrowserMatch ^Mozilla/4 gzip-only-text/html
-    	BrowserMatch ^Mozilla/4\.0[678] no-gzip
-    	BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
-	</IfModule>
-
-	# Dodatne konfiguracije
-	DeflateCompressionLevel 6
-	DeflateMemLevel 8
-	DeflateWindowSize 15
+    SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png|webp|ico|woff2?|svg|pdf)$ no-gzip
 </IfModule>
+
+# Protect hidden files and folders
+<FilesMatch "(^\.|\.env|composer\.(json|lock)|package(-lock)?\.json|yarn\.lock|vite\.config\.(js|ts)|tsconfig.*\.json)$">
+    Require all denied
+</FilesMatch>
+
+# Extra protection for .git
+RedirectMatch 403 /\.git
