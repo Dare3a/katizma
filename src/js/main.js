@@ -1,3 +1,4 @@
+import '../css/style.css'
 import './navigation.js';
 import './reveal.js';
 import './projects-slider.js';
