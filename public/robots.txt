@@ -1,0 +1,3 @@
+User-agent: *
+
+Sitemap: https://clovercode.rs/sitemap.xml
