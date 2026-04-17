@@ -167,7 +167,7 @@ html {
 
 .nav-active {
     position: relative;
-    color: rgb(13 148 136);
+    color: #5eead4;
     font-weight: 700;
 }
 
@@ -190,15 +190,16 @@ html {
 }
 
 .nav-active-dropdown {
-    color: rgb(13 148 136);
+    color: rgb(15 23 42);
     font-weight: 700;
-    background-color: rgba(240, 253, 250, 0.9);
+    background-color: rgba(94, 234, 212, 0.85);
+    box-shadow: 0 0 15px rgba(45, 212, 191, 0.22);
 }
 
 .nav-active-mobile {
-    color: rgb(15 118 110);
+    color: rgb(15 23 42);
     font-weight: 700;
-    background-color: rgba(240, 253, 250, 0.95);
+    background-color: rgba(94, 234, 212, 0.9);
 }
 /* floating cards horizontal drift */
 @keyframes heroFloatX {
