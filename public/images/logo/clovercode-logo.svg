@@ -1,0 +1,23 @@
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <defs>
+    <path id="leaf"
+      d="M256 111
+         L293 111
+         L316 134
+         L316 171
+         L286 201
+         L256 231
+         L226 201
+         L196 171
+         L196 134
+         L219 111
+         Z" />
+  </defs>
+
+  <g stroke="#30cfd0" stroke-width="16" stroke-linecap="round" stroke-linejoin="round">
+    <use href="#leaf"/>
+    <use href="#leaf" transform="rotate(90 256 256)"/>
+    <use href="#leaf" transform="rotate(180 256 256)"/>
+    <use href="#leaf" transform="rotate(270 256 256)"/>
+  </g>
+</svg>
