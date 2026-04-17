@@ -190,10 +190,10 @@ html {
 }
 
 .nav-active-dropdown {
-    color: rgb(15 23 42);
+    color: rgb(15 23 42); /* slate-900 */
     font-weight: 700;
-    background-color: rgba(94, 234, 212, 0.85);
-    box-shadow: 0 0 15px rgba(45, 212, 191, 0.22);
+    background-color: rgba(94, 234, 212, 0.95); /* jače */
+    box-shadow: 0 0 15px rgba(45, 212, 191, 0.25);
 }
 
 .nav-active-mobile {
