@@ -12,18 +12,23 @@
 <body id="top">
 
 <!-- NAVBAR -->
-<header class="sticky top-0 z-50 border-b border-slate-200 bg-white/70 backdrop-blur-lg shadow-sm">
+<header class="sticky top-0 z-50 border-b border-white/10 bg-slate-950 backdrop-blur-xl shadow-[0_0_0_1px_rgba(255,255,255,0.05),0_10px_50px_rgba(0,0,0,0.5)]">
     <div class="mx-auto max-w-7xl px-6">
         <div class="flex h-16 items-center justify-between">
             <!-- Logo -->
-            <a href="#" class="text-2xl font-bold tracking-tight text-primary">KATIZMA</a>
+            <a href="index.html" class="flex items-center gap-1 text-xl font-semibold">
+                <img src="/images/logo/tech-color.png" alt="CloverCode" class="h-8 w-8"/>
+                <span class="bg-linear-to-r from-teal-300 to-violet-400 bg-clip-text text-transparent">
+                    CloverCode
+                </span>
+            </a>
 
             <!-- Desktop -->
             <nav class="hidden md:block" aria-label="Glavna navigacija">
-                <ul class="flex items-center gap-8 text-sm font-semibold tracking-wide text-slate-800">
+                <ul class="flex items-center gap-8 text-sm font-semibold tracking-wide text-white/90">
                     <li>
                         <a href="index.html"
-                           class="rounded-md px-2 py-1 transition hover:text-teal-600 focus:outline-none focus:ring-2 focus:ring-teal-500/40">
+                           class="rounded-md px-2 py-1 transition hover:text-teal-300 focus:outline-none focus:ring-2 focus:ring-teal-400/40">
                             POČETNA
                         </a>
                     </li>
@@ -33,7 +38,7 @@
                         <button
                                 id="desktop-services-btn"
                                 type="button"
-                                class="inline-flex items-center gap-2 rounded-md px-2 py-1 transition hover:text-teal-600 focus:outline-none focus:ring-2 focus:ring-teal-500/40"
+                                class="inline-flex items-center gap-2 rounded-md px-2 py-1 transition hover:text-teal-300 focus:outline-none focus:ring-2 focus:ring-teal-400/40"
                                 aria-haspopup="true"
                                 aria-expanded="false"
                         >
@@ -57,55 +62,38 @@
 
                         <ul
                                 id="desktop-dropdown-menu"
-                                class="absolute left-0 top-full mt-3 w-60 translate-y-2 rounded-xl border border-slate-200 bg-white p-2 shadow-xl
-                   opacity-0 invisible transition-all duration-200"
+                                class="absolute left-0 top-full mt-3 w-60 translate-y-2 rounded-xl border border-white/10 bg-black/80 p-2 shadow-xl backdrop-blur-xl opacity-0 invisible transition-all duration-200 ease-out"
                         >
                             <li>
                                 <a href="izrada-web-sajta.html"
-                                   class="desktop-dropdown-link block rounded-lg px-3 py-2 text-sm text-slate-800 transition-colors duration-75 ease-out hover:bg-teal-500/90 hover:text-white hover:shadow-md focus:outline-none focus:ring-2 focus:ring-teal-500/30">
+                                   class="desktop-dropdown-link block rounded-lg px-3 py-2 text-sm text-white/80 transition duration-150 hover:bg-teal-300/80 hover:text-slate-900 hover:shadow-[0_0_15px_rgba(45,212,191,0.25)] focus:outline-none focus:ring-2 focus:ring-teal-400/30">
                                     Izrada web sajta
                                 </a>
                             </li>
                             <li>
                                 <a href="seo-optimizacija.html"
-                                   class="desktop-dropdown-link block rounded-lg px-3 py-2 text-sm text-slate-800 transition-colors duration-75 ease-out hover:bg-teal-500/90 hover:text-white hover:shadow-md focus:outline-none focus:ring-2 focus:ring-teal-500/30">
+                                   class="desktop-dropdown-link block rounded-lg px-3 py-2 text-sm text-white/80 transition duration-150 hover:bg-teal-300/80 hover:text-slate-900 hover:shadow-[0_0_15px_rgba(45,212,191,0.25)] focus:outline-none focus:ring-2 focus:ring-teal-400/30">
                                     SEO optimizacija
                                 </a>
                             </li>
-                            <!--                            <li>-->
-                            <!--                                <a href="#"-->
-                            <!--                                   class="block rounded-lg px-3 py-2 text-sm text-slate-800 transition-colors duration-75 ease-out-->
-                            <!--       hover:bg-teal-500/90 hover:text-white hover:shadow-md-->
-                            <!--       focus:outline-none focus:ring-2 focus:ring-teal-500/30">-->
-                            <!--                                    Digital marketing-->
-                            <!--                                </a>-->
-                            <!--                            </li>-->
-                            <!--                            <li>-->
-                            <!--                                <a href="#"-->
-                            <!--                                   class="block rounded-lg px-3 py-2 text-sm text-slate-800 transition-colors duration-75 ease-out-->
-                            <!--       hover:bg-teal-500/90 hover:text-white hover:shadow-md-->
-                            <!--       focus:outline-none focus:ring-2 focus:ring-teal-500/30">-->
-                            <!--                                    Web dizajn-->
-                            <!--                                </a>-->
-                            <!--                            </li>-->
                         </ul>
                     </li>
 
                     <li>
                         <a href="portfolio.html"
-                           class="rounded-md px-2 py-1 transition hover:text-teal-600 focus:outline-none focus:ring-2 focus:ring-teal-500/40">
+                           class="rounded-md px-2 py-1 transition hover:text-teal-300 focus:outline-none focus:ring-2 focus:ring-teal-400/40">
                             PORTFOLIO
                         </a>
                     </li>
                     <li>
-                        <a href="#"
-                           class="nav-active rounded-md px-2 py-1 transition hover:text-teal-600 focus:outline-none focus:ring-2 focus:ring-teal-500/40">
+                        <a href="o-nama.html"
+                           class="nav-active rounded-md px-2 py-1 transition hover:text-teal-300 focus:outline-none focus:ring-2 focus:ring-teal-400/40">
                             O NAMA
                         </a>
                     </li>
                     <li>
                         <a href="kontakt.html"
-                           class="rounded-md px-2 py-1 transition hover:text-teal-600 focus:outline-none focus:ring-2 focus:ring-teal-500/40">
+                           class="rounded-md px-2 py-1 transition hover:text-teal-300 focus:outline-none focus:ring-2 focus:ring-teal-400/40">
                             KONTAKT
                         </a>
                     </li>
@@ -115,7 +103,7 @@
             <!-- Hamburger -->
             <button
                     id="hamburger"
-                    class="md:hidden inline-flex items-center justify-center rounded-xl p-2 text-slate-800 transition hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500/40"
+                    class="md:hidden inline-flex items-center justify-center rounded-xl p-2 text-white/90 transition hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-teal-400/40"
                     aria-label="Otvori meni"
                     aria-controls="mobile-menu"
                     aria-expanded="false"
@@ -129,13 +117,14 @@
     </div>
 
     <!-- Mobile panel -->
-    <nav id="mobile-menu" class="hidden md:hidden border-t border-slate-200 bg-white/90 backdrop-blur-lg"
+    <nav id="mobile-menu"
+         class="hidden md:hidden border-t border-white/10 bg-black/80 backdrop-blur-xl"
          aria-label="Mobilna navigacija">
         <div class="mx-auto max-w-7xl px-6 py-4">
-            <ul class="flex flex-col gap-1 text-sm font-semibold text-slate-800">
+            <ul class="flex flex-col gap-1 text-sm font-semibold text-white/90">
                 <li>
                     <a href="index.html"
-                       class="block rounded-lg px-3 py-3 transition hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500/30">
+                       class="block rounded-lg px-3 py-3 transition hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-teal-400/30">
                         POČETNA
                     </a>
                 </li>
@@ -145,7 +134,7 @@
                     <button
                             id="mobile-dropdown-btn"
                             type="button"
-                            class="group flex w-full items-center justify-between rounded-lg px-3 py-3 text-left transition hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500/30"
+                            class="group flex w-full items-center justify-between rounded-lg px-3 py-3 text-left transition hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-teal-400/30"
                             aria-haspopup="true"
                             aria-expanded="false"
                             aria-controls="mobile-dropdown-menu"
@@ -153,37 +142,46 @@
                         <span>USLUGE</span>
 
                         <svg id="mobile-dropdown-icon"
-                             class="h-4 w-4 shrink-0 origin-center transition-transform duration-200 ease-out text-slate-600"
+                             class="h-4 w-4 shrink-0 origin-center transition-transform duration-200 ease-out text-white/70"
                              viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                             <path fill-rule="evenodd" clip-rule="evenodd"
                                   d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 10.94l3.71-3.71a.75.75 0 1 1 1.06 1.06l-4.24 4.24a.75.75 0 0 1-1.06 0L5.21 8.29a.75.75 0 0 1 .02-1.08z"/>
                         </svg>
                     </button>
 
-                    <ul id="mobile-dropdown-menu" class="hidden mt-1 pl-3 border-l border-slate-200">
-                        <li><a href="izrada-web-sajta.html"
-                               class="block rounded-lg px-3 py-2 text-slate-700 transition hover:bg-teal-50 hover:text-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500/30">Izrada
-                            web sajta</a></li>
-                        <li><a href="seo-optimizacija.html"
-                               class="block rounded-lg px-3 py-2 text-slate-700 transition hover:bg-teal-50 hover:text-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500/30">SEO
-                            optimizacija</a></li>
-                        <!--                        <li><a href="#"-->
-                        <!--                               class="block rounded-lg px-3 py-2 text-slate-700 transition hover:bg-teal-50 hover:text-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500/30">Digital-->
-                        <!--                            marketing</a></li>-->
-                        <!--                        <li><a href="#"-->
-                        <!--                               class="block rounded-lg px-3 py-2 text-slate-700 transition hover:bg-teal-50 hover:text-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500/30">Web-->
-                        <!--                            dizajn</a></li>-->
+                    <ul id="mobile-dropdown-menu" class="hidden mt-1 pl-3 border-l border-white/10">
+                        <li>
+                            <a href="izrada-web-sajta.html"
+                               class="block rounded-lg px-3 py-2 text-white/80 transition hover:bg-teal-300/80 hover:text-slate-900 active:bg-teal-300/80 active:text-slate-900 focus:outline-none focus:ring-2 focus:ring-teal-400/30">
+                                Izrada web sajta
+                            </a>
+                        </li>
+                        <li>
+                            <a href="seo-optimizacija.html"
+                               class="block rounded-lg px-3 py-2 text-white/80 transition hover:bg-teal-300/80 hover:text-slate-900 active:bg-teal-300/80 active:text-slate-900 focus:outline-none focus:ring-2 focus:ring-teal-400/30">
+                                SEO optimizacija
+                            </a>
+                        </li>
                     </ul>
                 </li>
 
-                <li><a href="#"
-                       class="block rounded-lg px-3 py-3 transition hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500/30">PORTFOLIO</a>
+                <li>
+                    <a href="portfolio.html"
+                       class="block rounded-lg px-3 py-3 transition hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-teal-400/30">
+                        PORTFOLIO
+                    </a>
                 </li>
-                <li><a href="#"
-                       class="nav-active block rounded-lg px-3 py-3 transition hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500/30">O
-                    NAMA</a></li>
-                <li><a href="kontakt.html"
-                       class="block rounded-lg px-3 py-3 transition hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500/30">KONTAKT</a>
+                <li>
+                    <a href="o-nama.html"
+                       class="nav-active-mobile block rounded-lg px-3 py-3 transition hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-teal-400/30">
+                        O NAMA
+                    </a>
+                </li>
+                <li>
+                    <a href="kontakt.html"
+                       class="block rounded-lg px-3 py-3 transition hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-teal-400/30">
+                        KONTAKT
+                    </a>
                 </li>
             </ul>
         </div>
@@ -191,7 +189,7 @@
 </header>
 
 <!-- HERO - O NAMA -->
-<section class="relative overflow-hidden bg-slate-950 text-white">
+<section class="relative -mt-16 pt-16 overflow-hidden bg-slate-950 text-white">
     <!-- Background -->
     <div class="pointer-events-none absolute inset-0">
         <!-- orbit glow -->
