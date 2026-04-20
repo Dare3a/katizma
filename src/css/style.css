@@ -777,3 +777,52 @@ html {
 .wave-anim {
     animation: floatSlow 12s ease-in-out infinite;
 }
+
+/* Google Ads hero chart bars */
+@keyframes adsBarPulse {
+    0%, 100% {
+        transform: scaleY(1);
+        opacity: 0.92;
+    }
+    25% {
+        transform: scaleY(1.06);
+        opacity: 1;
+    }
+    50% {
+        transform: scaleY(0.97);
+        opacity: 0.96;
+    }
+    75% {
+        transform: scaleY(1.03);
+        opacity: 1;
+    }
+}
+
+.ads-bar {
+    transform-origin: bottom;
+    animation: adsBarPulse 6s ease-in-out infinite;
+    will-change: transform, opacity;
+}
+
+.ads-bar-delay-1 { animation-delay: 0.4s; }
+.ads-bar-delay-2 { animation-delay: 0.9s; }
+.ads-bar-delay-3 { animation-delay: 1.4s; }
+.ads-bar-delay-4 { animation-delay: 1.9s; }
+.ads-bar-delay-5 { animation-delay: 2.4s; }
+.ads-bar-delay-6 { animation-delay: 2.9s; }
+.ads-bar-delay-7 { animation-delay: 3.4s; }
+
+@media (prefers-reduced-motion: reduce) {
+    .ads-bar,
+    .ads-bar-delay-1,
+    .ads-bar-delay-2,
+    .ads-bar-delay-3,
+    .ads-bar-delay-4,
+    .ads-bar-delay-5,
+    .ads-bar-delay-6,
+    .ads-bar-delay-7 {
+        animation: none;
+        transform: none;
+        opacity: 1;
+    }
+}
