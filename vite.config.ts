@@ -13,6 +13,7 @@ export default defineConfig({
                 portfolio: new URL('./portfolio.html', import.meta.url).pathname,
                 'seo-optimizacija': new URL('./seo-optimizacija.html', import.meta.url).pathname,
                 'izrada-web-sajta': new URL('./izrada-web-sajta.html', import.meta.url).pathname,
+                'google-ads': new URL('./google-ads.html', import.meta.url).pathname,
             },
         },
     },
