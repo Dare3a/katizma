@@ -99,6 +99,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
+// NOVO: Ako je zahtev poslat preko JS (Fetch/AJAX), vrati samo JSON i prekini izvršavanje
+if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest' || isset($_GET['ajax'])) {
+    header('Content-Type: application/json');
+    echo json_encode([
+        'success' => $result,
+        'error' => $error
+    ]);
+    exit;
+}
+
 $templatePath = __DIR__ . '/kontakt.html';
 
 if (!file_exists($templatePath)) {
