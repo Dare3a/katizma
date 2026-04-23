@@ -9,6 +9,7 @@ export default defineConfig({
                 index: new URL('./index.html', import.meta.url).pathname,
                 '404': new URL('./404.html', import.meta.url).pathname,
                 kontakt: new URL('./kontakt.html', import.meta.url).pathname,
+                'kontakt-php': new URL('./kontakt.php', import.meta.url).pathname,
                 'o-nama': new URL('./o-nama.html', import.meta.url).pathname,
                 portfolio: new URL('./portfolio.html', import.meta.url).pathname,
                 'seo-optimizacija': new URL('./seo-optimizacija.html', import.meta.url).pathname,
