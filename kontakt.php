@@ -65,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $headerSurname = str_replace(["\r", "\n"], '', $safeSurname);
                 $headerEmail = str_replace(["\r", "\n"], '', $safeEmail);
 
-                $to = 'info@katizma.rs';
+                $to = 'office@clovercode.rs';
                 $mailSubject = 'Kontakt forma: ' . $safeSubject;
 
                 $body  = "Ime: {$safeName}\r\n";
@@ -75,7 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $body .= "Naslov: {$safeSubject}\r\n\r\n";
                 $body .= "Poruka:\r\n{$safeMessage}\r\n";
 
-                $headers  = "From: Katizma Studio <info@katizma.rs>\r\n";
+                $headers  = "From: Clovercode forma <office@clovercode.rs>\r\n";
                 $headers .= "Reply-To: {$headerName} {$headerSurname} <{$headerEmail}>\r\n";
                 $headers .= "MIME-Version: 1.0\r\n";
                 $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
