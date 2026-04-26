@@ -162,7 +162,11 @@
 }
 
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: auto; /* isključujemo default da ne smeta custom animaciji */
+}
+
+body {
+    -webkit-overflow-scrolling: touch;
 }
 
 .nav-active {
