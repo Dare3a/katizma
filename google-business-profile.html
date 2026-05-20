@@ -1415,7 +1415,6 @@
                                 <div class="mt-3 flex flex-wrap items-center gap-3 text-sm text-white/65">
                                     <span class="text-yellow-300">4.9 ★★★★★</span>
                                     <span>(1.248 recenzija)</span>
-                                    <span>•</span>
                                 </div>
                                 <div class="mt-3 text-sm leading-7 text-white/65">
                                     Otvoreno · Restoran · Dostava · Rezervacije
@@ -1556,7 +1555,64 @@
                         <!-- info cards -->
                         <div class="grid gap-4 sm:grid-cols-2">
 
-                            <!-- hours -->
+                            <!-- icons -->
+                            <div class="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+
+                                <div class="text-sm font-semibold text-white">
+                                    Informacije o lokaciji
+                                </div>
+
+                                <div class="mt-4 space-y-3.5 text-sm text-white/75">
+
+                                    <!-- Adresa (Pin) -->
+                                    <div class="flex items-center gap-3">
+                                        <svg class="h-5 w-5 shrink-0 text-teal-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        </svg>
+                                        <span>Adresa</span>
+                                    </div>
+
+                                    <!-- Sajt (Web/Globus) -->
+                                    <div class="flex items-center gap-3">
+                                        <svg class="h-5 w-5 shrink-0 text-teal-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                                        </svg>
+                                        <span>vaš-sajt.com</span>
+                                    </div>
+
+                                    <!-- Meni (Kašika i nož) -->
+                                    <div class="flex items-center gap-3">
+                                        <svg class="h-5 w-5 shrink-0 text-teal-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                            <path d="M6 3v7"/>
+                                            <path d="M8 3v7"/>
+                                            <path d="M10 3v7"/>
+                                            <path d="M6 10c0 2 4 2 4 0"/>
+                                            <path d="M8 10v11"/>
+                                            <!-- nož -->
+                                            <path d="M16 3c2 3 2 6 0 9v9"/>
+                                        </svg>
+                                        <span>Meni</span>
+                                    </div>
+
+                                    <!-- Dostava (Kamiončić) -->
+                                    <div class="flex items-center gap-3">
+                                        <svg class="h-5 w-5 shrink-0 text-teal-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                            <!-- Ručke kese -->
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 9a3 3 0 016 0" />
+                                            <!-- Telo kese -->
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M18 9H8a1 1 0 00-1 1v9a2 2 0 002 2h8a2 2 0 002-2v-9a1 1 0 00-1-1z" />
+                                            <!-- Linije koje označavaju brzu dostavu / pokret -->
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M2 10h3M3 14h2M1 18h4" />
+                                        </svg>
+                                        <span>Naručite</span>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <!-- review -->
                             <div class="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
 
                                 <div class="text-sm font-semibold text-white">
@@ -1584,20 +1640,6 @@
 
                             </div>
 
-                            <!-- review -->
-                            <div class="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
-
-                                <div class="text-sm font-semibold text-white">
-                                    Istaknuta recenzija
-                                </div>
-
-                                <div class="mt-3 text-sm leading-7 text-white/65">
-                                    “Odlična usluga, brza rezervacija i veoma prijatan ambijent. Sve informacije na
-                                    Google profilu su bile tačne i korisne.”
-                                </div>
-
-                            </div>
-
                         </div>
 
                         <!-- post -->
@@ -1608,7 +1650,6 @@
                             </div>
 
                             <div class="mt-3 text-sm leading-7 text-white/70">
-                                Nova sezonska ponuda i specijalni meni dostupni su svakog vikenda.
                                 Redovno objavljivanje sadržaja povećava aktivnost Google Business profila i doprinosi
                                 boljoj lokalnoj vidljivosti firme.
                             </div>
