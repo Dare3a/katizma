@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Kontakt | Clovercode – Zatražite ponudu za vaš projekat</title>
+    <title>Blog | Clovercode – Zatražite ponudu za vaš projekat</title>
     <meta name="description"
           content="Zatražite ponudu za izradu sajta, SEO optimizaciju ili digitalni razvoj. Kontaktirajte Clovercode i pokrenite vaš projekat već danas."/>
     <meta name="robots" content="index, follow">
@@ -131,7 +131,7 @@
                     </li>
                     <li>
                         <a href="blog.html"
-                           class="rounded-md px-2 py-1 transition hover:text-teal-300 focus:outline-none focus:ring-2 focus:ring-teal-400/40">
+                           class="nav-active rounded-md px-2 py-1 transition hover:text-teal-300 focus:outline-none focus:ring-2 focus:ring-teal-400/40">
                             BLOG
                         </a>
                     </li>
@@ -143,7 +143,7 @@
                     </li>
                     <li>
                         <a href="kontakt.html"
-                           class="nav-active rounded-md px-2 py-1 transition hover:text-teal-300 focus:outline-none focus:ring-2 focus:ring-teal-400/40">
+                           class="rounded-md px-2 py-1 transition hover:text-teal-300 focus:outline-none focus:ring-2 focus:ring-teal-400/40">
                             KONTAKT
                         </a>
                     </li>
@@ -235,7 +235,7 @@
                 </li>
                 <li>
                     <a href="blog.html"
-                       class="block rounded-lg px-3 py-3 transition hover:bg-white/10">
+                       class="nav-active block rounded-lg px-3 py-3 transition hover:bg-white/10">
                         BLOG
                     </a>
                 </li>
@@ -247,7 +247,7 @@
                 </li>
                 <li>
                     <a href="kontakt.html"
-                       class="nav-active block rounded-lg px-3 py-3 transition hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-teal-400/30">
+                       class="block rounded-lg px-3 py-3 transition hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-teal-400/30">
                         KONTAKT
                     </a>
                 </li>
@@ -261,32 +261,30 @@
 
     <!-- BACKGROUND -->
     <div class="absolute inset-0 overflow-hidden">
-        <!-- base gradient -->
-        <div class="absolute inset-0 bg-[linear-gradient(135deg,#020617_0%,#041826_35%,#070b2d_70%,#140824_100%)]"></div>
+        <!-- base gradient (obrnut smer i drugačiji balans boja u odnosu na kontakt) -->
+        <div class="absolute inset-0 bg-[linear-gradient(135deg,#020617_0%,#0b0f2e_35%,#180a2e_70%,#03141c_100%)]"></div>
 
-        <!-- wave 1 -->
-        <div class="wave-anim absolute -top-32 -left-40 h-[420px] w-[140%] rotate-[10deg]
-                    bg-[linear-gradient(90deg,rgba(45,212,191,0.55),rgba(99,102,241,0.14),rgba(168,85,247,0.45))]">
-        </div>
+        <!-- suptilan dot-grid, editorijalni akcenat karakterističan za blog -->
+        <div class="absolute inset-0 opacity-[0.12]
+                    bg-[radial-gradient(rgba(255,255,255,0.6)_1px,transparent_1px)]
+                    [background-size:26px_26px]"></div>
 
-        <!-- wave 2 -->
-        <div class="wave-anim absolute top-[120px] -right-52 h-[360px] w-[120%] rotate-[-12deg]
-                    bg-[linear-gradient(90deg,rgba(45,212,191,0.45),rgba(59,130,246,0.08),rgba(139,92,246,0.35))]">
-        </div>
+        <!-- wave 1 - violet dominantan, dolazi sa gornje leve strane -->
+        <div class="wave-anim absolute -top-36 -left-32 h-[400px] w-[130%] rotate-[-8deg]
+                    bg-[linear-gradient(90deg,rgba(168,85,247,0.55),rgba(99,102,241,0.12),rgba(45,212,191,0.30))]"></div>
 
-        <!-- wave 3 -->
-        <div class="wave-anim absolute bottom-[-140px] -left-24 h-[340px] w-[115%] rotate-[8deg]
-                    bg-[linear-gradient(90deg,rgba(20,184,166,0.65),rgba(14,165,233,0.10),rgba(124,58,237,0.55))]">
-        </div>
+        <!-- wave 2 - dolazi sa donje desne strane -->
+        <div class="wave-anim absolute bottom-[-150px] -right-40 h-[360px] w-[125%] rotate-[10deg]
+                    bg-[linear-gradient(90deg,rgba(20,184,166,0.45),rgba(56,189,248,0.08),rgba(139,92,246,0.40))]"></div>
 
-        <!-- soft top/right accent -->
-        <div class="absolute -top-24 right-[-120px] h-[420px] w-[620px] rounded-full bg-violet-500/10 blur-3xl"></div>
+        <!-- soft accent gore-levo: violet (obrnuto od kontakta) -->
+        <div class="absolute -top-24 left-[-140px] h-[440px] w-[560px] rounded-full bg-violet-500/12 blur-3xl"></div>
 
-        <!-- soft left accent -->
-        <div class="absolute top-10 left-[-140px] h-[420px] w-[520px] rounded-full bg-teal-400/10 blur-3xl"></div>
+        <!-- soft accent dole-desno: teal -->
+        <div class="absolute bottom-[-60px] right-[-120px] h-[400px] w-[520px] rounded-full bg-teal-400/10 blur-3xl"></div>
 
-        <!-- vignette -->
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_35%,rgba(2,6,23,0.35)_100%)]"></div>
+        <!-- vinjeta -->
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_35%,rgba(2,6,23,0.4)_100%)]"></div>
     </div>
 
     <!-- CONTENT -->
@@ -300,13 +298,13 @@
             <!-- Eyebrow -->
             <div class="mb-4 inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/6 px-4 py-2 text-[11px] font-semibold tracking-[0.18em] text-white/80 backdrop-blur">
                 <span class="h-2 w-2 rounded-full bg-teal-400"></span>
-                JAVITE NAM SE
+                CLOVERCODE WIKI
             </div>
 
             <!-- H1 -->
             <h1 class="relative text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl">
             <span class="bg-linear-to-r from-teal-300 via-cyan-300 to-violet-300 bg-clip-text text-transparent">
-                Kontakt
+                Blog
             </span>
             </h1>
 
