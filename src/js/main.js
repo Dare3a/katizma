@@ -7,3 +7,4 @@ import './testimonial.js';
 import './portfolio-filter.js';
 import './counter.js';
 import './kontakt-form.js';
+import './blog-filter.js';
