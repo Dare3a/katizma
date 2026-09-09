@@ -308,7 +308,8 @@
                 <div class="flex items-center gap-2.5">
                     <div class="h-7 w-7 rounded-full bg-gradient-to-tr from-teal-400 to-violet-500 p-[1px]">
                         <div class="h-full w-full rounded-full bg-slate-950 flex items-center justify-center text-[10px] font-bold text-teal-300">
-                            <svg viewBox="0 0 24 24" class="h-5 w-5 text-teal-400 shrink-0 relative -top-px" fill="currentColor"
+                            <svg viewBox="0 0 24 24" class="h-5 w-5 text-teal-400 shrink-0 relative -top-px"
+                                 fill="currentColor"
                                  aria-hidden="true">
                                 <path d="M12 4.5c-.8-1.2-3-1.5-4 .3-1 1.8.4 3.3 4 6 3.6-2.7 5-4.2 4-6-1-1.8-3.2-1.5-4-.3z"/>
                                 <g transform="rotate(90 12 12)">
@@ -360,223 +361,757 @@
     </div>
 </section>
 
-<!-- BLOG-CARD SECTION -->
-<section class="py-16 bg-slate-950 text-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<!-- MAIN ARTICLE CONTENT SECTION WITH SIDEBAR -->
+<main class="relative z-10 bg-slate-950 flex-grow">
+    <div class="relative mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
 
-        <!-- HEADING SEKCIJE BLOGA -->
-        <div class="reveal-up mx-auto max-w-3xl text-center mb-10 sm:mb-12">
-            <div class="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/5 px-4 py-2 text-[11px] font-semibold tracking-[0.18em] text-white/70 backdrop-blur">
+        <!-- FLEX / GRID CONTAINER -->
+        <div class="flex flex-col lg:grid lg:grid-cols-12 gap-12">
 
-                <!-- Mala ikonica (Djetelina) -->
-                <span class="flex h-5 w-5 items-center justify-center">
-            <svg viewBox="0 0 24 24" class="h-5 w-5 text-teal-400 shrink-0 relative -top-px" fill="currentColor"
-                 aria-hidden="true">
-                <path d="M12 4.5c-.8-1.2-3-1.5-4 .3-1 1.8.4 3.3 4 6 3.6-2.7 5-4.2 4-6-1-1.8-3.2-1.5-4-.3z"/>
-                <g transform="rotate(90 12 12)">
-                    <path d="M12 4.5c-.8-1.2-3-1.5-4 .3-1 1.8.4 3.3 4 6 3.6-2.7 5-4.2 4-6-1-1.8-3.2-1.5-4-.3z"/>
-                </g>
-                <g transform="rotate(180 12 12)">
-                    <path d="M12 4.5c-.8-1.2-3-1.5-4 .3-1 1.8.4 3.3 4 6 3.6-2.7 5-4.2 4-6-1-1.8-3.2-1.5-4-.3z"/>
-                </g>
-                <g transform="rotate(270 12 12)">
-                    <path d="M12 4.5c-.8-1.2-3-1.5-4 .3-1 1.8.4 3.3 4 6 3.6-2.7 5-4.2 4-6-1-1.8-3.2-1.5-4-.3z"/>
-                </g>
-                <path d="M12 14c0 2.2-1 3.5-2.6 5" stroke="currentColor" stroke-width="1.2" fill="none"
-                      stroke-linecap="round"/>
-            </svg>
-        </span>
+            <!-- SIDEBAR (Na mobilnom ide PRVI sa TOC-om, na desktopu stoji sa desne strane) -->
+            <aside class="order-1 lg:order-2 lg:col-span-4">
+                <div class="sticky top-24 space-y-8">
 
-                <span>BLOG & VESTI</span>
+                    <!-- SINGLE TOC ACCORDION (JEDINI TOC U KODU) -->
+                    <details id="toc-accordion"
+                             class="group rounded-2xl border border-white/10 bg-slate-900/50 p-4 sm:p-6 backdrop-blur-md shadow-xl">
+                        <summary
+                                class="flex cursor-pointer lg:cursor-default items-center justify-between font-semibold text-white list-none select-none">
+                            <div class="flex items-center gap-2.5">
+                                <svg viewBox="0 0 24 24" class="h-5 w-5 stroke-teal-400 fill-none" stroke-width="2"
+                                     stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="8" y1="6" x2="21" y2="6"></line>
+                                    <line x1="8" y1="12" x2="21" y2="12"></line>
+                                    <line x1="8" y1="18" x2="21" y2="18"></line>
+                                    <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                                    <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                                    <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                                </svg>
+                                <span class="text-sm tracking-wide uppercase text-slate-200">Sadržaj članka</span>
+                            </div>
+
+                            <!-- Strelica za otvaranje (vidljiva samo na mobilnim uređajima) -->
+                            <div class="flex h-7 w-7 items-center justify-center rounded-lg bg-white/5 border border-white/10 text-slate-400 group-open:rotate-180 group-open:text-teal-300 transition-transform duration-200 lg:hidden">
+                                <svg viewBox="0 0 24 24" class="h-4 w-4 stroke-current fill-none" stroke-width="2"
+                                     stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </div>
+                        </summary>
+
+                        <!-- Navigacija sa linkovima -->
+                        <nav class="mt-4 pt-3 border-t border-white/10 space-y-1.5 text-sm">
+                            <a href="#ukratko"
+                               class="block py-1.5 px-3 rounded-lg text-slate-300 hover:text-teal-300 hover:bg-white/5 transition-all">
+                                1. Ukratko
+                            </a>
+                            <a href="#koji-su-kriterijumi-za-izbor-web-agencije"
+                               class="block py-1.5 px-3 rounded-lg text-slate-300 hover:text-teal-300 hover:bg-white/5 transition-all">
+                                2. Kriterijumi za izbor web agencije
+                            </a>
+                            <a href="#kako-prepoznati-najbolju-agenciju-za-izradu-sajta"
+                               class="block py-1.5 px-3 rounded-lg text-slate-300 hover:text-teal-300 hover:bg-white/5 transition-all">
+                                3. Kako prepoznati najbolju agenciju
+                            </a>
+                            <a href="#na-sta-obratiti-paznju-tokom-prvog-kontakta-sa-agencijom"
+                               class="block py-1.5 px-3 rounded-lg text-slate-300 hover:text-teal-300 hover:bg-white/5 transition-all">
+                                4. Prvi kontakt sa agencijom
+                            </a>
+                            <a href="#preporuka-za-izradu-sajta-kako-do-pouzdane-saradnje"
+                               class="block py-1.5 px-3 rounded-lg text-slate-300 hover:text-teal-300 hover:bg-white/5 transition-all">
+                                5. Preporuke za pouzdanu saradnju
+                            </a>
+                            <a href="#najcesca-pitanja"
+                               class="block py-1.5 px-3 rounded-lg text-slate-300 hover:text-teal-300 hover:bg-white/5 transition-all">
+                                6. Najčešća pitanja
+                            </a>
+                            <a href="#zakljucak"
+                               class="block py-1.5 px-3 rounded-lg text-slate-300 hover:text-teal-300 hover:bg-white/5 transition-all">
+                                7. Zaključak
+                            </a>
+                        </nav>
+                    </details>
+
+                    <!-- CTA KARTICA (Prikazana u sidebaru na desktopu) -->
+                    <div class="hidden lg:block relative overflow-hidden rounded-2xl border border-teal-500/30 bg-gradient-to-b from-slate-900/80 to-slate-950 p-6 backdrop-blur-md shadow-2xl">
+                        <div class="absolute -right-8 -top-8 h-28 w-28 rounded-full bg-teal-400/20 blur-xl pointer-events-none"></div>
+                        <div class="absolute -left-8 -bottom-8 h-28 w-28 rounded-full bg-violet-500/20 blur-xl pointer-events-none"></div>
+
+                        <span class="inline-block rounded-full bg-teal-400/10 px-3 py-1 text-[11px] font-semibold text-teal-300 border border-teal-400/20 mb-3 uppercase tracking-wider">
+              Besplatne konsultacije
+            </span>
+                        <h4 class="text-xl font-bold text-white leading-tight">
+                            Treba vam moderan i brz web sajt za firmu?
+                        </h4>
+                        <p class="mt-2 text-sm text-slate-300">
+                            Kontaktirajte CloverCode tim za besplatnu analizu i predlog rešenja sa jasnim rokovima i
+                            transparentnim cenama.
+                        </p>
+                        <a href="https://clovercode.rs/kontakt.html"
+                           class="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-teal-400 via-cyan-400 to-teal-500 px-5 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-teal-500/20 hover:brightness-110 transition-all">
+                            <span>Zatražite ponudu</span>
+                            <svg viewBox="0 0 24 24" class="h-4 w-4 stroke-current fill-none" stroke-width="2.2"
+                                 stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+
+                </div>
+            </aside>
+
+            <!-- ARTICLE MAIN CONTENT (Na mobilnom ide DRUGI, odmah ispod sklopljenog TOC-a) -->
+            <article
+                    class="order-2 lg:order-1 lg:col-span-8 space-y-10 text-slate-300 text-base leading-relaxed sm:text-lg">
+
+                <!-- Uvodni pasusi -->
+                <p class="text-lg sm:text-xl text-slate-200 font-normal leading-relaxed border-l-2 border-teal-400 pl-4 py-1 bg-slate-900/30 rounded-r-xl">
+                    Odabir prave digitalne agencije za izradu sajta može biti ključan korak za razvoj vašeg preduzeća.
+                    Ako se pitate kako izabrati digitalnu agenciju za izradu sajta, ovaj tekst će vam pomoći da
+                    razjasnite koje kriterijume treba postaviti, kako prepoznati profesionalan tim i na šta obratiti
+                    pažnju u prvom kontaktu sa agencijom.
+                </p>
+
+                <p>
+                    Saznaćete i kako da pronađete agenciju koja ne nudi samo tehničku izradu sajta, već i kompletan
+                    digitalni pristup – od SEO optimizacije, preko Google Ads oglašavanja, do poboljšanja lokalne
+                    vidljivosti. Tekst je namenjen vlasnicima malih i srednjih preduzeća i svima koji žele da unaprede
+                    svoje online prisustvo i digitalni marketing.
+                </p>
+
+                <!-- KEY TAKEAWAYS / UKRATKO BOX -->
+                <section id="ukratko"
+                         class="scroll-mt-28 relative overflow-hidden rounded-2xl border border-teal-500/30 bg-slate-900/60 p-6 sm:p-8 backdrop-blur-md shadow-[0_0_25px_rgba(45,212,191,0.08)]">
+                    <div class="absolute -top-12 -right-12 h-32 w-32 rounded-full bg-teal-400/10 blur-2xl pointer-events-none"></div>
+
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-teal-500/20 text-teal-300 border border-teal-500/30">
+                            <svg viewBox="0 0 24 24" class="h-5 w-5 fill-none stroke-current" stroke-width="2"
+                                 stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                            </svg>
+                        </div>
+                        <h2 class="text-xl font-bold tracking-tight text-white m-0">Ukratko</h2>
+                    </div>
+
+                    <ul class="space-y-3 text-slate-200 text-base list-none pl-0 my-0">
+                        <li class="flex items-start gap-3">
+                            <span class="mt-1.5 h-2 w-2 rounded-full bg-teal-400 shrink-0"></span>
+                            <span>Pravi izbor digitalne agencije zavisi od iskustva, portfolija i preporuka.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="mt-1.5 h-2 w-2 rounded-full bg-cyan-400 shrink-0"></span>
+                            <span>Kvalitet komunikacije i transparentnost procesa ključni su za uspešnu saradnju.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="mt-1.5 h-2 w-2 rounded-full bg-violet-400 shrink-0"></span>
+                            <span>Detaljno istražite agenciju pre konačne odluke i ne zaboravite na podršku nakon izrade sajta.</span>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- SEKCIJA 1 -->
+                <div class="space-y-6 pt-4">
+                    <h2 id="koji-su-kriterijumi-za-izbor-web-agencije"
+                        class="scroll-mt-28 text-2xl sm:text-3xl font-bold tracking-tight text-white border-b border-white/10 pb-3">
+                        Koji su kriterijumi za izbor web agencije?
+                    </h2>
+
+                    <figure class="relative overflow-hidden rounded-2xl border border-white/10 bg-slate-900/50 my-6">
+                        <img src="/uploads/blog-images/684866a9-dbe3-4d5f-a592-835fdf821de0.webp"
+                             alt="Moderna kancelarija digitalne agencije za izradu sajta sa računarima i web dizajnom"
+                             loading="lazy" class="w-full h-auto object-cover">
+                    </figure>
+
+                    <p>
+                        Prilikom razmatranja kako izabrati digitalnu agenciju za izradu sajta za vaše preduzeće, važno
+                        je jasno postaviti kriterijume koji će vam pomoći da donesete pravu odluku. Ovo su ključni
+                        faktori koje treba uzeti u obzir:
+                    </p>
+
+                    <h3 class="text-xl font-semibold text-teal-300 mt-6 mb-2">Iskustvo i portfolio: ogledalo kvaliteta
+                        rada</h3>
+                    <p>
+                        Prvi i možda najvažniji korak u izboru web agencije jeste provera njihovog portfolija.
+                        Pogledajte primere prethodnih projekata, posebno iz vaše ili slične delatnosti. Različite
+                        industrije zahtevaju različite pristupe — izrada sajta za lokalni servis nije isto što i za
+                        e-commerce prodavnicu. Kvalitetan portfolio pokazuje širinu znanja i sposobnost prilagođavanja
+                        specifičnim potrebama klijenata.
+                    </p>
+
+                    <h3 class="text-xl font-semibold text-teal-300 mt-6 mb-2">Stručnost tima i tehnička rešenja</h3>
+                    <p>
+                        Tehnička stručnost tima odražava se kroz predloge koje dobijate u startu: da li nude moderan,
+                        responzivan dizajn? Da li znaju da prilagode sajt za SEO i brže učitavanje? Agencije koje, poput
+                        <a href="https://clovercode.rs/izrada-web-sajta.html"
+                           class="text-teal-300 underline underline-offset-4 decoration-teal-500/50 hover:text-teal-200 hover:decoration-teal-400 transition-colors">Clovercode</a>,
+                        integrišu SEO osnovu i analiziraju konkurenciju već u fazi izrade sajta, pokazuju posvećenost
+                        rezultatima, a ne samo izgledu. Proverite i koje tehnologije koriste i da li nude rešenja koja
+                        mogu da rastu sa vašim biznisom.
+                    </p>
+
+                    <h3 class="text-xl font-semibold text-teal-300 mt-6 mb-2">Transparentnost u komunikaciji i procesu
+                        rada</h3>
+                    <p>
+                        Dobar izbor web agencije podrazumeva otvorenu komunikaciju kroz ceo projekat. Prilikom prvih
+                        kontakata, obratite pažnju na to da li jasno objašnjavaju proces izrade, vremenske rokove,
+                        mogućnosti izmena i način izveštavanja o napretku. Transparentnost je ključ za izgradnju
+                        poverenja i sprečavanje nesporazuma tokom saradnje.
+                    </p>
+
+                    <!-- TABELA 1 -->
+                    <div class="overflow-x-auto rounded-2xl border border-white/10 bg-slate-900/40 my-6 backdrop-blur-md">
+                        <table class="w-full text-left text-sm text-slate-300 border-collapse">
+                            <thead class="bg-slate-900/80 text-teal-300 border-b border-white/10 text-xs uppercase tracking-wider">
+                            <tr>
+                                <th class="py-3.5 px-4 font-semibold">Kriterijum</th>
+                                <th class="py-3.5 px-4 font-semibold">Šta proveriti?</th>
+                                <th class="py-3.5 px-4 font-semibold">Zašto je važno?</th>
+                            </tr>
+                            </thead>
+                            <tbody class="divide-y divide-white/5">
+                            <tr class="hover:bg-white/5 transition-colors">
+                                <td class="py-3 px-4 font-medium text-white">Portfolio</td>
+                                <td class="py-3 px-4">Radovi u vašoj ili sličnoj branši</td>
+                                <td class="py-3 px-4">Pokazuje relevantno iskustvo</td>
+                            </tr>
+                            <tr class="hover:bg-white/5 transition-colors">
+                                <td class="py-3 px-4 font-medium text-white">Stručnost tima</td>
+                                <td class="py-3 px-4">Tehnologije, SEO znanje, UX dizajn</td>
+                                <td class="py-3 px-4">Garantuje kvalitet i funkcionalnost</td>
+                            </tr>
+                            <tr class="hover:bg-white/5 transition-colors">
+                                <td class="py-3 px-4 font-medium text-white">Transparentnost</td>
+                                <td class="py-3 px-4">Jasni koraci, komunikacija, izveštaji</td>
+                                <td class="py-3 px-4">Obezbeđuje poverenje i sigurnost</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p>
+                        Birajući agenciju koja kombinuje iskustvo, tehničku stručnost i otvorenu komunikaciju,
+                        povećavate šansu da izaberete najbolju agenciju za izradu sajta i ostvarite uspešnu online
+                        prezentaciju svog poslovanja.
+                    </p>
+                </div>
+
+                <!-- SEKCIJA 2 -->
+                <div class="space-y-6 pt-4">
+                    <h2 id="kako-prepoznati-najbolju-agenciju-za-izradu-sajta"
+                        class="scroll-mt-28 text-2xl sm:text-3xl font-bold tracking-tight text-white border-b border-white/10 pb-3">
+                        Kako prepoznati najbolju agenciju za izradu sajta?
+                    </h2>
+
+                    <p>
+                        Kada razmišljate kako izabrati digitalnu agenciju za izradu sajta, važno je znati po kojim
+                        parametrima možete prepoznati najbolju agenciju za izradu sajta za vaše preduzeće. Prvi korak je
+                        detaljna analiza prethodnih radova, odnosno portfolija. Pogledajte koje su projekte realizovali,
+                        da li su radili sa firmama iz vaše ili srodnih branši i da li sajtovi koje su izradili deluju
+                        moderno, funkcionalno i prilagođeno korisnicima. Pregled portfolija na stranici kao što je <a
+                            href="https://clovercode.rs/izrada-web-sajta.html"
+                            class="text-teal-300 underline underline-offset-4 decoration-teal-500/50 hover:text-teal-200">Izrada
+                        web sajta</a> može otkriti stručnost i stil izabrane agencije.
+                    </p>
+
+                    <p>
+                        Jednako su važne i ocene i recenzije klijenata. Prava preporuka za izradu sajta često dolazi od
+                        drugih preduzeća koja su već prošla kroz proces izrade i saradnje sa agencijom. Pretražite
+                        Google recenzije, komentare na društvenim mrežama, kao i povratne informacije na sajtu same
+                        agencije. Obratite pažnju na to da li se klijenti vraćaju i preporučuju dalje saradnju – to je
+                        često najbolji pokazatelj pouzdanosti.
+                    </p>
+
+                    <p>
+                        Još jedan ključni kriterijum pri izboru web agencije jeste koliko je njihova ponuda prilagođena
+                        vašim poslovnim ciljevima i budžetu. Najbolja agencija za izradu sajta neće nuditi univerzalna
+                        rešenja, već će analizirati vaše potrebe, konkurenciju i tržište, kako bi predložila strategiju
+                        koja ima smisla za vašu firmu. Prilagođeni pristup znači da ćete, osim same izrade sajta, dobiti
+                        i preporuke za dalji digitalni razvoj – bilo kroz <a
+                            href="https://clovercode.rs/seo-optimizacija.html"
+                            class="text-teal-300 underline underline-offset-4 decoration-teal-500/50 hover:text-teal-200">SEO
+                        optimizaciju za veći organski rast</a>, Google Ads ili optimizaciju Google Business profila, u
+                        zavisnosti od vaših ciljeva.
+                    </p>
+
+                    <!-- TABELA 2 -->
+                    <div class="overflow-x-auto rounded-2xl border border-white/10 bg-slate-900/40 my-6 backdrop-blur-md">
+                        <table class="w-full text-left text-sm text-slate-300 border-collapse">
+                            <thead class="bg-slate-900/80 text-teal-300 border-b border-white/10 text-xs uppercase tracking-wider">
+                            <tr>
+                                <th class="py-3.5 px-4 font-semibold">Kriterijum</th>
+                                <th class="py-3.5 px-4 font-semibold">Šta gledati?</th>
+                                <th class="py-3.5 px-4 font-semibold">Primeri dobre prakse</th>
+                            </tr>
+                            </thead>
+                            <tbody class="divide-y divide-white/5">
+                            <tr class="hover:bg-white/5 transition-colors">
+                                <td class="py-3 px-4 font-medium text-white">Portfolio</td>
+                                <td class="py-3 px-4">Relevantni i savremeni projekti u vašoj branši</td>
+                                <td class="py-3 px-4">Vidljive reference na <a
+                                        href="https://clovercode.rs/izrada-web-sajta.html"
+                                        class="text-teal-300 hover:underline">Izrada web sajta</a> stranici
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-white/5 transition-colors">
+                                <td class="py-3 px-4 font-medium text-white">Recenzije</td>
+                                <td class="py-3 px-4">Autentične povratne informacije klijenata</td>
+                                <td class="py-3 px-4">Pozitivni Google komentari, preporuke na društvenim mrežama</td>
+                            </tr>
+                            <tr class="hover:bg-white/5 transition-colors">
+                                <td class="py-3 px-4 font-medium text-white">Prilagođenost</td>
+                                <td class="py-3 px-4">Ponuda osmišljena prema vašem tržištu i ciljevima</td>
+                                <td class="py-3 px-4">Analiza potreba, predlog SEO ili Google Ads strategije po meri
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p>
+                        Detaljna analiza rada i otvorena komunikacija o vašim potrebama su ključni koraci da vaše
+                        ulaganje u digitalni nastup donese željene rezultate.
+                    </p>
+                </div>
+
+                <!-- SEKCIJA 3 -->
+                <div class="space-y-6 pt-4">
+                    <h2 id="na-sta-obratiti-paznju-tokom-prvog-kontakta-sa-agencijom"
+                        class="scroll-mt-28 text-2xl sm:text-3xl font-bold tracking-tight text-white border-b border-white/10 pb-3">
+                        Na šta obratiti pažnju tokom prvog kontakta sa agencijom?
+                    </h2>
+
+                    <figure class="relative overflow-hidden rounded-2xl border border-white/10 bg-slate-900/50 my-6">
+                        <img src="/uploads/blog-images/c67c06c8-c214-4bed-a01f-6a10e61d27b9.webp"
+                             alt="Radni sto sa laptopom i beleškama — kako izabrati digitalnu agenciju za izradu sajta"
+                             loading="lazy" class="w-full h-auto object-cover">
+                    </figure>
+
+                    <p>
+                        Prvi kontakt sa digitalnom agencijom često otkriva mnogo više nego što se na prvi pogled čini.
+                        Obratite pažnju na to koliko brzo i jasno odgovaraju na vaš upit – ozbiljna agencija neće
+                        dozvoliti da čekate danima na osnovne informacije ili odgovore na konkretna pitanja. Kvalitet
+                        komunikacije i spremnost da razjasne sve nedoumice odmah pokazuje nivo profesionalnosti i
+                        posvećenosti klijentima.
+                    </p>
+
+                    <p>
+                        U komunikaciji, tražite transparentnost. Da li su rokovi izrade jasno definisani? Da li su svi
+                        troškovi detaljno objašnjeni, uključujući moguće dodatne troškove tokom projekta? Kvalitetan
+                        partner neće ostavljati prostor za nejasnoće, već će vas voditi kroz svaki korak procesa izrade
+                        sajta i pomoći vam da razumete šta dobijate za svoj budžet. Pogledajte primer poređenja tipičnih
+                        odgovora:
+                    </p>
+
+                    <!-- TABELA 3 -->
+                    <div class="overflow-x-auto rounded-2xl border border-white/10 bg-slate-900/40 my-6 backdrop-blur-md">
+                        <table class="w-full text-left text-sm text-slate-300 border-collapse">
+                            <thead class="bg-slate-900/80 text-teal-300 border-b border-white/10 text-xs uppercase tracking-wider">
+                            <tr>
+                                <th class="py-3.5 px-4 font-semibold">Detalj</th>
+                                <th class="py-3.5 px-4 font-semibold text-teal-300">Pouzdan odgovor</th>
+                                <th class="py-3.5 px-4 font-semibold text-rose-400">Nepouzdan odgovor</th>
+                            </tr>
+                            </thead>
+                            <tbody class="divide-y divide-white/5">
+                            <tr class="hover:bg-white/5 transition-colors">
+                                <td class="py-3 px-4 font-medium text-white">Rokovi</td>
+                                <td class="py-3 px-4 text-slate-200">Precizni (npr. 30 dana od odobrenja dizajna)</td>
+                                <td class="py-3 px-4 text-slate-400">Neodređeni ("uskoro", "koliko pre možemo")</td>
+                            </tr>
+                            <tr class="hover:bg-white/5 transition-colors">
+                                <td class="py-3 px-4 font-medium text-white">Troškovi</td>
+                                <td class="py-3 px-4 text-slate-200">Jasno razloženi sa svim stavkama</td>
+                                <td class="py-3 px-4 text-slate-400">Opšti iznos bez detalja</td>
+                            </tr>
+                            <tr class="hover:bg-white/5 transition-colors">
+                                <td class="py-3 px-4 font-medium text-white">Podrška</td>
+                                <td class="py-3 px-4 text-slate-200">Definisana (npr. 3 meseca tehničke podrške)</td>
+                                <td class="py-3 px-4 text-slate-400">Nespomenuta ili nejasna</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p>Ne ustručavajte se da tokom prvog razgovora postavite pitanja kao što su:</p>
+
+                    <ul class="space-y-2.5 my-4 list-none pl-0">
+                        <li class="flex items-start gap-3">
+                            <svg viewBox="0 0 24 24" class="h-5 w-5 stroke-teal-400 fill-none shrink-0 mt-0.5"
+                                 stroke-width="2">
+                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <span>Kako izgleda proces izrade sajta, od analize potreba do lansiranja?</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg viewBox="0 0 24 24" class="h-5 w-5 stroke-teal-400 fill-none shrink-0 mt-0.5"
+                                 stroke-width="2">
+                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <span>Ko je kontakt osoba u svakom delu projekta?</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg viewBox="0 0 24 24" class="h-5 w-5 stroke-teal-400 fill-none shrink-0 mt-0.5"
+                                 stroke-width="2">
+                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <span>Da li postoji podrška nakon što sajt postane aktivan i šta ona uključuje?</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg viewBox="0 0 24 24" class="h-5 w-5 stroke-teal-400 fill-none shrink-0 mt-0.5"
+                                 stroke-width="2">
+                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <span>Kako se vrši SEO optimizacija i da li je uključena u osnovnu ponudu?</span>
+                        </li>
+                    </ul>
+
+                    <p>
+                        Agencija koja nudi kompletnu digitalnu strategiju treba jasno da objasni ne samo tehničku izradu
+                        sajta, već i dodatne vrednosti poput <a href="https://clovercode.rs/seo-optimizacija.html"
+                                                                class="text-teal-300 underline underline-offset-4">SEO
+                        optimizacija za veći organski rast</a> ili Google Ads oglašavanja. Prvi utisak, transparentnost
+                        i spremnost da odgovore na sva vaša pitanja najčešće su dobar pokazatelj da li ste na pravom
+                        putu u izboru web agencije.
+                    </p>
+                </div>
+
+                <!-- SEKCIJA 4 -->
+                <div class="space-y-6 pt-4">
+                    <h2 id="preporuka-za-izradu-sajta-kako-do-pouzdane-saradnje"
+                        class="scroll-mt-28 text-2xl sm:text-3xl font-bold tracking-tight text-white border-b border-white/10 pb-3">
+                        Preporuka za izradu sajta: kako do pouzdane saradnje?
+                    </h2>
+
+                    <p>
+                        Preporuke i iskustva drugih korisnika često su ključni faktor kada razmišljate <strong
+                            class="text-white font-semibold">kako izabrati digitalnu agenciju za izradu sajta</strong>.
+                        Lični utisci, povratne informacije i studije slučaja pružaju realnu sliku o tome kako agencija
+                        funkcioniše u praksi. Ako poznajete nekoga ko je već sarađivao sa određenom web agencijom,
+                        pitajte ih o transparentnosti rada, dostupnosti tima i kvalitetu podrške tokom i nakon izrade
+                        sajta.
+                    </p>
+
+                    <p>
+                        Sledeći korak je provera referenci. Pouzdane agencije, poput Clovercode, otvoreno prezentuju
+                        primere prethodnih projekata i često mogu povezati potencijalnog klijenta sa nekim od svojih
+                        klijenata radi dodatnih informacija. Ne ustručavajte se da tražite konkretne primere sajtova iz
+                        vaše branše ili da kontaktirate firmu iz reference i pitate:
+                    </p>
+
+                    <ul class="space-y-2.5 my-4 list-none pl-0">
+                        <li class="flex items-start gap-3">
+                            <span class="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-violet-500/20 text-violet-300 text-xs font-bold border border-violet-500/30">1</span>
+                            <span>Da li je agencija ispoštovala dogovorene rokove?</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-violet-500/20 text-violet-300 text-xs font-bold border border-violet-500/30">2</span>
+                            <span>Kako je izgledala komunikacija tokom projekta?</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-violet-500/20 text-violet-300 text-xs font-bold border border-violet-500/30">3</span>
+                            <span>Da li rezultati (npr. bolja online vidljivost, povećanje upita) opravdavaju investiciju?</span>
+                        </li>
+                    </ul>
+
+                    <p>
+                        Pouzdana saradnja ne završava objavom sajta. Prava vrednost digitalne agencije ogleda se u
+                        mogućnosti da izgradi dugoročan partnerski odnos sa klijentom. To znači da će vas pratiti kroz
+                        promene na tržištu, nove potrebe i digitalne trendove. Na primer, nakon izrade sajta, firme
+                        često shvate da im je potrebna i <a href="https://clovercode.rs/google-ads.html"
+                                                            class="text-teal-300 underline underline-offset-4">Google
+                        Ads oglašavanje za brže upite i više klijenata</a> — zato je važno birati agenciju koja ima
+                        kompletan spektar digitalnih usluga i spremna je da razvija vašu online strategiju i kasnije.
+                    </p>
+
+                    <p>
+                        Kada birate najboljeg partnera, obratite pažnju da li agencija nudi personalizovan pristup i da
+                        li je spremna na kontinuiranu analizu i optimizaciju vašeg sajta, što je osnova za rast i
+                        konkurentnost. Dugoročna saradnja sa pouzdanom agencijom znači da će vaš sajt i digitalna
+                        strategija biti u skladu sa razvojem vašeg biznisa, bez potrebe za čestim promenama partnera ili
+                        povremenim “gašenjem požara”.
+                    </p>
+                </div>
+
+                <!-- FAQ SEKCIJA -->
+                <div class="space-y-6 pt-4">
+                    <h2 id="najcesca-pitanja"
+                        class="scroll-mt-28 text-2xl sm:text-3xl font-bold tracking-tight text-white border-b border-white/10 pb-3">
+                        Najčešća pitanja
+                    </h2>
+
+                    <div class="space-y-4">
+                        <!-- FAQ item 1 -->
+                        <div class="rounded-2xl border border-white/10 bg-slate-900/40 p-5 backdrop-blur-md">
+                            <h3 class="text-lg font-semibold text-teal-300 m-0">Koliko traje proces izrade sajta u
+                                proseku?</h3>
+                            <p class="mt-2 text-base text-slate-300 mb-0">
+                                Vreme potrebno za izradu sajta zavisi od obima projekta, broja stranica i nivoa
+                                funkcionalnosti, ali za mala i srednja preduzeća najčešće traje od dve do šest nedelja.
+                                Važno je da agencija, poput Clovercode, napravi detaljnu analizu potreba i konkurencije
+                                kako bi proces bio efikasan i prilagođen vašem biznisu.
+                            </p>
+                        </div>
+
+                        <!-- FAQ item 2 -->
+                        <div class="rounded-2xl border border-white/10 bg-slate-900/40 p-5 backdrop-blur-md">
+                            <h3 class="text-lg font-semibold text-teal-300 m-0">Koje su najčešće greške prilikom izbora
+                                web agencije?</h3>
+                            <p class="mt-2 text-base text-slate-300 mb-0">
+                                Česte greške su odabir agencije isključivo po ceni, zanemarivanje referenci i iskustva,
+                                kao i nedovoljno razumevanje ponuđenih usluga. Važno je izabrati agenciju koja nudi
+                                kompletan digitalni pristup, od izrade sajta do SEO optimizacije i Google Ads kampanja,
+                                kako bi vaše online prisustvo bilo celovito unapređeno.
+                            </p>
+                        </div>
+
+                        <!-- FAQ item 3 -->
+                        <div class="rounded-2xl border border-white/10 bg-slate-900/40 p-5 backdrop-blur-md">
+                            <h3 class="text-lg font-semibold text-teal-300 m-0">Kako proveriti da li je agencija
+                                pouzdana?</h3>
+                            <p class="mt-2 text-base text-slate-300 mb-0">
+                                Pouzdana agencija ima jasno prikazane prethodne projekte, transparentno komunicira i
+                                nudi personalizovana rešenja. Pregledajte primere sajtova koje su radili, tražite
+                                povratne informacije od klijenata i proverite da li pružaju detaljnu analizu i
+                                strategiju, kao što radi Clovercode, pre nego što započnete saradnju.
+                            </p>
+                        </div>
+
+                        <!-- FAQ item 4 -->
+                        <div class="rounded-2xl border border-white/10 bg-slate-900/40 p-5 backdrop-blur-md">
+                            <h3 class="text-lg font-semibold text-teal-300 m-0">Da li je bolje angažovati lokalnu ili
+                                internacionalnu agenciju?</h3>
+                            <p class="mt-2 text-base text-slate-300 mb-0">
+                                Lokalne agencije bolje razumeju specifičnosti vašeg tržišta i mogu efikasnije
+                                optimizovati lokalnu vidljivost, posebno uz usluge poput Google Business optimizacije.
+                                Internacionalne agencije su pogodnije za globalne projekte, ali za male i srednje firme
+                                koje žele jače online prisustvo na domaćem tržištu, lokalni partner je često bolji
+                                izbor.
+                            </p>
+                        </div>
+
+                        <!-- FAQ item 5 -->
+                        <div class="rounded-2xl border border-white/10 bg-slate-900/40 p-5 backdrop-blur-md">
+                            <h3 class="text-lg font-semibold text-teal-300 m-0">Koja pitanja treba postaviti agenciji
+                                pre potpisivanja ugovora?</h3>
+                            <p class="mt-2 text-base text-slate-300 mb-0">
+                                Pre potpisivanja ugovora pitajte za proces izrade sajta, uključene usluge (SEO, Google
+                                Ads, podrška), rokove, način komunikacije tokom projekta, kao i mogućnosti održavanja i
+                                optimizacije nakon izrade. Tako ćete biti sigurni da agencija, poput Clovercode, pokriva
+                                sve aspekte razvoja vašeg digitalnog nastupa.
+                            </p>
+                        </div>
+
+                        <!-- FAQ item 6 -->
+                        <div class="rounded-2xl border border-white/10 bg-slate-900/40 p-5 backdrop-blur-md">
+                            <h3 class="text-lg font-semibold text-teal-300 m-0">Kako osigurati dobru podršku nakon
+                                izrade sajta?</h3>
+                            <p class="mt-2 text-base text-slate-300 mb-0">
+                                Dogovorite se unapred o podršci i održavanju sajta, uključujući redovno ažuriranje,
+                                tehničku pomoć i dodatne optimizacije. Proverite da li agencija nudi jasno definisane
+                                usluge podrške i da li je komunikacija brza i dostupna, što je ključno za nesmetan rad i
+                                razvoj vašeg sajta nakon lansiranja.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ZAKLJUČAK SEKCIJA -->
+                <div class="space-y-6 pt-4">
+                    <h2 id="zakljucak"
+                        class="scroll-mt-28 text-2xl sm:text-3xl font-bold tracking-tight text-white border-b border-white/10 pb-3">
+                        Zaključak
+                    </h2>
+
+                    <p>
+                        Izbor prave digitalne agencije za izradu sajta je važan korak u unapređenju online prisustva
+                        vašeg preduzeća. Ključ je u pažljivom sagledavanju iskustva, pristupa i komunikacije agencije,
+                        kao i u proveri njihove sposobnosti da odgovore na vaše specifične potrebe, od dizajna sajta do
+                        SEO i oglašavanja. Dobar partner će vas voditi kroz ceo proces, uz transparentnost i predloge
+                        koji su usmereni na dugoročni rast vašeg brenda.
+                    </p>
+
+                    <p>
+                        Ukoliko želite personalizovan pristup i kompletnu digitalnu strategiju koja uključuje izradu
+                        sajta, SEO optimizaciju i Google Ads oglašavanje, sledeći korak je da kontaktirate proverenu
+                        agenciju i dogovorite prvi konsultativni razgovor. Tako ćete najbolje proceniti da li je
+                        agencija pravi izbor za vaše ciljeve i omogućiti svom preduzeću siguran digitalni razvoj.
+                    </p>
+                </div>
+
+                <!-- SHARE / SOCIAL SHARING BOX (Ispod celog teksta) -->
+                <div class="mt-12 rounded-2xl border border-white/10 bg-slate-900/50 p-6 backdrop-blur-md">
+                    <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+                        <div>
+                            <h4 class="text-base font-semibold text-white m-0">Podelite ovaj članak:</h4>
+                            <p class="text-xs text-slate-400 m-0 mt-0.5">Pomozite kolegama da izaberu pravu digitalnu
+                                agenciju.</p>
+                        </div>
+
+                        <div class="flex items-center gap-2.5">
+                            <!-- LinkedIn -->
+                            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://clovercode.rs/blog/kako-izabrati-digitalnu-agenciju.html"
+                               target="_blank" rel="noopener noreferrer"
+                               class="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-slate-300 hover:border-teal-400/50 hover:bg-teal-400/10 hover:text-teal-300 transition-all"
+                               aria-label="Podeli na LinkedIn-u">
+                                <svg viewBox="0 0 24 24" class="h-4 w-4 fill-current">
+                                    <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.78a1.62 1.62 0 1 0 0 3.24 1.62 1.62 0 0 0 0-3.24z"/>
+                                </svg>
+                            </a>
+
+                            <!-- Facebook -->
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=https://clovercode.rs/blog/kako-izabrati-digitalnu-agenciju.html"
+                               target="_blank" rel="noopener noreferrer"
+                               class="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-slate-300 hover:border-teal-400/50 hover:bg-teal-400/10 hover:text-teal-300 transition-all"
+                               aria-label="Podeli na Facebook-u">
+                                <svg viewBox="0 0 24 24" class="h-4 w-4 fill-current">
+                                    <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H7.5v-3H10V9.69c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.45 3h-2.33v6.8c4.56-.93 8-4.96 8-9.8z"/>
+                                </svg>
+                            </a>
+
+                            <!-- Twitter / X -->
+                            <a href="https://twitter.com/intent/tweet?url=https://clovercode.rs/blog/kako-izabrati-digitalnu-agenciju.html"
+                               target="_blank" rel="noopener noreferrer"
+                               class="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-slate-300 hover:border-teal-400/50 hover:bg-teal-400/10 hover:text-teal-300 transition-all"
+                               aria-label="Podeli na X-u">
+                                <svg viewBox="0 0 24 24" class="h-4 w-4 fill-current">
+                                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                                </svg>
+                            </a>
+
+                            <!-- Copy Link -->
+                            <button onclick="navigator.clipboard.writeText(window.location.href); alert('Link je kopiran u klipbord!');"
+                                    class="flex h-10 items-center gap-2 rounded-xl border border-teal-500/30 bg-teal-500/10 px-3.5 text-xs font-semibold text-teal-300 hover:bg-teal-500/20 transition-all"
+                                    aria-label="Kopiraj link">
+                                <svg viewBox="0 0 24 24" class="h-4 w-4 stroke-current fill-none" stroke-width="2"
+                                     stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                </svg>
+                                <span>Kopiraj link</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </article>
+
+        </div>
+    </div>
+</main>
+
+<!-- RELATED ARTICLES BOTTOM SECTION -->
+<section class="border-t border-white/10 bg-slate-950/80 py-16 relative">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-10 gap-4">
+            <div>
+                <span class="text-xs font-bold uppercase tracking-widest text-teal-400">Slične teme</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-1">Preporučujemo za čitanje</h2>
             </div>
-
-            <h2 class="mt-5 text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-5xl">
-                Saveti, vodiči i digitalni uvid
-            </h2>
-
-            <p class="mt-5 text-sm leading-7 text-white/68 sm:text-base sm:leading-8">
-                Pročitajte najnovije tekstove iz oblasti SEO optimizacije, izrade web sajtova i lokalnog pozicioniranja.
-                Delimo praktične strategije koje vam pomažu da unapredite svoje online prisustvo.
-            </p>
+            <a href="#"
+               class="inline-flex items-center gap-2 text-sm font-semibold text-teal-400 hover:text-teal-300 transition-colors">
+                <span>Pogledaj sve blog tekstove</span>
+                <i class="fa-solid fa-arrow-right text-xs"></i>
+            </a>
         </div>
 
-        <!-- 1. FILTER DUGMAD -->
-        <div class="flex items-center gap-2 overflow-x-auto pb-4 sm:justify-center no-scrollbar">
-            <button type="button"
-                    class="blog-filter-btn active px-5 py-2 rounded-full text-sm font-medium border border-teal-500/30 bg-teal-500/10 text-teal-300 transition-all duration-200 hover:border-teal-400"
-                    data-filter="all">
-                Sve vesti
-            </button>
-            <button type="button"
-                    class="blog-filter-btn px-5 py-2 rounded-full text-sm font-medium border border-white/10 bg-slate-900/60 text-slate-300 transition-all duration-200 hover:border-teal-500/40 hover:text-white"
-                    data-filter="seo">
-                SEO
-            </button>
-            <button type="button"
-                    class="blog-filter-btn px-5 py-2 rounded-full text-sm font-medium border border-white/10 bg-slate-900/60 text-slate-300 transition-all duration-200 hover:border-teal-500/40 hover:text-white"
-                    data-filter="izrada-sajta">
-                Izrada Sajta
-            </button>
-            <button type="button"
-                    class="blog-filter-btn px-5 py-2 rounded-full text-sm font-medium border border-white/10 bg-slate-900/60 text-slate-300 transition-all duration-200 hover:border-teal-500/40 hover:text-white"
-                    data-filter="gmb">
-                GMB
-            </button>
-        </div>
+        <!-- Articles Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
-        <!-- 2. GRID KARTICA (Izdvojene / Najnovije vesti) -->
-        <div id="blog-grid" class="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-
-            <!-- Kartica 1 -->
+            <!-- Card 1 -->
             <article
-                    class="blog-item blog-card group flex flex-col justify-between overflow-hidden rounded-2xl border border-white/10 bg-slate-900/50 p-5 transition duration-300 hover:border-teal-500/40"
-                    data-category="seo">
-                <div>
-                    <a href="/blog/seo-vodic-2026" class="block overflow-hidden rounded-xl aspect-video mb-5">
-                        <img src="img/blog/seo-thumb.jpg" alt="SEO Vodič"
-                             class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                             loading="lazy"/>
-                    </a>
-                    <h3 class="text-xl font-bold text-white mb-3">
-                        <a href="/blog/seo-vodic-2026"
-                           class="transition-colors duration-200 hover:text-teal-400 line-clamp-2">
-                            Kako optimizovati sajt za pretragu u 2026. godini
-                        </a>
-                    </h3>
-                    <p class="text-sm text-slate-400 line-clamp-3 mb-6">
-                        Saznajte koje su najvažnije SEO tehničke promene i kako prilagoditi sadržaj za nove pretraživače
-                        i generativne AI modele.
-                    </p>
+                    class="group rounded-2xl border border-white/10 bg-slate-900/50 overflow-hidden backdrop-blur-md hover:border-teal-500/40 transition-all flex flex-col h-full shadow-lg">
+                <div class="relative h-48 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&auto=format&fit=crop&q=80"
+                         alt="SEO teksta"
+                         class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <span class="absolute top-3 left-3 rounded-lg bg-slate-950/80 backdrop-blur px-2.5 py-1 text-[11px] font-semibold text-teal-300 border border-white/10">
+              SEO & Optimizacija
+            </span>
                 </div>
-                <div class="mt-auto flex items-center justify-between pt-4 border-t border-white/10 text-xs">
-                    <span class="inline-flex items-center rounded-full bg-teal-500/10 px-3 py-1 font-medium text-teal-300 border border-teal-500/20">SEO</span>
-                    <div class="flex items-center gap-2 text-slate-400">
-                        <time datetime="2026-09-08">08. Sep 2026.</time>
-                        <span>•</span>
-                        <span>4 min</span>
+                <div class="p-6 flex flex-col flex-grow justify-between">
+                    <div>
+                        <span class="text-xs text-slate-400">08. Mart 2026.</span>
+                        <h3 class="text-lg font-bold text-white mt-2 group-hover:text-teal-300 transition-colors line-clamp-2">
+                            Koliko košta SEO optimizacija sajta u 2026. godini?
+                        </h3>
+                        <p class="text-xs text-slate-400 mt-2 line-clamp-2">
+                            Detaljan pregled cena, paketa i šta tačno dobijate investicijom u organsku pretragu.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs text-slate-400">
+                        <span>5 min čitanja</span>
+                        <span class="text-teal-400 group-hover:translate-x-1 transition-transform flex items-center gap-1">Pročitaj <i
+                                class="fa-solid fa-chevron-right text-[10px]"></i></span>
                     </div>
                 </div>
             </article>
 
-            <!-- Kartica 2 -->
+            <!-- Card 2 -->
             <article
-                    class="blog-item blog-card group flex flex-col justify-between overflow-hidden rounded-2xl border border-white/10 bg-slate-900/50 p-5 transition duration-300 hover:border-teal-500/40"
-                    data-category="izrada-sajta">
-                <div>
-                    <a href="/blog/cena-izrade-sajta" class="block overflow-hidden rounded-xl aspect-video mb-5">
-                        <img src="img/blog/web-dev-thumb.jpg" alt="Cena izrade sajta"
-                             class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                             loading="lazy"/>
-                    </a>
-                    <h3 class="text-xl font-bold text-white mb-3">
-                        <a href="/blog/cena-izrade-sajta"
-                           class="transition-colors duration-200 hover:text-teal-400 line-clamp-2">
-                            Cena izrade sajta u 2026: Koliko košta profesionalni sajt?
-                        </a>
-                    </h3>
-                    <p class="text-sm text-slate-400 line-clamp-3 mb-6">
-                        Detaljan pregled troškova izrade web sajta, domena, hostinga i održavanja za male i srednje
-                        biznise.
-                    </p>
+                    class="group rounded-2xl border border-white/10 bg-slate-900/50 overflow-hidden backdrop-blur-md hover:border-violet-500/40 transition-all flex flex-col h-full shadow-lg">
+                <div class="relative h-48 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&auto=format&fit=crop&q=80"
+                         alt="Redizajn"
+                         class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <span class="absolute top-3 left-3 rounded-lg bg-slate-950/80 backdrop-blur px-2.5 py-1 text-[11px] font-semibold text-violet-300 border border-white/10">
+              Web Dizajn
+            </span>
                 </div>
-                <div class="mt-auto flex items-center justify-between pt-4 border-t border-white/10 text-xs">
-                    <span class="inline-flex items-center rounded-full bg-teal-500/10 px-3 py-1 font-medium text-teal-300 border border-teal-500/20">Izrada Sajta</span>
-                    <div class="flex items-center gap-2 text-slate-400">
-                        <time datetime="2026-09-05">05. Sep 2026.</time>
-                        <span>•</span>
-                        <span>6 min</span>
+                <div class="p-6 flex flex-col flex-grow justify-between">
+                    <div>
+                        <span class="text-xs text-slate-400">01. Mart 2026.</span>
+                        <h3 class="text-lg font-bold text-white mt-2 group-hover:text-violet-300 transition-colors line-clamp-2">
+                            5 znaka da je vašem sajtu hitno potreban redizajn
+                        </h3>
+                        <p class="text-xs text-slate-400 mt-2 line-clamp-2">
+                            Ako vaši klijenti napuštaju sajt ili je mobilno iskustvo loše, vreme je za novu platformu.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs text-slate-400">
+                        <span>6 min čitanja</span>
+                        <span class="text-violet-400 group-hover:translate-x-1 transition-transform flex items-center gap-1">Pročitaj <i
+                                class="fa-solid fa-chevron-right text-[10px]"></i></span>
                     </div>
                 </div>
             </article>
 
-            <!-- Kartica 3 -->
+            <!-- Card 3 -->
             <article
-                    class="blog-item blog-card group flex flex-col justify-between overflow-hidden rounded-2xl border border-white/10 bg-slate-900/50 p-5 transition duration-300 hover:border-teal-500/40"
-                    data-category="gmb">
-                <div>
-                    <a href="/blog/google-maps-optimizacija" class="block overflow-hidden rounded-xl aspect-video mb-5">
-                        <img src="img/blog/gmb-thumb.jpg" alt="Google Maps Optimizacija"
-                             class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                             loading="lazy"/>
-                    </a>
-                    <h3 class="text-xl font-bold text-white mb-3">
-                        <a href="/blog/google-maps-optimizacija"
-                           class="transition-colors duration-200 hover:text-teal-400 line-clamp-2">
-                            Vodič za Google Business Profile i lokalni SEO
-                        </a>
-                    </h3>
-                    <p class="text-sm text-slate-400 line-clamp-3 mb-6">
-                        Kako da se pozicionirate u prvim rezultatima na Google mapi i privučete više lokalnih kupaca.
-                    </p>
+                    class="group rounded-2xl border border-white/10 bg-slate-900/50 overflow-hidden backdrop-blur-md hover:border-teal-500/40 transition-all flex flex-col h-full shadow-lg">
+                <div class="relative h-48 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=600&auto=format&fit=crop&q=80"
+                         alt="Performanse"
+                         class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <span class="absolute top-3 left-3 rounded-lg bg-slate-950/80 backdrop-blur px-2.5 py-1 text-[11px] font-semibold text-teal-300 border border-white/10">
+              Performanse
+            </span>
                 </div>
-                <div class="mt-auto flex items-center justify-between pt-4 border-t border-white/10 text-xs">
-                    <span class="inline-flex items-center rounded-full bg-teal-500/10 px-3 py-1 font-medium text-teal-300 border border-teal-500/20">GMB</span>
-                    <div class="flex items-center gap-2 text-slate-400">
-                        <time datetime="2026-09-02">02. Sep 2026.</time>
-                        <span>•</span>
-                        <span>3 min</span>
+                <div class="p-6 flex flex-col flex-grow justify-between">
+                    <div>
+                        <span class="text-xs text-slate-400">22. Februar 2026.</span>
+                        <h3 class="text-lg font-bold text-white mt-2 group-hover:text-teal-300 transition-colors line-clamp-2">
+                            Zašto je brzina učitavanja sajta ključna za konverzije?
+                        </h3>
+                        <p class="text-xs text-slate-400 mt-2 line-clamp-2">
+                            Svaka sekunda kašnjenja smanjuje konverziju za 7%. Naučite kako ubrzati svoj web sajt.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs text-slate-400">
+                        <span>4 min čitanja</span>
+                        <span class="text-teal-400 group-hover:translate-x-1 transition-transform flex items-center gap-1">Pročitaj <i
+                                class="fa-solid fa-chevron-right text-[10px]"></i></span>
                     </div>
                 </div>
             </article>
 
-        </div>
-
-        <!-- 3. TEKSTUALNA LISTA (Ostale vesti) -->
-        <div id="blog-text-section" class="mt-16 max-w-5xl mx-auto">
-            <h3 id="list-title" class="text-xl font-bold text-white mb-6">Ostale vesti</h3>
-
-            <div id="blog-text-list" class="divide-y divide-white/10 border-t border-b border-white/10">
-
-                <!-- Lista stavka 1 -->
-                <a href="/blog/pisanje-opisa-proizvoda"
-                   class="blog-item blog-title-item group flex flex-col sm:flex-row sm:items-center py-5 transition-colors duration-200 hover:bg-white/[0.02] px-3 -mx-3 rounded-xl"
-                   data-category="seo">
-                    <div class="sm:w-52 shrink-0 mb-1 sm:mb-0">
-                        <span class="block text-xs font-semibold uppercase tracking-wider text-teal-400">SEO</span>
-                        <time class="text-xs text-slate-400" datetime="2026-08-28">28. Avgust 2026.</time>
-                    </div>
-                    <div class="grow">
-                        <h4 class="text-base sm:text-lg font-medium text-slate-200 group-hover:text-teal-300 transition-colors duration-200">
-                            Napišite opise proizvoda koji donose konverzije: Provereni saveti
-                        </h4>
-                    </div>
-                </a>
-
-                <!-- Lista stavka 2 -->
-                <a href="/blog/vaznost-odrzavanja-sajta"
-                   class="blog-item blog-title-item group flex flex-col sm:flex-row sm:items-center py-5 transition-colors duration-200 hover:bg-white/[0.02] px-3 -mx-3 rounded-xl"
-                   data-category="izrada-sajta">
-                    <div class="sm:w-52 shrink-0 mb-1 sm:mb-0">
-                        <span class="block text-xs font-semibold uppercase tracking-wider text-teal-400">Izrada Sajta</span>
-                        <time class="text-xs text-slate-400" datetime="2026-08-20">20. Avgust 2026.</time>
-                    </div>
-                    <div class="grow">
-                        <h4 class="text-base sm:text-lg font-medium text-slate-200 group-hover:text-teal-300 transition-colors duration-200">
-                            Zašto je redovno održavanje sajta ključno za bezbednost i brzinu
-                        </h4>
-                    </div>
-                </a>
-
-                <!-- Lista stavka 3 -->
-                <a href="/blog/custom-vs-cms"
-                   class="blog-item blog-title-item group flex flex-col sm:flex-row sm:items-center py-5 transition-colors duration-200 hover:bg-white/[0.02] px-3 -mx-3 rounded-xl"
-                   data-category="izrada-sajta">
-                    <div class="sm:w-52 shrink-0 mb-1 sm:mb-0">
-                        <span class="block text-xs font-semibold uppercase tracking-wider text-teal-400">Izrada Sajta</span>
-                        <time class="text-xs text-slate-400" datetime="2026-08-12">12. Avgust 2026.</time>
-                    </div>
-                    <div class="grow">
-                        <h4 class="text-base sm:text-lg font-medium text-slate-200 group-hover:text-teal-300 transition-colors duration-200">
-                            Custom web aplikacije vs Gotove platforme: Kompletna poređenja
-                        </h4>
-                    </div>
-                </a>
-
-            </div>
         </div>
 
     </div>
 </section>
+
 <!-- CTA SEKCIJA PRI DNU BLOGA -->
 <section class="relative overflow-hidden bg-slate-950 py-20 lg:py-28 text-white border-t border-white/10">
 
