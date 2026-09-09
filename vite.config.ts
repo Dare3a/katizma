@@ -15,6 +15,7 @@ export default defineConfig({
                 'izrada-web-sajta': new URL('./izrada-web-sajta.html', import.meta.url).pathname,
                 'google-ads': new URL('./google-ads.html', import.meta.url).pathname,
                 'google-business-profile': new URL('./google-business-profile.html', import.meta.url).pathname,
+                blog: new URL('./blog.html', import.meta.url).pathname,
             },
         },
     },
