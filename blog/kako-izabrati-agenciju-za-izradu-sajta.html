@@ -1053,18 +1053,30 @@
 </main>
 
 <!-- RELATED ARTICLES BOTTOM SECTION -->
-<section class="border-t border-white/10 bg-slate-950/80 py-16 relative">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+<section class="border-t border-white/10 bg-black py-16 relative">
+    <!-- Background Glow -->
+    <div class="pointer-events-none absolute inset-0">
+        <div class="absolute -top-40 left-0 h-130 w-130 rounded-full bg-violet-500/10 blur-3xl"></div>
+        <div class="absolute bottom-0 right-0 h-130 w-130 rounded-full bg-teal-500/10 blur-3xl"></div>
+    </div>
 
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+
+        <!-- Section Header -->
         <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-10 gap-4">
             <div>
                 <span class="text-xs font-bold uppercase tracking-widest text-teal-400">Slične teme</span>
                 <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-1">Preporučujemo za čitanje</h2>
             </div>
-            <a href="#"
-               class="inline-flex items-center gap-2 text-sm font-semibold text-teal-400 hover:text-teal-300 transition-colors">
+            <a href="/blog.html"
+               class="inline-flex items-center gap-2 text-sm font-semibold text-teal-400 hover:text-teal-300 transition-colors group">
                 <span>Pogledaj sve blog tekstove</span>
-                <i class="fa-solid fa-arrow-right text-xs"></i>
+                <svg viewBox="0 0 24 24"
+                     class="h-4 w-4 stroke-current fill-none group-hover:translate-x-1 transition-transform"
+                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
             </a>
         </div>
 
@@ -1074,28 +1086,27 @@
             <!-- Card 1 -->
             <article
                     class="group rounded-2xl border border-white/10 bg-slate-900/50 overflow-hidden backdrop-blur-md hover:border-teal-500/40 transition-all flex flex-col h-full shadow-lg">
-                <div class="relative h-48 overflow-hidden">
+                <a href="#" class="relative h-48 overflow-hidden block">
                     <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&auto=format&fit=crop&q=80"
                          alt="SEO teksta"
                          class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500">
                     <span class="absolute top-3 left-3 rounded-lg bg-slate-950/80 backdrop-blur px-2.5 py-1 text-[11px] font-semibold text-teal-300 border border-white/10">
-              SEO & Optimizacija
-            </span>
-                </div>
+                        SEO & Optimizacija
+                    </span>
+                </a>
                 <div class="p-6 flex flex-col flex-grow justify-between">
                     <div>
-                        <span class="text-xs text-slate-400">08. Mart 2026.</span>
-                        <h3 class="text-lg font-bold text-white mt-2 group-hover:text-teal-300 transition-colors line-clamp-2">
-                            Koliko košta SEO optimizacija sajta u 2026. godini?
+                        <h3 class="text-lg font-bold text-white group-hover:text-teal-300 transition-colors line-clamp-2">
+                            <a href="#">Koliko košta SEO optimizacija sajta u 2026. godini?</a>
                         </h3>
-                        <p class="text-xs text-slate-400 mt-2 line-clamp-2">
+                        <!-- Ažurirani opisni tekst: text-sm i text-slate-300 -->
+                        <p class="text-sm text-slate-300 mt-2 line-clamp-2">
                             Detaljan pregled cena, paketa i šta tačno dobijate investicijom u organsku pretragu.
                         </p>
                     </div>
                     <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs text-slate-400">
+                        <span>08. Mart 2026.</span>
                         <span>5 min čitanja</span>
-                        <span class="text-teal-400 group-hover:translate-x-1 transition-transform flex items-center gap-1">Pročitaj <i
-                                class="fa-solid fa-chevron-right text-[10px]"></i></span>
                     </div>
                 </div>
             </article>
@@ -1103,28 +1114,27 @@
             <!-- Card 2 -->
             <article
                     class="group rounded-2xl border border-white/10 bg-slate-900/50 overflow-hidden backdrop-blur-md hover:border-violet-500/40 transition-all flex flex-col h-full shadow-lg">
-                <div class="relative h-48 overflow-hidden">
+                <a href="#" class="relative h-48 overflow-hidden block">
                     <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&auto=format&fit=crop&q=80"
                          alt="Redizajn"
                          class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500">
                     <span class="absolute top-3 left-3 rounded-lg bg-slate-950/80 backdrop-blur px-2.5 py-1 text-[11px] font-semibold text-violet-300 border border-white/10">
-              Web Dizajn
-            </span>
-                </div>
+                        Web Dizajn
+                    </span>
+                </a>
                 <div class="p-6 flex flex-col flex-grow justify-between">
                     <div>
-                        <span class="text-xs text-slate-400">01. Mart 2026.</span>
-                        <h3 class="text-lg font-bold text-white mt-2 group-hover:text-violet-300 transition-colors line-clamp-2">
-                            5 znaka da je vašem sajtu hitno potreban redizajn
+                        <h3 class="text-lg font-bold text-white group-hover:text-violet-300 transition-colors line-clamp-2">
+                            <a href="#">5 znaka da je vašem sajtu hitno potreban redizajn</a>
                         </h3>
-                        <p class="text-xs text-slate-400 mt-2 line-clamp-2">
+                        <!-- Ažurirani opisni tekst: text-sm i text-slate-300 -->
+                        <p class="text-sm text-slate-300 mt-2 line-clamp-2">
                             Ako vaši klijenti napuštaju sajt ili je mobilno iskustvo loše, vreme je za novu platformu.
                         </p>
                     </div>
                     <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs text-slate-400">
+                        <span>01. Mart 2026.</span>
                         <span>6 min čitanja</span>
-                        <span class="text-violet-400 group-hover:translate-x-1 transition-transform flex items-center gap-1">Pročitaj <i
-                                class="fa-solid fa-chevron-right text-[10px]"></i></span>
                     </div>
                 </div>
             </article>
@@ -1132,28 +1142,27 @@
             <!-- Card 3 -->
             <article
                     class="group rounded-2xl border border-white/10 bg-slate-900/50 overflow-hidden backdrop-blur-md hover:border-teal-500/40 transition-all flex flex-col h-full shadow-lg">
-                <div class="relative h-48 overflow-hidden">
+                <a href="#" class="relative h-48 overflow-hidden block">
                     <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=600&auto=format&fit=crop&q=80"
                          alt="Performanse"
                          class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500">
                     <span class="absolute top-3 left-3 rounded-lg bg-slate-950/80 backdrop-blur px-2.5 py-1 text-[11px] font-semibold text-teal-300 border border-white/10">
-              Performanse
-            </span>
-                </div>
+                        Performanse
+                    </span>
+                </a>
                 <div class="p-6 flex flex-col flex-grow justify-between">
                     <div>
-                        <span class="text-xs text-slate-400">22. Februar 2026.</span>
-                        <h3 class="text-lg font-bold text-white mt-2 group-hover:text-teal-300 transition-colors line-clamp-2">
-                            Zašto je brzina učitavanja sajta ključna za konverzije?
+                        <h3 class="text-lg font-bold text-white group-hover:text-teal-300 transition-colors line-clamp-2">
+                            <a href="#">Zašto je brzina učitavanja sajta ključna za konverzije?</a>
                         </h3>
-                        <p class="text-xs text-slate-400 mt-2 line-clamp-2">
+                        <!-- Ažurirani opisni tekst: text-sm i text-slate-300 -->
+                        <p class="text-sm text-slate-300 mt-2 line-clamp-2">
                             Svaka sekunda kašnjenja smanjuje konverziju za 7%. Naučite kako ubrzati svoj web sajt.
                         </p>
                     </div>
                     <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs text-slate-400">
+                        <span>22. Februar 2026.</span>
                         <span>4 min čitanja</span>
-                        <span class="text-teal-400 group-hover:translate-x-1 transition-transform flex items-center gap-1">Pročitaj <i
-                                class="fa-solid fa-chevron-right text-[10px]"></i></span>
                     </div>
                 </div>
             </article>
