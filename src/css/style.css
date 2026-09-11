@@ -1,4 +1,9 @@
 @import "tailwindcss";
+
+html {
+    scroll-behavior: smooth !important;
+}
+
 /* animacije */
 @keyframes fadeUp {
     from {
